@@ -1,0 +1,25 @@
+{
+  "name": "digital-planner",
+  "version": "1.0.0",
+  "description": "My CS240 project ",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mattzou1/Digital-Planner.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mattzou1/Digital-Planner/issues"
+  },
+  "homepage": "https://github.com/mattzou1/Digital-Planner#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "jasmine": "^4.5.0"
+  }
+}
