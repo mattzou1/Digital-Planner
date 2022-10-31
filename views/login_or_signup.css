@@ -1,0 +1,49 @@
+#container {
+    display: flex;
+    border: 1px green solid;
+    padding: 5px;
+    justify-content: center;
+}
+
+#container > div {
+    border: 1px blue solid;
+    padding: 10px;
+}
+
+form {
+    font-size: 30px;
+}
+
+input[type=text] {
+    padding: 10px;
+}
+
+#submit {
+    font-size: 25px;
+
+}
+
+#signup {
+    font-size: 30px;
+}
+
+/* form {
+  position: relative;
+  left: 200px;
+  top: 150px;
+  font-size: 30px;
+}
+
+#submit {
+    padding: 10px 50px;
+    font-size: 25px;
+}
+
+#signup {
+    position: absolute;
+    left: 550px;
+    top: 200px;
+    padding: 70px 100px;
+    font-size: 60px;
+   
+} */
