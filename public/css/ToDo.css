@@ -1,0 +1,31 @@
+#Todo {
+    background-color: lightcoral; 
+    width: 25%; height: 92%;
+    text-align: center;
+    margin: 2%;
+    border-radius: 35px ;  
+    z-index: 1;  
+}
+
+#assignment {
+    position: relative;
+    background-color: lightskyblue;
+    width: 96%;
+    height: 20%;
+    margin: 2%;
+    z-index: 2;
+}
+
+#shortcut {
+    position: relative;
+    background-color: lightgreen;
+    width: 96%;
+    height: 20%;
+    margin: 2%;
+    z-index: 2;
+    display: none;
+}
+
+body{
+    margin: 0%;
+}
