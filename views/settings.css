@@ -1,0 +1,36 @@
+
+/* Make the dropdown hoverable*/
+
+.body{
+    text-align:center;
+}
+
+#submitButton, #logoutButton{  /*Changes size of submit button*/
+    display: inline-block;
+    width: 90px;
+    height: 40px;
+}
+form {
+    align-items: center; /*Items are aligned in the center*/
+    display: flex; /*Makes layout fluid to fill the window if window is resized*/
+   flex-direction: column; /*Organizes text into columns*/
+}
+
+
+
+
+/*
+#logoutButton{ /*Changes size of logout button
+    width: 90px;
+    height: 50px;
+}
+
+h1{
+    background: lightcyan;
+}
+
+form{
+    background: skyblue;
+}
+
+*/
