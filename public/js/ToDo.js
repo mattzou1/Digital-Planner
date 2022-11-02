@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     //Change to shortcut tab
     function ShortcutTab(event){
+        //select all the assignments and shortcuts
         const assignments = document.body.querySelectorAll("#assignment");
         const shortcuts = document.body.querySelectorAll("#shortcut");
 
@@ -35,6 +36,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     //Change to Assignments tab
     function AssignmentTab(event){
+        //select all the assignments and shortcuts
         const shortcuts = document.body.querySelectorAll("#shortcut");
         const assignments = document.body.querySelectorAll("#assignment");
  
