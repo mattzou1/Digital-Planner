@@ -7,8 +7,10 @@
     <link href="../public/css/login_or_signup.css" rel="stylesheet">
 </head>
 <body>
+    <h1>Login or Sign Up</h1>
     <div id="container">
         <div>
+        <!-- to do: change action of form -->
         <form action="https://wp.zybooks.com/form-viewer.php" target="_blank" method="GET">
             <p>
                 <label for="username">Username:</label>
@@ -25,9 +27,9 @@
         </div>
 
         <div>
-        <!-- does Sign Up button have to be in form? bc all it should do is take user to the other html page-->
         <p>
-            <button type="button" id="signup">Sign Up</button>
+            <!-- When user clicks button, it takes them to Sign Up page so they can create account -->
+            <a href="signup.html" target="_blank"><button type="button" id="signup">Sign Up</button></a>
         </p>
         </div>
 </div>

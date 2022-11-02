@@ -1,6 +1,6 @@
 #container {
     display: flex;
-    border: 1px green solid;
+    /* border: 1px green solid; */
     padding: 50px;
     justify-content: space-between;
     flex-grow: 0;
@@ -8,7 +8,7 @@
 }
 
 #container > div {
-    border: 1px blue solid;
+    /* border: 1px blue solid; */
     padding: 10px;
 }
 
@@ -35,5 +35,11 @@ label {
    margin: 10px;
    font-size: 25px;
    padding: 10px;
+}
+
+h1{
+    background-color: rgb(200, 204, 204);
+    padding: 10px;
+    margin-top: 10px;
 }
 
