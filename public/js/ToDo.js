@@ -1,7 +1,12 @@
 document.addEventListener('DOMContentLoaded', (event) => {
-    //constants for tab buttons
+    //constants for buttons
+    //tabs
     const assignmentButton = document.body.querySelector("#button1");
     const shortcutButton = document.body.querySelector("#button2");
+    //add assignment
+    const add = document.body.querySelector("#addAssignment");
+
+
 
     //set assignments as "clicked" by default
     assignmentButton.style.backgroundColor = "#D47272";
@@ -11,10 +16,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
     //event listeners for button clicks
     shortcutButton.addEventListener("click", ShortcutTab);
     assignmentButton.addEventListener("click", AssignmentTab);
+    add.addEventListener("click", addAssignment);
 
 
     //Change to shortcut tab
-    function ShortcutTab(event){
+    function ShortcutTab(){
         //select all the assignments and shortcuts
         const assignments = document.body.querySelectorAll("#assignment");
         const shortcuts = document.body.querySelectorAll("#shortcut");
@@ -35,7 +41,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
     //Change to Assignments tab
-    function AssignmentTab(event){
+    function AssignmentTab(){
         //select all the assignments and shortcuts
         const shortcuts = document.body.querySelectorAll("#shortcut");
         const assignments = document.body.querySelectorAll("#assignment");
@@ -54,5 +60,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
         for(let i = 0; i < assignments.length; i++){
             assignments[i].style.display = "block";
         }
+    }
+
+    //alert that an assignment was added on click
+    function addAssignment(){
+        alert("Assignment Added!")
     }
 })
