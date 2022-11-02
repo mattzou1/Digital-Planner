@@ -1,0 +1,81 @@
+<!--Things to consider
+    - what if user sets username larger than the textbox/should i make textbox larger
+    - is set the right word/should it even have a set
+    - what should be in the placeholder
+    - maxlength for password and username
+    - requirements of username-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head class="head">
+    <meta charset="UTF-8">
+    <title>Settings Page</title> <!--This is the settings page for Digital Planner-->
+    <link href="settings.css" rel="stylesheet"> <!--Links css and html together-->
+</head>
+
+<body>
+
+    <div class="mainContainer">
+
+    <h1>Settings</h1>
+
+    <form> 
+        <div>
+            <p> <!--User can change their username-->
+                <label for="user">Set Username:</label> 
+                <input type="text" name="changeUsername" id="user" placeholder="New Username" maxlength="20">
+            </p>
+        </div>
+
+        <div>
+            <p> <!--User can change their password-->
+                <label for="password">Set Password:</label> 
+                <input type="text" name="changePassword" id="password" placeholder="New Password" maxlength="20">
+            </p>
+        </div>
+       
+        <div>
+            <p> <!--User can update their reading speed-->
+                <label for="reading">Set Reading Speed:</label> 
+                <input type="text" name="changeReading" id="reading" placeholder="New Reading Speed">
+            </p>
+        </div>
+
+        <div>
+            <p> <!--User can update the earliest time they want to be doing work-->
+                <label for="start">Set Earliest Work Time:</label> 
+                <input type="text" name="startWorkTime" id="start" placeholder="Earliest Work Time">
+            </p>
+        </div>
+
+        <div>
+            <p> <!--User can update the latest time they want to be doing work-->
+                <label for="stop">Set Latest Work Time:</label> 
+                <input type="text" name="stopWorkTime" id="stop" placeholder="Latest Work Time">
+            </p> 
+    
+        </div>
+
+        <div>
+            <p>
+                <label for="themes">Theme:</label> <!--Drop-down menu for theme-->
+                <select name="Theme" id="themes"> 
+                    <option value="light">Light</option>
+                    <option value="dark">Dark</option>
+                    <option value="colors">Colors</option>
+                    <option value="pastel">Pastel</option>
+                </select>
+                </p>
+        </div>
+       
+        <div id="buttons">
+            <input type="submit" value="Submit" id="submitButton"> <!--Button to submit data-->
+            <input type="button" value="Logout" id="logoutButton"> <!--Button to logout-->
+        </div>
+        
+    </form>
+
+</div>
+</body>
+</html>

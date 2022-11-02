@@ -1,0 +1,25 @@
+
+/* Make the dropdown hoverable?
+
+*/
+
+h1{ /*Makes h1 header in the center*/
+    text-align:center;
+}
+
+.mainContainer{
+    /*/*border: 3px blue solid;*/
+    align-items: center; /*Items are aligned in the center*/
+    display: flex; /*Makes layout fluid to fill the window if window is resized*/
+    flex-direction: column; /*Organizes text into columns*/
+}
+
+form > div{ /*Deals with div elements in form*/
+    /*border: 3px hotpink solid;*/
+    padding: 5px;
+}
+
+#buttons{ /*Deals with buttons*/
+    display: flex; /*Makes layout fluid to fill the window if window is resized*/
+    justify-content: space-evenly; /*Space between buttons and edges is equal*/
+}
