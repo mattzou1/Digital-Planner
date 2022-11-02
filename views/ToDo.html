@@ -8,11 +8,15 @@
     <link rel="stylesheet" href="../public/css/ToDo.css">
     <script src = "../public/js/ToDo.js"></script>
 </head>
+
 <body>
     <div id = "Todo">
         <h1>ToDo List</h1>
-        <button onclick="assignments()">Assignments</button>
-        <button onclick="shortcuts()">Shortcuts</button>
+
+        <div class="buttons">
+            <button id="button1" name="assignments">Assignments</button>
+            <button id="button2" name="shortcuts">Shortcuts</button>
+        </div>
 
         <div id = "assignment">
             <p>Assignment 1</p>   
@@ -34,6 +38,5 @@
             <p>Shortcut 3</p>   
         </div>
     </div>
-    
 </body>
 </html>
