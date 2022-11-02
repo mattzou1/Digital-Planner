@@ -1,0 +1,21 @@
+#container {
+    display: flex;
+    flex-direction: column;
+    border: 1px green solid;
+    padding: 50px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#container > div {
+    border: 1px blue solid;
+    padding: 10px;
+}
+
+label, #createAccount{
+    display: inline-block;
+    width: 150px;
+    margin-right: 5px;
+    text-align: right;
+    font-size: 20px;
+}
