@@ -13,6 +13,7 @@
 #assignment {
     position: relative;
     background-color: lightskyblue;
+    border-radius: 50px;
 
     width: 96%;
     height: 20%;
@@ -22,6 +23,8 @@
 #shortcut {
     position: relative;
     background-color: lightgreen;
+    border-radius: 50px;
+    
     width: 96%;
     height: 20%;
     margin: 2%;
