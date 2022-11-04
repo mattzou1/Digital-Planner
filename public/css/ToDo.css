@@ -15,9 +15,8 @@
     background-color: lightskyblue;
     border-radius: 50px;
 
-    width: 96%;
-    height: 20%;
-    margin: 2%;
+    width: 350px;
+    height: 100px;
 }
 
 #shortcut {
@@ -25,9 +24,8 @@
     background-color: lightgreen;
     border-radius: 50px;
     
-    width: 96%;
-    height: 20%;
-    margin: 2%;
+    width: 350px;
+    height: 100px;
     display: none;
 }
 
@@ -115,3 +113,24 @@ body{
 .todoDropBox{
     background-color: black;
 }
+
+.drophere{
+    width: 350px;
+    height: 100px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   }
+   #div{
+    background: blueviolet;
+    width: 280px;
+    height: 70px;
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
+    cursor: -moz-grabbing;
+   }
+
+   #dropOut{
+    vertical-align: center;
+   }
