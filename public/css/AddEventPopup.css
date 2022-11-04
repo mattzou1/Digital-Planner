@@ -1,45 +1,62 @@
 .btn2 {
 	padding: 10px 60px;
-	background: #ffff;
+	background: white;
+  color: rgb(4, 133, 184);
+  border-color: rgb(4, 133, 184);
+  border-style: solid;
+  border-width: 0.7px;
+  border-radius: 20px;
 	border: 1;
 	outline: auto;
 	cursor: pointer;
 	font-size: 22px;
 	font-weight: 500;
-	border-radius: 30px;
-    margin-left: 10px;
+  margin-left: 10px;
+	transition: background-color 0.5s,
+		color 0.5s,
+		box-shadow 0.5s;
+}
+
+.btn2:hover {
+	background-color:rgb(4, 133, 184) ;
+	color: white;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 1.0);
+}
+
+.btn2:active {
+  background-color:rgb(0, 105, 147);
 }
 
 .event_popup {
-    height: 400px;
-    width: 400px;
-    background: #ffff;
-    border-radius: 30px;
-    position: absolute;
-    top: 0%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0.1);
-    text-align: center;
-    padding: 0 30px 0px;
-    color: #333;
-    visibility: hidden;
-    transition: transform 0.4s, top 0.4s;
+  height: 400px;
+  width: 400px;
+  background: #ffff;
+  border-radius: 30px;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+  text-align: center;
+  padding: 0 30px 0px;
+  color: #333;
+  visibility: hidden;
+  transition: transform 0.4s, top 0.4s;
 }
 
 .open-event_popup {
-    top: 50%;
-    transform: translate(-50%, -50%) scale(1);
-    visibility: visible;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  visibility: visible;
 }
   
 .event_popup form {
-    margin-top: 20px;
+  margin-top: 20px;
 }
   
 .event_popup h2 {
-    font-size: 25px;
-    font-weight: 500;
-    margin: 30px 0 10px;
+  font-size: 25px;
+  font-weight: 500;
+  margin: 30px 0 10px;
 }
 
 .cancelbtn2 {

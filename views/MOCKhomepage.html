@@ -4,12 +4,12 @@
 	<meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="AddAssignmentPopup.css">
-  <link rel="stylesheet" href="AddEventPopup.css">
+  <link rel="stylesheet" href="../public/css/AddAssignmentPopup.css">
+  <link rel="stylesheet" href="../public/css/AddEventPopup.css">
   <title>Add Assignment Popup</title>
 </head> 
 <body>
-  <div class="container">
+  <div class="container" id="blur">
     <button type="button" class="btn" onclick="openPopup()">Add Assignment</button>
 
     <div class="assignment_popup" id="assignment_popup">
@@ -27,8 +27,8 @@
         <input type="checkbox" id="Shortcut">
         <label for="Shortcut">Shortcut?</label>
       </form>
-      <button type="button" class="cancelbtn" onclick="closePopup()">Cancel</button>
-      <button type="button" class="addbtn" onclick="closePopup()">Submit</button>
+      <button type="button" class="cancelbtn" onclick="closePopup(); clearFields()">Cancel</button>
+      <button type="button" class="addbtn" onclick="closePopup(); clearFields()">Submit</button>
     </div>
 
     <button type="button" class="btn2" onclick="openPopup2()">Add Event</button>
@@ -50,11 +50,11 @@
         <input type="checkbox" id="Recurring">
         <label for="Recurring">Recurring?</label>
       </form>
-      <button type="button" class="cancelbtn2" onclick="closePopup2()">Cancel</button>
-      <button type="button" class="addbtn2" onclick="closePopup2()">Submit</button>
+      <button type="button" class="cancelbtn2" onclick="closePopup2(); clearFields2()">Cancel</button>
+      <button type="button" class="addbtn2" onclick="closePopup2(); clearFields2()">Submit</button>
     </div>
 
   </div>
-<script src="AddAssignmentPopup.js"></script>
+<script src="../public/js/AddAssignmentPopup.js"></script>
 </body>
 </html>
