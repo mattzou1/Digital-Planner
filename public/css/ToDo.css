@@ -2,8 +2,8 @@
     background-color: lightcoral; 
     width: 25%; height: 92%;
     text-align: center;
-    margin: 2%;
     border-radius: 35px ;  
+    display: inline-block;
 }
 
 #Todo > h1{
@@ -90,5 +90,28 @@
 }
 
 body{
-    margin: 0%;
+    margin: 20px;
+}
+
+
+
+.calander{
+    display: inline-flexbox;
+    height: 92%; width: 70%;
+    background-color: lightcoral;
+    float: right;
+    border-radius: 50px;
+}
+
+#dropBox1{
+    display: inline-flexbox;
+    position: relative;
+    height: 50%; width: 50%;
+    background-color: lightblue;
+    border-radius: 50px;
+    padding: 20px;
+}
+
+.todoDropBox{
+    background-color: black;
 }

@@ -6,7 +6,6 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="../public/css/ToDo.css">
-    <script src = "../public/js/ToDo.js"></script>
 </head>
 
 <body>
@@ -20,7 +19,7 @@
         <br>
 
         <div class="buttons">
-            <div id="button1" name="assignments">
+            <div id="button1" name="assignments" >
                 <p>Assignments</p>
             </div>
             <div id="button2" name="shortcuts">
@@ -28,26 +27,60 @@
             </div>
         </div>
 
-        <div id = "assignment">
-            <p>Assignment 1</p>   
+        
+        <div class="todoDropBox">
+            <div id = "assignment" draggable="true" ondragstart="drag(event)">
+                <p>Assignment 1</p>   
+            </div>
         </div>
-        <div id = "assignment">
-            <p>Assignment 2</p>   
+        <div class="todoDropBox">
+            <div id = "assignment" draggable="true" ondragstart="drag(event)">
+                <p>Assignment 2</p>   
+            </div>
         </div>
-        <div id = "assignment">
-            <p>Assignment 3</p>   
-        </div>
-
-        <div id = "shortcut">
-            <p>Shortcut 1</p>   
-        </div>
-        <div id = "shortcut">
-            <p>Shortcut 2</p>   
-        </div>
-        <div id = "shortcut">
-            <p>Shortcut 3</p>   
+        <div class="todoDropBox">
+            <div id = "assignment" draggable="true" ondragstart="drag(event)">
+                <p>Assignment 3</p>   
+            </div>
         </div>
 
+        <div class="todoDropBox">
+            <div id = "shortcut" draggable="true" ondragstart="drag(event)">
+                <p>Shortcut 1</p>   
+            </div>
+        </div>
+        <div class="todoDropBox">
+            <div id = "shortcut" draggable="true" ondragstart="drag(event)">
+                <p>Shortcut 2</p>   
+            </div>
+        </div>
+        <div class="todoDropBox">
+            <div id = "shortcut" draggable="true" ondragstart="drag(event)">
+                <p>Shortcut 3</p>   
+            </div>
+        </div>
     </div>
+
+    <div class="calander">
+        <div id="dropBox1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    </div>
+
+    <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+    </script>
+    <script src = "../public/js/ToDo.js"></script>
+    
 </body>
 </html>
