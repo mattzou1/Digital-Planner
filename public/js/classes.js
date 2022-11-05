@@ -78,10 +78,19 @@ class Event{
     } 
 }
 
-// user1 = new User(1,1,"9:30", "13:00");
-// console.log(user1.schedule);
+//user1 = new User(1,1,"9:30", "13:00");
+//console.log(user1.schedule);
 // event1 = new Event(1,1,1,1,[false,true,false,false,false,false,false]);
 // user1.addElement("10:00","11:30", event1);
 // console.log(user1.schedule);
 // console.log(user1.getCurrentDate());
 
+//exports the classes so we can use them in other js files
+module.exports.User = User;
+module.exports.Assignment = Assignment;
+module.exports.Event = Event;
+
+//to import them, do:
+    //let classes = require("./classes.js");
+    //and then access the classes with classes.User, classes.Assignment, etc
+    //ex: let user1 = new classes.User(1,1,"9:30", "13:00");

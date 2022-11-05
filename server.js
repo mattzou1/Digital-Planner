@@ -19,9 +19,17 @@ app.use('/img', express.static(__dirname + 'public/img'));
 
 // A route definition
 app.get("/", (req, res) => {
-    res.sendFile(__dirname + '/views/index.html');
+    res.sendFile(__dirname + '/views/login_or_signup.html');
 });
 
+app.post("/home", (req, res) => {
+    console.log(req.body);
+    res.sendFile(__dirname + '/views/ToDo.html');
+});
+
+app.get("/signup", (req, res) => {
+    res.sendFile(__dirname + '/views/signup.html');
+});
 
 
 
