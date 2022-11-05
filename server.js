@@ -24,14 +24,12 @@ app.get("/", (req, res) => {
 
 app.post("/home", (req, res) => {
     console.log(req.body);
-    res.sendFile(__dirname + '/views/ToDo.html');
+    res.sendFile(__dirname + '/views/copyToDo.html');
 });
 
 app.get("/signup", (req, res) => {
     res.sendFile(__dirname + '/views/signup.html');
 });
-
-
 
 // starts web server listening on localhost at port 3000
 app.listen(port, () => {
