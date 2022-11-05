@@ -4,14 +4,14 @@
      <!-- HTML for Sign Up/Login page-->
     <meta charset="UTF-8">
     <title>Login and Sign Up Page</title>
-    <link href="../public/css/login_or_signup.css" rel="stylesheet">
+    <link href="css/login_or_signup.css" rel="stylesheet">
 </head>
 <body>
     <h1>Login or Sign Up</h1>
     <div id="container">
         <div>
         <!-- to do: change action of form -->
-        <form action="https://wp.zybooks.com/form-viewer.php" target="_blank" method="GET">
+        <form action="/home" target="_blank" method="POST">
             <p>
                 <label for="username">Username:</label>
                 <input type="text" name="username" id="username">
@@ -29,7 +29,7 @@
         <div>
         <p>
             <!-- When user clicks button, it takes them to Sign Up page so they can create account -->
-            <a href="signup.html" target="_blank"><button type="button" id="signup">Sign Up</button></a>
+            <a href="/signup"><button type="button" id="signup">Sign Up</button></a>
         </p>
         </div>
 </div>
