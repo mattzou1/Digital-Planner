@@ -28,27 +28,27 @@
                 </div>
             </div>
 
-            <div class="holder">
-                <div id = "assignment">
+            <div class="holder" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id = "assignment" draggable="true" ondragstart="drag(event)">
                     <p>Assignment 1</p>  
                 </div>
-                <div id = "shortcut">
+                <div id = "shortcut" draggable="true" ondragstart="drag(event)">
                     <p>Shortcut 1</p>   
                 </div>
             </div>
-            <div class="holder">
-                <div id = "assignment">
+            <div class="holder" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id = "assignment" draggable="true" ondragstart="drag(event)">
                     <p>Assignment 2</p>   
                 </div>
-                <div id = "shortcut">
+                <div id = "shortcut" draggable="true" ondragstart="drag(event)">
                     <p>Shortcut 2</p>   
                 </div>
             </div>
-            <div class="holder">
-                <div id = "assignment">
+            <div class="holder" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id = "assignment" draggable="true" ondragstart="drag(event)">
                     <p>Assignment 3</p>  
                 </div>
-                <div id = "shortcut">
+                <div id = "shortcut" draggable="true" ondragstart="drag(event)">
                     <p>Shortcut 3</p>   
                 </div>
             </div>
@@ -69,13 +69,33 @@
             <div id="table">
                 <p>I am a schedule.</p>
             </div>
+
+            <div class="holder" ondrop="drop(event)" ondragover="allowDrop(event)">
+                
+            </div>
+            <div class="holder" ondrop="drop(event)" ondragover="allowDrop(event)">
+                
+            </div>
+            <div class="holder" ondrop="drop(event)" ondragover="allowDrop(event)">
+                
+            </div>
     
-        </div>
-        <!-- </div> -->
-        
+        </div>      
     </div>
 
-    <!-- </div> -->
+    <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+    </script>
     
     <script src = "../public/js/copyToDo.js"></script>
 
