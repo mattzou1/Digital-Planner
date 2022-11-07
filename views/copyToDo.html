@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/copyToDo.css">
 
-
     <title>Copy</title>
+    <script type="module" src="js/copyToDo.js"></script>
 </head>
 
 <body>
@@ -73,19 +73,40 @@
                         <tr>
                             <th>Time</th>
                             <th>Monday</th>
-                            <th>Tuesday</th>
+                            <!-- <th>Tuesday</th>
                             <th>Wednesday</th>
                             <th>Thursday</th>
                             <th>Friday</th>
                             <th>Saturday</th>
-                            <th>Sunday</th>
+                            <th>Sunday</th> -->
                         </tr>
                         <tr>
                         </tr>
                     </tbody>
                 </table>
-                <p id="iAmSchedule">I am a schedule.</p>
             </div>
+            
+            <!-- Code that fills in the calendar with the user's schedule -->
+            <script src="js/classes.js"></script>
+            <script>
+                //create user
+                let user1 = new User(1,1,"9:30", "16:30");
+                
+                //console.log(user1.schedule);
+
+                 //get table body
+                let table = document.body.querySelector("tbody");
+
+                //loop through each time in the schedule map
+                for (let [time] of user1.schedule){
+                    //console.log(time);
+       
+                    let row = table.insertRow(-1); //insert a row
+                    let cell1 = row.insertCell(0); //create a cell
+       
+                    cell1.innerHTML = time; //set the time to that cell
+                }
+            </script>
 
             <!--Feel free to move this somehwere else in the code-->
             <div class="holder" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
@@ -94,8 +115,5 @@
     
         </div>      
     </div>
-    
-    <script src = "js/copyToDo.js"></script>
-
 </body>
 </html>
