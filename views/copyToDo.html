@@ -6,6 +6,7 @@
     
 
     <title>Copy</title>
+    <script src="js/copyToDo.js"></script>
 </head>
 
 <body>
@@ -70,15 +71,10 @@
                 <p>I am a schedule.</p>
             </div>
 
-            <div class="holder" ondrop="drop(event)" ondragover="allowDrop(event)">
-                
-            </div>
-            <div class="holder" ondrop="drop(event)" ondragover="allowDrop(event)">
-                
-            </div>
-            <div class="holder" ondrop="drop(event)" ondragover="allowDrop(event)">
-                
-            </div>
+            <!--Feel free to move this somehwere else in the code-->
+            <div class="holder" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div class="holder" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div class="holder" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     
         </div>      
     </div>
@@ -96,8 +92,5 @@
             ev.target.appendChild(document.getElementById(data));
         }
     </script>
-    
-    <script src = "../public/js/copyToDo.js"></script>
-
 </body>
 </html>
