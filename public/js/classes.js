@@ -2,7 +2,7 @@ let weekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Sat
 
 //All times should be a string using miltary time with minutes as 00 or 30 for example "14:30"
 //user class containing user information and schedule for one day
-class User{    
+export class User{    
     constructor(username, password, startTime, endTime){
         this.username = username;
         this.password = password;
@@ -86,9 +86,9 @@ class Event{
 // console.log(user1.getCurrentDate());
 
 //exports the classes so we can use them in other js files
-module.exports.User = User;
-module.exports.Assignment = Assignment;
-module.exports.Event = Event;
+//module.exports = User;
+//module.exports.Assignment = Assignment;
+//module.exports.Event = Event;
 
 //to import them, do:
     //let classes = require("./classes.js");
