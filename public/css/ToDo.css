@@ -134,3 +134,7 @@ body{
    #dropOut{
     vertical-align: center;
    }
+
+table, th, td {
+    border:1px solid black;
+}
