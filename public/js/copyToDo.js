@@ -1,5 +1,15 @@
+//let classes = require("js/classes.js");
+//import {User} from "/public/js/classes";
 
 document.addEventListener('DOMContentLoaded', (event) => {
+    
+    
+    //create user
+    let user1 = new User(1,1,"9:30", "13:00");
+    console.log(user1.schedule);
+           
+    
+    
     //constants for buttons
     //tabs
     const assignmentButton = document.body.querySelector("#button1");

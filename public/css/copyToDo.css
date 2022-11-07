@@ -179,3 +179,7 @@ body{
     height: 150px;
     padding: 0%;
 }
+
+table, th, td {
+    border:1px solid black;
+    }
