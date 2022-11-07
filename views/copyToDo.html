@@ -6,6 +6,7 @@
 
 
     <title>Copy</title>
+    <script src="js/copyToDo.js"></script>
 </head>
 
 <body>
@@ -28,30 +29,30 @@
                 </div>
             </div>
 
-            <div id = "assignment">
-                <p>Assignment 1</p>  
+            <div class="holder" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id = "assignment" draggable="true" ondragstart="drag(event)">
+                    <p>Assignment 1</p>  
+                </div>
+                <div id = "shortcut" draggable="true" ondragstart="drag(event)">
+                    <p>Shortcut 1</p>   
+                </div>
             </div>
-
-            <div id = "assignment">
-                <p>Assignment 2</p>   
+            <div class="holder" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id = "assignment" draggable="true" ondragstart="drag(event)">
+                    <p>Assignment 2</p>   
+                </div>
+                <div id = "shortcut" draggable="true" ondragstart="drag(event)">
+                    <p>Shortcut 2</p>   
+                </div>
             </div>
-
-            <div id = "assignment">
-                <p>Assignment 3</p>  
+            <div class="holder" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id = "assignment" draggable="true" ondragstart="drag(event)">
+                    <p>Assignment 3</p>  
+                </div>
+                <div id = "shortcut" draggable="true" ondragstart="drag(event)">
+                    <p>Shortcut 3</p>   
+                </div>
             </div>
-
-            <div id = "shortcut">
-                <p>Shortcut 1</p>   
-            </div>
-
-            <div id = "shortcut">
-                <p>Shortcut 2</p>   
-            </div>
-
-            <div id = "shortcut">
-                <p>Shortcut 3</p>   
-            </div>
-
         </div>
 
         <div id="calendar">
@@ -85,13 +86,18 @@
                 </table>
                 <p id="iAmSchedule">I am a schedule.</p>
             </div>
+
+            <!--Feel free to move this somehwere else in the code-->
+            <div class="holder" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div class="holder" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div class="holder" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     
-        </div>
-        <!-- </div> -->
-        
+        </div>      
     </div>
 
     <!-- </div> -->
+    
+    <script src = "../public/js/copyToDo.js"></script>
 
 </body>
 </html>
