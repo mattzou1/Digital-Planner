@@ -73,8 +73,8 @@
 #assignment {
     position: relative;
     background-color: lightskyblue;
-    width: 96%;
-    height: 22%;
+    width: 400px;
+    height: 100px;
     margin: 2%;
     border-radius: 35px; /*Curves edges*/
 }
@@ -91,8 +91,8 @@
 #shortcut {
     position: relative;
     background-color: lightgreen;
-    width: 96%;
-    height: 22%;
+    width: 400px;
+    height: 100px;
     margin: 2%;
     display: none;
     border-radius: 35px; 
@@ -170,4 +170,11 @@
 
 body{
     margin: 0%;
+}
+
+.holder{
+    margin: 0%;
+    border-style: solid;
+    width: 400px;
+    height: 150px;
 }
