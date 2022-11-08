@@ -34,8 +34,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     //Change to shortcut tab
     function ShortcutTab(){
         //select all the assignments and shortcuts
-        const assignments = document.body.querySelectorAll("#assignment");
-        const shortcuts = document.body.querySelectorAll("#shortcut");
+        const assignments = document.body.querySelectorAll(".assignment");
+        const shortcuts = document.body.querySelectorAll(".shortcut");
 
         //change color of tab
         shortcutButton.style.backgroundColor = "#D47272";
@@ -55,8 +55,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     //Change to Assignments tab
     function AssignmentTab(){
         //select all the assignments and shortcuts
-        const shortcuts = document.body.querySelectorAll("#shortcut");
-        const assignments = document.body.querySelectorAll("#assignment");
+        const shortcuts = document.body.querySelectorAll(".shortcut");
+        const assignments = document.body.querySelectorAll(".assignment");
  
         //change color of tab
         assignmentButton.style.backgroundColor = "#D47272";
