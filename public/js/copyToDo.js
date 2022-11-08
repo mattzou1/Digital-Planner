@@ -43,7 +43,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         //hide assignments
         for(let i = 0; i < assignments.length; i++){
-            assignments[i].style.display = "none";
+            if(assignments[i].parentElement.id != "calander"){
+                assignments[i].style.display = "none";
+            }
         }
 
         //show shortcuts
@@ -65,7 +67,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         //hide shortcuts
         for(let i = 0; i < shortcuts.length; i++){
-            shortcuts[i].style.display = "none";
+            console.log(shortcuts[i].parentElement.id)
+            if(shortcuts[i].parentElement.id != "calander"){
+                shortcuts[i].style.display = "none";
+            }
         }
 
         //show assignments
