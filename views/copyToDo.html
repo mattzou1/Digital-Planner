@@ -28,27 +28,27 @@
                 </div>
             </div>
 
-            <div class="holder" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <div id = "assignment" draggable="true" ondragstart="drag(event)">
+            <div class="holder" name="ToDo1" ondrop="drop(event)" ondragover="">
+                <div class = "assignment" id="assignment1" draggable="true" ondragstart="drag(event)">
                     <p>Assignment 1</p>  
                 </div>
-                <div id = "shortcut" draggable="true" ondragstart="drag(event)">
+                <div class = "shortcut" id="shortcut1" draggable="true" ondragstart="drag(event)">
                     <p>Shortcut 1</p>   
                 </div>
             </div>
-            <div class="holder" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <div id = "assignment" draggable="true" ondragstart="drag(event)">
+            <div class="holder" name="ToDo2" ondrop="drop(event)" ondragover="">
+                <div class = "assignment" id="assignment2" draggable="true" ondragstart="drag(event)">
                     <p>Assignment 2</p>   
                 </div>
-                <div id = "shortcut" draggable="true" ondragstart="drag(event)">
+                <div class = "shortcut" id="shortcut2" draggable="true" ondragstart="drag(event)">
                     <p>Shortcut 2</p>   
                 </div>
             </div>
-            <div class="holder" ondrop="drop(event)" ondragover="allowDrop(event)">
-                <div id = "assignment" draggable="true" ondragstart="drag(event)">
+            <div class="holder" name="ToDo3" ondrop="drop(event)" ondragover="">
+                <div class = "assignment" id="assignment3" draggable="true" ondragstart="drag(event)">
                     <p>Assignment 3</p>  
                 </div>
-                <div id = "shortcut" draggable="true" ondragstart="drag(event)">
+                <div class = "shortcut" id="shortcut3" draggable="true" ondragstart="drag(event)">
                     <p>Shortcut 3</p>   
                 </div>
             </div>
@@ -108,10 +108,27 @@
                 }
             </script>
 
+            <script>
+                //Make code so that it can't be dragged around when other type of card is being viewed
+                function allowDrop(ev) {
+                    ev.preventDefault();
+                }
+                function drag(ev) {
+                    ev.target.parentNode.setAttribute("ondragover", "allowDrop(event)");
+                    ev.dataTransfer.setData("text", ev.target.id);
+                }
+                function drop(ev) {
+                    ev.preventDefault();
+                    var data = ev.dataTransfer.getData("text");
+                    ev.target.appendChild(document.getElementById(data));
+                    event.target.setAttribute("ondragover", "");
+                }
+            </script>
+
             <!--Feel free to move this somehwere else in the code-->
-            <div class="holder" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-            <div class="holder" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-            <div class="holder" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div class="holder" id="calander" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div class="holder" id="calander" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div class="holder" id="calander" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
     
         </div>      
     </div>

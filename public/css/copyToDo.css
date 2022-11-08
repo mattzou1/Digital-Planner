@@ -70,7 +70,7 @@
 }
 
 /*Properties for assignments on Todo assignments tab*/
-#assignment {
+.assignment {
     position: relative;
     background-color: lightskyblue;
     width: 100%;
@@ -80,7 +80,7 @@
 }
 
 /*Properties for text saying "assignments" on Todo assignments tab*/
-#assignment > p{
+.assignment > p{
     position: relative;
     width: 50%;
     left: 20px;
@@ -88,7 +88,7 @@
 }
 
 /*Properties for shortcuts on Todo shortcuts tab*/
-#shortcut {
+.shortcut {
     position: relative;
     background-color: lightgreen;
     width: 100%;
@@ -99,7 +99,7 @@
 }
 
 /*Properties for text saying "shortcuts" on Todo shortcuts tab*/
-#shortcut > p{
+.shortcut > p{
     position: relative;
     width: 50%;
     left: 20px;
