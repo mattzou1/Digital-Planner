@@ -67,7 +67,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         //hide shortcuts
         for(let i = 0; i < shortcuts.length; i++){
-            console.log(shortcuts[i].parentElement.id)
             if(shortcuts[i].parentElement.id != "calander"){
                 shortcuts[i].style.display = "none";
             }
