@@ -2,13 +2,13 @@ let weekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Sat
 
 //All times should be a string using miltary time with minutes as 00 or 30 for example "14:30"
 //user class containing user information and schedule for one day
-//export 
-class User{    
+export class User{    
     constructor(username, password, startTime, endTime){
         this.username = username;
         this.password = password;
         this.startTime = startTime;
         this.endTime = endTime;
+        this.assignments = [];
         this.schedule = new Map();                              //schedule for 1 day, may need to add more code if we want to view multiple days
         this.addElement(this.startTime,this.endTime, "empty");  //fills schedule map with hours:minute as key and a string empty.
     }
@@ -51,7 +51,7 @@ class User{
 }
 
 //Assignment class for making assignments
-class Assignment{
+export class Assignment{
     //shortcut should be boolean 
     constructor(name, description, completionTime, shortcut){
         this.name = name;
@@ -65,7 +65,7 @@ class Assignment{
 
 //Event class for making events
 
-class Event{
+export class Event{
     //reocuring should be an boolean array corresponding to ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"] 
     constructor(name, description, startTime, stopTime, reoccuring){
         this.name = name;
@@ -79,7 +79,7 @@ class Event{
     } 
 }
 
-//user1 = new User(1,1,"9:30", "13:00");
+export let user1 = new User("bob","123","9:30", "13:00");
 //console.log(user1.schedule);
 // event1 = new Event(1,1,1,1,[false,true,false,false,false,false,false]);
 // user1.addElement("10:00","11:30", event1);
@@ -87,7 +87,7 @@ class Event{
 // console.log(user1.getCurrentDate());
 
 //exports the classes so we can use them in other js files
-// module.exports = User;
+// module.exports.User = User;
 // module.exports.Assignment = Assignment;
 // module.exports.Event = Event;
 
