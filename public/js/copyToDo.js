@@ -45,7 +45,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         for(let i = 0; i < assignments.length; i++){
             if(assignments[i].parentElement.id != "calander"){
                 assignments[i].style.display = "none";
-                
             }
         }
 
