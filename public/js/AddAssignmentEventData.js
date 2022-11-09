@@ -1,7 +1,5 @@
+//code to add event and assignment objects to fields in a user object 
 import {User,user1,Assignment, Event} from "./classes.js";
-
-
-//console.log(user1);
 
 window.addEventListener("DOMContentLoaded", registerSubmitButtons)
 
@@ -15,7 +13,9 @@ function registerSubmitButtons(){
 
     let submitEventButton = document.querySelector(".addbtn2");
     submitEventButton.addEventListener("click", function (event) {
-        console.log("bye");
+        let event1 = new Event(document.getElementById("Ename").value, document.getElementById("EventDescription").value, document.getElementById("Stime").value, document.getElementById("Etime").value)
+        user1.addElement(event1.startTime, event1.stopTime, event1);
+        clearFields2();
     })
 }
 
