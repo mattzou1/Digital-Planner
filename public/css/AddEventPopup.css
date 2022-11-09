@@ -1,5 +1,8 @@
+/*
+ * Styling for the add event button.
+ */
 .btn2 {
-	padding: 10px 60px;
+	padding: 10px 30px;
 	background: white;
   color: rgb(4, 133, 184);
   border-color: rgb(4, 133, 184);
@@ -9,12 +12,17 @@
 	border: 1;
 	outline: auto;
 	cursor: pointer;
-	font-size: 22px;
+	font-size: 10px;
 	font-weight: 500;
   margin-left: 10px;
+	width: 100px;
 	transition: background-color 0.5s,
 		color 0.5s,
 		box-shadow 0.5s;
+
+	position: absolute;
+	top: 6%;
+	left: 41%;
 }
 
 .btn2:hover {
@@ -27,6 +35,9 @@
   background-color:rgb(0, 105, 147);
 }
 
+/*
+ * Styling for the add event popup.
+ */
 .event_popup {
   height: 400px;
   width: 400px;
@@ -59,9 +70,12 @@
   margin: 30px 0 10px;
 }
 
+/*
+ * Styling for the cancel button inside the popup.
+ */
 .cancelbtn2 {
 	width: 40%;
-	margin-top: 80px;
+	margin-top: 70px;
 	padding: 10px 10px;
 	background-color: brown;
 	color: antiquewhite;
@@ -70,10 +84,13 @@
 	outline: none;
 	cursor: pointer;
 }
-  
+
+/*
+ * Styling for the add button inside the popup.
+ */
 .addbtn2 {
 	width: 40%;
-	margin-top: 80px;
+	margin-top: 70px;
 	margin: 10px;
 	padding: 10px 10px;
 	background-color: brown;
