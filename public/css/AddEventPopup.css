@@ -4,15 +4,13 @@
 .btn2 {
 	padding: 10px 30px;
 	background: white;
-  color: rgb(4, 133, 184);
-  border-color: rgb(4, 133, 184);
-  border-style: solid;
-  border-width: 0.7px;
-  border-radius: 20px;
+  color: #007E6F;
+  border-width: 0px;
+  border-radius: 2px;
 	border: 1;
 	outline: auto;
 	cursor: pointer;
-	font-size: 14px;
+	font-size: 13px;
 	font-weight: 500;
   margin-left: 10px;
 	width: 100px;
@@ -26,13 +24,13 @@
 }
 
 .btn2:hover {
-	background-color:rgb(4, 133, 184) ;
+	background-color: lightcoral;
 	color: white;
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 1.0);
 }
 
 .btn2:active {
-  background-color:rgb(0, 105, 147);
+  background-color: rgb(255, 100, 100);
 }
 
 /*
@@ -65,6 +63,8 @@
 }
   
 .event_popup h2 {
+	background-color: brown;
+	color: antiquewhite;
   font-size: 25px;
   font-weight: 500;
   margin: 30px 0 10px;
