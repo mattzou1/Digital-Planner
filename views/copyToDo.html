@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/copyToDo.css">
-    //<link rel="stylesheet" href="css/AddAssignmentPopup.css">
-    //<link rel="stylesheet" href="css/AddEventPopup.css">
+    <link rel="stylesheet" href="css/AddAssignmentPopup.css">
+    <link rel="stylesheet" href="css/AddEventPopup.css">
 
     <title>Copy</title>
     <script type="module" src="js/copyToDo.js"></script>
@@ -82,11 +82,7 @@
                     </tbody>
                 </table>
             </div> 
-            <!--Feel free to move this somehwere else in the code-->
-            <div class="holder" id="calander" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-            <div class="holder" id="calander" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-            <div class="holder" id="calander" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        </div>      
+        </div>    
     </div>
 
     <div class="container" id="blur">
@@ -133,8 +129,12 @@
           <button type="button" class="cancelbtn2" onclick="closePopup2(); clearFields2()">Cancel</button>
           <button type="button" class="addbtn2" onclick="closePopup2(); clearFields2()">Submit</button>
         </div>
-    
       </div>
+
+              <!--Feel free to move this somehwere else in the code-->
+              <div class="holder" id="calendarBox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+              <div class="holder" id="calendarBox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+              <div class="holder" id="calendarBox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>  
 
     <script src="js/AddAssignmentPopup.js"></script>
     <script>

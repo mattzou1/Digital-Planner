@@ -146,7 +146,7 @@ body{
     margin: 0%;
     border-style: solid;
     width: 400px;
-    height: 150px;
+    height: 125px;
     padding: 4.5%;
     border-radius: 3px;
     text-align: center;
@@ -154,4 +154,4 @@ body{
 
 table, th, td {
     border:1px solid black;
-    }
+}
