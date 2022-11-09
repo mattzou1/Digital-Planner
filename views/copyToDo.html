@@ -3,11 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/copyToDo.css">
-<<<<<<< HEAD
-=======
     <link rel="stylesheet" href="css/AddAssignmentPopup.css">
     <link rel="stylesheet" href="css/AddEventPopup.css">
->>>>>>> c32f347 (Linked the add assignment and add event buttons.)
 
     <title>Copy</title>
     <script type="module" src="js/copyToDo.js"></script>
@@ -90,55 +87,19 @@
                     </tbody>
                 </table>
             </div>
-            
-            <!-- Code that fills in the calendar with the user's schedule -->
-            <script src="js/classes.js"></script>
-            <script>
-                //create user
-                let user1 = new User(1,1,"9:30", "16:30");
+
+            <div class="holder" ondrop="drop(event)" ondragover="allowDrop(event)">
                 
-                //console.log(user1.schedule);
-
-                 //get table body
-                let table = document.body.querySelector("tbody");
-
-                //loop through each time in the schedule map
-                for (let [time] of user1.schedule){
-                    //console.log(time);
-       
-                    let row = table.insertRow(-1); //insert a row
-                    let cell1 = row.insertCell(0); //create a cell
-       
-                    cell1.innerHTML = time; //set the time to that cell
-                }
-            </script>
-
-            <script>
-                //Make code so that it can't be dragged around when other type of card is being viewed
-                function allowDrop(ev) {
-                    ev.preventDefault();
-                }
-                function drag(ev) {
-                    ev.target.parentNode.setAttribute("ondragover", "allowDrop(event)");
-                    ev.dataTransfer.setData("text", ev.target.id);
-                }
-                function drop(ev) {
-                    ev.preventDefault();
-                    var data = ev.dataTransfer.getData("text");
-                    ev.target.appendChild(document.getElementById(data));
-                    event.target.setAttribute("ondragover", "");
-                }
-            </script>
-
-            <!--Feel free to move this somehwere else in the code-->
-            <div class="holder" id="calander" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-            <div class="holder" id="calander" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-            <div class="holder" id="calander" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            </div>
+            <div class="holder" ondrop="drop(event)" ondragover="allowDrop(event)">
+                
+            </div>
+            <div class="holder" ondrop="drop(event)" ondragover="allowDrop(event)">
+                
+            </div>
     
         </div>      
     </div>
-<<<<<<< HEAD
-=======
 
     <div class="container" id="blur">
         <button type="button" class="btn" onclick="openPopup()">Add Assignment</button>
@@ -202,7 +163,7 @@
         }
     </script>
     
-    <script src = "js/copyToDo.js"></script>
+    <script src = "../public/js/copyToDo.js"></script>
 
 >>>>>>> c32f347 (Linked the add assignment and add event buttons.)
 </body>
