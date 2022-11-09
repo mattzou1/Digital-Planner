@@ -1,25 +1,59 @@
 
-/* Make the dropdown hoverable?
-
-*/
-
-h1{ /*Makes h1 header in the center*/
-    text-align:center;
+body{
+    background-color: lightcoral;
 }
 
 .mainContainer{
-    /*/*border: 3px blue solid;*/
-    align-items: center; /*Items are aligned in the center*/
     display: flex; /*Makes layout fluid to fill the window if window is resized*/
+    align-items: center; /*Items are aligned in the center*/
     flex-direction: column; /*Organizes text into columns*/
+    height: 100%;
+    width: 100%;
 }
 
-form > div{ /*Deals with div elements in form*/
-    /*border: 3px hotpink solid;*/
+form{
+    width: 600px;
+    height: 430px;
+    text-align:center;
     padding: 5px;
+
+    border-radius: 30px;
+    background-color: white;
+    gap:0;
+}
+
+
+h1{ /*Makes h1 header in the center*/
+    text-align:center;
+    font-size: 25pt;
+
+    
+    border-radius: 30px;
+    background-color: white;
+    width:600px;
+
+}
+
+form > div { /*Deals with div elements in form*/
+    border: 1px white solid;
+    border-radius: 35px;
+    padding: 2px;
 }
 
 #buttons{ /*Deals with buttons*/
     display: flex; /*Makes layout fluid to fill the window if window is resized*/
     justify-content: space-evenly; /*Space between buttons and edges is equal*/
 }
+
+#submitButton{
+    width: 40%;
+    border-radius: 10px;
+    padding: 10px 10px;
+}
+
+#logoutButton{
+    width: 40%;
+    padding: 10px 10px;
+    border-radius: 10px;
+}
+
