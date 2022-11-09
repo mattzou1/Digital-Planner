@@ -5,21 +5,19 @@
     - maxlength for password and username
     - requirements of username-->
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head class="head">
     <meta charset="UTF-8">
-    <title>Settings Page</title> <!--This is the settings page for Digital Planner-->
+    <title>Settings</title> <!--This is the settings page for Digital Planner-->
     <link href="../public/css/settings.css" rel="stylesheet"> <!--Links css and html together-->
 </head>
 
 <body>
-
     <div class="mainContainer">
 
     <h1>Settings</h1>
-
+    
     <form> 
         <div>
             <p> <!--User can change their username-->
@@ -42,7 +40,7 @@
             </p>
         </div>
 
-        <div>
+        <div id="startBox">
             <p> <!--User can update the earliest time they want to be doing work-->
                 <label for="start">Set Earliest Work Time:</label> 
                 <input type="text" name="startWorkTime" id="start" placeholder="Earliest Work Time">
@@ -77,5 +75,6 @@
     </form>
 
 </div>
+
 </body>
 </html>

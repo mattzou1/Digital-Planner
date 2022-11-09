@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/copyToDo.css">
+    <link rel="stylesheet" href="css/AddAssignmentPopup.css">
+    <link rel="stylesheet" href="css/AddEventPopup.css">
 
     <title>Copy</title>
     <script type="module" src="js/copyToDo.js"></script>
@@ -15,7 +17,6 @@
             
             <div id="buttonsAndPlus">
                 <div id="addAssignment">
-                    <h1>+</h1>
                 </div>
     
                 <div class="buttons">
@@ -60,10 +61,6 @@
                 <div id="calHeader">
                     <h1>Wednesday November 2, 2022</h1>
                 </div>
-    
-                <div id="events">
-                    <input type="button" value="Events" id="eventButton"> 
-                </div>
             </div>
 
             <!-- Creates calendar for user -->
@@ -85,52 +82,83 @@
                     </tbody>
                 </table>
             </div>
-            
-            <!-- Code that fills in the calendar with the user's schedule -->
-            <script src="js/classes.js"></script>
-            <script>
-                //create user
-                let user1 = new User(1,1,"9:30", "16:30");
+
+            <div class="holder" ondrop="drop(event)" ondragover="allowDrop(event)">
                 
-                //console.log(user1.schedule);
-
-                 //get table body
-                let table = document.body.querySelector("tbody");
-
-                //loop through each time in the schedule map
-                for (let [time] of user1.schedule){
-                    //console.log(time);
-       
-                    let row = table.insertRow(-1); //insert a row
-                    let cell1 = row.insertCell(0); //create a cell
-       
-                    cell1.innerHTML = time; //set the time to that cell
-                }
-            </script>
-
-            <script>
-                //Make code so that it can't be dragged around when other type of card is being viewed
-                function allowDrop(ev) {
-                    ev.preventDefault();
-                }
-                function drag(ev) {
-                    ev.target.parentNode.setAttribute("ondragover", "allowDrop(event)");
-                    ev.dataTransfer.setData("text", ev.target.id);
-                }
-                function drop(ev) {
-                    ev.preventDefault();
-                    var data = ev.dataTransfer.getData("text");
-                    ev.target.appendChild(document.getElementById(data));
-                    event.target.setAttribute("ondragover", "");
-                }
-            </script>
-
-            <!--Feel free to move this somehwere else in the code-->
-            <div class="holder" id="calander" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-            <div class="holder" id="calander" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-            <div class="holder" id="calander" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            </div>
+            <div class="holder" ondrop="drop(event)" ondragover="allowDrop(event)">
+                
+            </div>
+            <div class="holder" ondrop="drop(event)" ondragover="allowDrop(event)">
+                
+            </div>
     
         </div>      
     </div>
+
+    <div class="container" id="blur">
+        <button type="button" class="btn" onclick="openPopup()">Add Assignment</button>
+    
+        <div class="assignment_popup" id="assignment_popup">
+          <h2>Add an Assignment</h2>
+          <form>
+            <label for="Aname">Assignment name:</label>
+            <input type="text" id="Aname"><br><br>
+    
+            <input type="checkbox" id="reading">
+            <label for="reading"> Reading Assignment?</label><br><br>
+    
+            <label for="Description">Description:</label>
+            <input type="text" id="Description"><br><br>
+    
+            <input type="checkbox" id="Shortcut">
+            <label for="Shortcut">Shortcut?</label>
+          </form>
+          <button type="button" class="cancelbtn" onclick="closePopup(); clearFields()">Cancel</button>
+          <button type="button" class="addbtn" onclick="closePopup(); clearFields()">Submit</button>
+        </div>
+    
+        <button type="button" class="btn2" onclick="openPopup2()">Add Event</button>
+        <div class="event_popup" id="event_popup">
+          <h2>Add an event</h2>
+          <form>
+            <label for="Ename">Event name:</label>
+            <input type="text" id="Ename"><br><br>
+    
+            <label for="EventDescription">Description:</label>
+            <input type="text" id="EventDescription"><br><br>
+    
+            <label for="Stime">Start time:</label>
+            <input type="text" id="Stime"><br><br>
+    
+            <label for="Etime">End time:</label>
+            <input type="text" id="Etime"><br><br>
+    
+            <input type="checkbox" id="Recurring">
+            <label for="Recurring">Recurring?</label>
+          </form>
+          <button type="button" class="cancelbtn2" onclick="closePopup2(); clearFields2()">Cancel</button>
+          <button type="button" class="addbtn2" onclick="closePopup2(); clearFields2()">Submit</button>
+        </div>
+    
+      </div>
+
+    <script src="js/AddAssignmentPopup.js"></script>
+    <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+    </script>
+    
+    <script src = "../public/js/copyToDo.js"></script>
+    
 </body>
 </html>
