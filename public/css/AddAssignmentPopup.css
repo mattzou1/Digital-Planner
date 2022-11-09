@@ -1,12 +1,12 @@
 body{
-  background-color: white;
+  background-color: #41B3A3;
 }
 
 /*
  * Styling for the Add Assignment button
  */
 .btn {
-	padding: 10px 30px;
+	padding: 10px 20px;
 	background: white;
   color: rgb(4, 133, 184);
 	border-color: rgb(4, 133, 184);
@@ -17,15 +17,15 @@ body{
 	outline: auto;
 	cursor: pointer;
   width: 100px;
-	font-size: 10px;
-	font-weight: 500;
+	font-size: 13px;
+	font-weight: 5000;
   text-align: center;
   transition: background-color 0.5s,
     color 0.5s,
     box-shadow 0.5s;
 
   position: absolute;
-  top: 12%;
+  top: 9%;
   left: 24%;
 }
 

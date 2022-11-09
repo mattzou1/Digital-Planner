@@ -20,21 +20,8 @@
     background-color: lightcoral; /*Background color*/
     margin: 2%;
     border-radius: 35px; /*Makes edges curved*/
-    width: 800px;
+    width: 900px;
     height: 505px;
-}
-
-/*Properties for events button container on calendar*/
-#events{
-    display: flex;
-    justify-content: center;
-    width: 100px;
-    height: 50px;
-}
-
-/*Properties for events button itself*/
-#eventButton{
-    width: 90px;
 }
 
 /*Properties for the header and event button on calendar*/
@@ -59,7 +46,7 @@
     background-color: lightcoral; 
     margin: 2%;
     border-radius: 35px; /*Curves edges*/
-    width: 400px; 
+    width: 450px; 
     height: 505px;
 }
 
@@ -117,24 +104,6 @@
     justify-content: space-evenly;
     flex-direction: row-reverse;
     height: 30px;
-}
-
-/*Properties for plus sign button*/
-#addAssignment {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    border-style: solid;
-    background-color: lightcoral;
-    width: 40px;
-    height: 30px;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-/*Properties for plus sign button*/
-#addAssignment > h1{
-    line-height: 15%;
 }
 
 /*Properties for assignments and shortcut buttons*/

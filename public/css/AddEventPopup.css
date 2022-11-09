@@ -12,7 +12,7 @@
 	border: 1;
 	outline: auto;
 	cursor: pointer;
-	font-size: 10px;
+	font-size: 14px;
 	font-weight: 500;
   margin-left: 10px;
 	width: 100px;
@@ -22,7 +22,7 @@
 
 	position: absolute;
 	top: 6%;
-	left: 41%;
+	left: 39%;
 }
 
 .btn2:hover {
