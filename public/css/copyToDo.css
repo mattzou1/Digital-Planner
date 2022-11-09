@@ -1,7 +1,7 @@
 /*Properties for where table will be*/
 #table{
-    background-color:lavender;
-    width: 770px;
+    background-color:#7DEBDA;
+    width: 850px;
     height: 380px;;
     margin: 2%;
 }
@@ -12,7 +12,7 @@
     flex-direction: row;
     justify-content: space-around;
     width: 100%;
-    height: 100%
+    height: 100%;
 }
 
 /*CSS properties for right hand side calendar container*/
@@ -20,21 +20,8 @@
     background-color: lightcoral; /*Background color*/
     margin: 2%;
     border-radius: 35px; /*Makes edges curved*/
-    width: 800px;
-    height: 505px;
-}
-
-/*Properties for events button container on calendar*/
-#events{
-    display: flex;
-    justify-content: center;
-    width: 100px;
-    height: 50px;
-}
-
-/*Properties for events button itself*/
-#eventButton{
-    width: 90px;
+    width: 900px;
+    height: 700px;
 }
 
 /*Properties for the header and event button on calendar*/
@@ -59,8 +46,8 @@
     background-color: lightcoral; 
     margin: 2%;
     border-radius: 35px; /*Curves edges*/
-    width: 300px; 
-    height: 505px;
+    width: 450px; 
+    height: 700px;
 }
 
 /*Properties for header on Todo*/
@@ -70,17 +57,24 @@
 }
 
 /*Properties for assignments on Todo assignments tab*/
-#assignment {
+.assignment {
     position: relative;
+<<<<<<< HEAD
     background-color: lightskyblue;
     width: 96%;
     height: 22%;
     margin: 2%;
+=======
+    background-color: #7DEBDA;
+    width: 100%;
+    height: 80%;
+    margin: 0%;
+>>>>>>> 9eef7f8630de95d80fba659bc8cc70d15205664e
     border-radius: 35px; /*Curves edges*/
 }
 
 /*Properties for text saying "assignments" on Todo assignments tab*/
-#assignment > p{
+.assignment > p{
     position: relative;
     width: 50%;
     left: 20px;
@@ -88,18 +82,25 @@
 }
 
 /*Properties for shortcuts on Todo shortcuts tab*/
-#shortcut {
+.shortcut {
     position: relative;
+<<<<<<< HEAD
     background-color: lightgreen;
     width: 96%;
     height: 22%;
     margin: 2%;
+=======
+    background-color: #B2EDC5;
+    width: 100%;
+    height: 80%;
+    margin: 0%;
+>>>>>>> 9eef7f8630de95d80fba659bc8cc70d15205664e
     display: none;
     border-radius: 35px; 
 }
 
 /*Properties for text saying "shortcuts" on Todo shortcuts tab*/
-#shortcut > p{
+.shortcut > p{
     position: relative;
     width: 50%;
     left: 20px;
@@ -117,24 +118,6 @@
     justify-content: space-evenly;
     flex-direction: row-reverse;
     height: 30px;
-}
-
-/*Properties for plus sign button*/
-#addAssignment {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    border-style: solid;
-    background-color: lightcoral;
-    width: 40px;
-    height: 30px;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-/*Properties for plus sign button*/
-#addAssignment > h1{
-    line-height: 15%;
 }
 
 /*Properties for assignments and shortcut buttons*/
@@ -172,3 +155,20 @@
 body{
     margin: 0%;
 }
+<<<<<<< HEAD
+=======
+
+.holder{
+    margin: 0%;
+    border-style: solid;
+    width: 400px;
+    height: 150px;
+    padding: 4.5%;
+    border-radius: 3px;
+    text-align: center;
+}
+
+table, th, td {
+    border:1px solid black;
+    }
+>>>>>>> 9eef7f8630de95d80fba659bc8cc70d15205664e

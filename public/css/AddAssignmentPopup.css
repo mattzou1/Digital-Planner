@@ -1,48 +1,49 @@
 body{
-  background-color: #87CEEB;
+  background-color: #41B3A3;
 }
 
-.container {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
+/*
+ * Styling for the Add Assignment button
+ */
 .btn {
-	padding: 10px 60px;
+	padding: 10px 20px;
 	background: white;
-  color: rgb(4, 133, 184);
-	border-color: rgb(4, 133, 184);
-  border-style: solid;
-  border-width: 0.7px;
-  border-radius: 20px;
+  color: #007E6F;
+  border-width: 0px;
+  border-radius: 2px;
 	border: 1;
 	outline: auto;
 	cursor: pointer;
-	font-size: 22px;
-	font-weight: 500;
+  width: 100px;
+	font-size: 13px;
+	font-weight: 5000;
+  text-align: center;
   transition: background-color 0.5s,
     color 0.5s,
     box-shadow 0.5s;
+
+  position: absolute;
+  top: 9%;
+  left: 24%;
 }
 
 .btn:hover {
-  background-color:rgb(4, 133, 184);
+  background-color: lightcoral;
 	color: white;
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 1.0);
 }
 
 .btn:active {
-  background-color:rgb(0, 105, 147);
+  background-color:rgb(255, 100, 100);
 }
 
+/*
+ * Styling for the add assignment popup.
+ */
 .assignment_popup {
   height: 400px;
   width: 400px;
-  background: #ffff;
+  background: white;
   border-radius: 30px;
   position: absolute;
   top: 0%;
@@ -72,6 +73,9 @@ body{
   color: antiquewhite;
 }
 
+/*
+ * Styling for the cancel button inside the popup.
+ */
 .cancelbtn {
 	width: 40%;
 	margin-top: 100px;
@@ -83,7 +87,10 @@ body{
 	outline: none;
 	cursor: pointer;
 }
-  
+
+/*
+ * Styling for the add button inside the popup.
+ */
 .addbtn {
 	width: 40%;
 	margin-top: 100px;

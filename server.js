@@ -22,8 +22,8 @@ app.get("/", (req, res) => {
     res.sendFile(__dirname + '/views/login_or_signup.html');
 });
 
+//creates new tab need to fix 
 app.post("/home", (req, res) => {
-    console.log(req.body);
     res.sendFile(__dirname + '/views/copyToDo.html');
 });
 

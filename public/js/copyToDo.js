@@ -1,5 +1,15 @@
+//let classes = require("js/classes.js");
+//import {User} from "js/classes";
 
 document.addEventListener('DOMContentLoaded', (event) => {
+    
+    
+    //create user
+    //let user1 = new User(1,1,"9:30", "13:00");
+    //console.log(user1.schedule);
+           
+    
+    
     //constants for buttons
     //tabs
     const assignmentButton = document.body.querySelector("#button1");
@@ -24,8 +34,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     //Change to shortcut tab
     function ShortcutTab(){
         //select all the assignments and shortcuts
-        const assignments = document.body.querySelectorAll("#assignment");
-        const shortcuts = document.body.querySelectorAll("#shortcut");
+        const assignments = document.body.querySelectorAll(".assignment");
+        const shortcuts = document.body.querySelectorAll(".shortcut");
 
         //change color of tab
         shortcutButton.style.backgroundColor = "#D47272";
@@ -33,7 +43,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         //hide assignments
         for(let i = 0; i < assignments.length; i++){
-            assignments[i].style.display = "none";
+            if(assignments[i].parentElement.id != "calander"){
+                assignments[i].style.display = "none";
+                
+            }
         }
 
         //show shortcuts
@@ -45,8 +58,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
     //Change to Assignments tab
     function AssignmentTab(){
         //select all the assignments and shortcuts
-        const shortcuts = document.body.querySelectorAll("#shortcut");
-        const assignments = document.body.querySelectorAll("#assignment");
+        const shortcuts = document.body.querySelectorAll(".shortcut");
+        const assignments = document.body.querySelectorAll(".assignment");
  
         //change color of tab
         assignmentButton.style.backgroundColor = "#D47272";
@@ -55,7 +68,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         //hide shortcuts
         for(let i = 0; i < shortcuts.length; i++){
-            shortcuts[i].style.display = "none";
+            if(shortcuts[i].parentElement.id != "calander"){
+                shortcuts[i].style.display = "none";
+            }
         }
 
         //show assignments
@@ -73,6 +88,4 @@ document.addEventListener('DOMContentLoaded', (event) => {
     function eventButtonHandler(){
         alert("Event Added!")
     }
-
-
 })
