@@ -81,19 +81,8 @@
                         </tr>
                     </tbody>
                 </table>
-            </div>
-
-            <div class="holder" ondrop="drop(event)" ondragover="allowDrop(event)">
-                
-            </div>
-            <div class="holder" ondrop="drop(event)" ondragover="allowDrop(event)">
-                
-            </div>
-            <div class="holder" ondrop="drop(event)" ondragover="allowDrop(event)">
-                
-            </div>
-    
-        </div>      
+            </div> 
+        </div>    
     </div>
 
     <div class="container" id="blur">
@@ -140,21 +129,29 @@
           <button type="button" class="cancelbtn2" onclick="closePopup2(); clearFields2()">Cancel</button>
           <button type="button" class="addbtn2" onclick="closePopup2(); clearFields2()">Submit</button>
         </div>
-    
       </div>
+
+              <!--Feel free to move this somehwere else in the code-->
+              <div class="holder" id="calendarBox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+              <div class="holder" id="calendarBox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+              <div class="holder" id="calendarBox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>  
 
     <script src="js/AddAssignmentPopup.js"></script>
     <script>
+
+        //Make code so that it can't be dragged around when other type of card is being viewed
         function allowDrop(ev) {
-            ev.preventDefault();
+                ev.preventDefault();
         }
         function drag(ev) {
+            ev.target.parentNode.setAttribute("ondragover", "allowDrop(event)");
             ev.dataTransfer.setData("text", ev.target.id);
         }
         function drop(ev) {
             ev.preventDefault();
             var data = ev.dataTransfer.getData("text");
             ev.target.appendChild(document.getElementById(data));
+            event.target.setAttribute("ondragover", "");
         }
     </script>
     

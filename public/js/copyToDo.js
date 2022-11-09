@@ -8,8 +8,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     //let user1 = new User(1,1,"9:30", "13:00");
     //console.log(user1.schedule);
            
-    
-    
     //constants for buttons
     //tabs
     const assignmentButton = document.body.querySelector("#button1");
@@ -41,17 +39,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
         shortcutButton.style.backgroundColor = "#D47272";
         assignmentButton.style.backgroundColor = "lightcoral";
 
-        //hide assignments
-        for(let i = 0; i < assignments.length; i++){
-            if(assignments[i].parentElement.id != "calander"){
-                assignments[i].style.display = "none";
-                
-            }
-        }
 
         //show shortcuts
         for(let i = 0; i < shortcuts.length; i++){
             shortcuts[i].style.display = "block";
+        }
+        
+        //while everything is showing
+        determineDraggable();
+
+        //hide assignments
+        for(let i = 0; i < assignments.length; i++){
+            if(assignments[i].parentElement.id != "calendarBox"){
+                assignments[i].style.display = "none";
+            }
         }
     }
 
@@ -66,16 +67,31 @@ document.addEventListener('DOMContentLoaded', (event) => {
         shortcutButton.style.backgroundColor = "lightcoral";
 
 
-        //hide shortcuts
-        for(let i = 0; i < shortcuts.length; i++){
-            if(shortcuts[i].parentElement.id != "calander"){
-                shortcuts[i].style.display = "none";
-            }
-        }
-
         //show assignments
         for(let i = 0; i < assignments.length; i++){
             assignments[i].style.display = "block";
+        }
+
+        //while everything is showing
+        determineDraggable();
+
+        //hide shortcuts
+        for(let i = 0; i < shortcuts.length; i++){
+            if(shortcuts[i].parentElement.id != "calendarBox"){
+                shortcuts[i].style.display = "none";
+            }
+        }
+    }
+
+    function determineDraggable(){
+        let holders = document.body.querySelectorAll(".holder");
+        for(let i = 0; i < holders.length; i++){
+            if(holders[i].hasChildNodes()){
+                holders[i].setAttribute("ondragover", "");
+            }
+            else{
+                holders[i].setAttribute("ondragover", "allowDrop(event)")
+            }
         }
     }
 

@@ -59,17 +59,10 @@
 /*Properties for assignments on Todo assignments tab*/
 .assignment {
     position: relative;
-<<<<<<< HEAD
-    background-color: lightskyblue;
-    width: 96%;
-    height: 22%;
-    margin: 2%;
-=======
     background-color: #7DEBDA;
     width: 100%;
     height: 80%;
     margin: 0%;
->>>>>>> 9eef7f8630de95d80fba659bc8cc70d15205664e
     border-radius: 35px; /*Curves edges*/
 }
 
@@ -84,17 +77,10 @@
 /*Properties for shortcuts on Todo shortcuts tab*/
 .shortcut {
     position: relative;
-<<<<<<< HEAD
-    background-color: lightgreen;
-    width: 96%;
-    height: 22%;
-    margin: 2%;
-=======
     background-color: #B2EDC5;
     width: 100%;
     height: 80%;
     margin: 0%;
->>>>>>> 9eef7f8630de95d80fba659bc8cc70d15205664e
     display: none;
     border-radius: 35px; 
 }
@@ -155,14 +141,12 @@
 body{
     margin: 0%;
 }
-<<<<<<< HEAD
-=======
 
 .holder{
     margin: 0%;
     border-style: solid;
     width: 400px;
-    height: 150px;
+    height: 125px;
     padding: 4.5%;
     border-radius: 3px;
     text-align: center;
@@ -170,5 +154,4 @@ body{
 
 table, th, td {
     border:1px solid black;
-    }
->>>>>>> 9eef7f8630de95d80fba659bc8cc70d15205664e
+}
