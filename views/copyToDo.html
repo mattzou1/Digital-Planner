@@ -138,21 +138,34 @@
 
     <script src="js/AddAssignmentPopup.js"></script>
     <script>
-
         //Make code so that it can't be dragged around when other type of card is being viewed
         function allowDrop(ev) {
                 ev.preventDefault();
         }
         function drag(ev) {
-            ev.target.parentNode.setAttribute("ondragover", "allowDrop(event)");
+            determineDraggable();
             ev.dataTransfer.setData("text", ev.target.id);
         }
         function drop(ev) {
             ev.preventDefault();
             var data = ev.dataTransfer.getData("text");
             ev.target.appendChild(document.getElementById(data));
-            event.target.setAttribute("ondragover", "");
+            determineDraggable();
         }
+
+        //Always checks ALL holders. I tried to make it only check changed ones, but couldn't
+        //get it working with ones that were placed in invalid locations
+        function determineDraggable(){
+        let holders = document.body.querySelectorAll(".holder");
+        for(let i = 0; i < holders.length; i++){
+            if(holders[i].hasChildNodes()){
+                holders[i].setAttribute("ondragover", "");
+            }
+            else{
+                holders[i].setAttribute("ondragover", "allowDrop(event)")
+            }
+        }
+    }
     </script>
     
     <script src = "../public/js/copyToDo.js"></script>
