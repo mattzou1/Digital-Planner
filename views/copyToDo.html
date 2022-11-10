@@ -8,6 +8,7 @@
 
     <title>Copy</title>
     <script type="module" src="js/copyToDo.js"></script>
+    <script type="module" src="js/AddAssignmentEventData.js"></script>
 </head>
 
 <body>
@@ -29,7 +30,7 @@
                 </div>
             </div>
 
-            <div class="holder" name="ToDo1" ondrop="drop(event)" ondragover="">
+            <div class="holder" name="ToDo1">
                 <div class = "assignment" id="assignment1" draggable="true" ondragstart="drag(event)">
                     <p>Assignment 1</p>  
                 </div>
@@ -37,7 +38,7 @@
                     <p>Shortcut 1</p>   
                 </div>
             </div>
-            <div class="holder" name="ToDo2" ondrop="drop(event)" ondragover="">
+            <div class="holder" name="ToDo2">
                 <div class = "assignment" id="assignment2" draggable="true" ondragstart="drag(event)">
                     <p>Assignment 2</p>   
                 </div>
@@ -45,7 +46,7 @@
                     <p>Shortcut 2</p>   
                 </div>
             </div>
-            <div class="holder" name="ToDo3" ondrop="drop(event)" ondragover="">
+            <div class="holder" name="ToDo3">
                 <div class = "assignment" id="assignment3" draggable="true" ondragstart="drag(event)">
                     <p>Assignment 3</p>  
                 </div>
@@ -103,8 +104,8 @@
             <input type="checkbox" id="Shortcut">
             <label for="Shortcut">Shortcut?</label>
           </form>
-          <button type="button" class="cancelbtn" onclick="closePopup(); clearFields()">Cancel</button>
-          <button type="button" class="addbtn" onclick="closePopup(); clearFields()">Submit</button>
+          <button type="button" class="cancelbtn" onclick="closePopup();">Cancel</button>
+          <button type="button" class="addbtn" onclick="closePopup();">Submit</button>
         </div>
     
         <button type="button" class="btn2" onclick="openPopup2()">Add Event</button>
@@ -126,8 +127,8 @@
             <input type="checkbox" id="Recurring">
             <label for="Recurring">Recurring?</label>
           </form>
-          <button type="button" class="cancelbtn2" onclick="closePopup2(); clearFields2()">Cancel</button>
-          <button type="button" class="addbtn2" onclick="closePopup2(); clearFields2()">Submit</button>
+          <button type="button" class="cancelbtn2" onclick="closePopup2();">Cancel</button>
+          <button type="button" class="addbtn2" onclick="closePopup2();">Submit</button>
         </div>
       </div>
 
