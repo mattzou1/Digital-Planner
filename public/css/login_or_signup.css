@@ -1,6 +1,85 @@
+
+body{
+    background-color: lightcoral;
+}
+
+#container{
+    margin: 30px 10px 10px 450px; /* top, right, bottom, left*/
+
+    display:flex;
+    align-items: center; 
+    flex-direction: column; 
+    width: 350px;
+    height: 450px;
+    justify-content: center;
+    
+    border-radius: 30px;
+    padding: 5px;
+    background-color: white;
+}
+
+form{
+    /* border: 1px solid pink;*/
+    text-align:center;
+    padding: 10px;
+    border-radius: 30px;
+}
+
+form > p { /*Deals with div elements in form*/
+    border-radius: 35px;
+    padding: 5px;
+}
+
+h1{
+    text-align:center;
+    background-color: cornsilk;
+    padding: 5px;
+    width: 260px;
+    margin-top: 10px;
+}
+
+#submit{
+    width: 90%;
+    border-radius: 10px;
+    padding: 10px 10px;
+    background-color: cornsilk;
+    border: 1px black solid;
+}
+
+#signup{
+    border-radius: 10px;
+    width: 223px;
+    height: 35px;
+    border: 1px black solid;
+    background-color: cornsilk;
+}
+
+#submit:hover{
+    background-color: lightcoral;
+	color: white;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 1.0);
+}
+
+#signup:hover{
+    background-color: lightcoral;
+	color: white;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 1.0);
+}
+
+#signDiv{
+    display:flex;
+    flex-direction: column;
+    border-top: 1px solid grey;
+    width: 90%;
+    justify-content: center;
+    text-align:center;
+    
+}
+
+/*
 #container {
     display: flex;
-    /* border: 1px green solid; */
+    border: 1px green solid;
     padding: 50px;
     justify-content: space-between;
     flex-grow: 0;
@@ -8,7 +87,7 @@
 }
 
 #container > div {
-    /* border: 1px blue solid; */
+    
     padding: 10px;
 }
 
@@ -42,4 +121,5 @@ h1{
     padding: 10px;
     margin-top: 10px;
 }
+*/
 
