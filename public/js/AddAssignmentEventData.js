@@ -1,6 +1,5 @@
 //code to add event and assignment objects to fields in a user object 
 import {User,user1,Assignment, Event} from "./classes.js";
-
 window.addEventListener("DOMContentLoaded", registerSubmitButtons)
 
 function registerSubmitButtons(){
