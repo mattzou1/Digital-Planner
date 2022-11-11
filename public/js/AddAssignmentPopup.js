@@ -17,17 +17,17 @@ function closePopup2() {
   event_popup.classList.remove('open-event_popup');
 }
 
-function clearFields() {
-  document.getElementById("Aname").value = "";
-  document.getElementById("reading").checked = false;
-  document.getElementById("Description").value = "";
-  document.getElementById("Shortcut").checked = false;
-}
+// function clearFields() {
+//   document.getElementById("Aname").value = "";
+//   document.getElementById("reading").checked = false;
+//   document.getElementById("Description").value = "";
+//   document.getElementById("Shortcut").checked = false;
+// }
 
-function clearFields2() {
-  document.getElementById("Ename").value = "";
-  document.getElementById("EventDescription").value = "";
-  document.getElementById("Stime").value = "";
-  document.getElementById("Etime").value = "";
-  document.getElementById("Recurring").checked = false;
-}
+// function clearFields2() {
+//   document.getElementById("Ename").value = "";
+//   document.getElementById("EventDescription").value = "";
+//   document.getElementById("Stime").value = "";
+//   document.getElementById("Etime").value = "";
+//   document.getElementById("Recurring").checked = false;
+// }
