@@ -13,22 +13,21 @@
         <div>
         <!-- to do: change action of form -->
         <form action="/home" target="_blank" method="POST">
-            <p>
-                <label for="username"></label>
-                <input type="text" name="username" id="username" maxlength="20" placeholder="Username">
-            </p>
-            <p>
-                <label for="password"></label>
-                <input type="text" name="password" id="password" maxlength="20" placeholder="Password">
-            </p>
+            <div id="userInput">
+                <p id="userP">
+                    <label for="username"></label>
+                    <input type="text" name="username" id="username" maxlength="20" placeholder="Username">
+                </p>
+                <p id="passP">
+                    <label for="password"></label>
+                    <input type="text" name="password" id="password" maxlength="20" placeholder="Password">
+                </p>
+            </div>
+
             <p>
                 <input type="submit" id="submit"></button>
             </p>
         
-
-
-
-
         </div>
 
         <div id="signDiv">
@@ -36,7 +35,7 @@
          <p>Not a member?</p>
         <p>
             <!-- When user clicks button, it takes them to Sign Up page so they can create account -->
-            <a href="/signup"><button type="button" id="signup">Sign Up</button></a>
+            <a href="/signup"><button type="button" id="signup">Create Account</button></a>
         </p>
         </div>
 
