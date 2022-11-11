@@ -1,4 +1,4 @@
-//let classes = require("js/classes.js");
+//let User = require("js/User.js");
 //import {User} from "js/classes";
 
 document.addEventListener('DOMContentLoaded', (event) => {
