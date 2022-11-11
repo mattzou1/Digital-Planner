@@ -9,6 +9,7 @@
     <title>Copy</title>
     <script type="module" src="js/copyToDo.js"></script>
     <script type="module" src="js/AddAssignmentEventData.js"></script>
+    <script type="module" src="js/removeAssignments.js"></script>
 </head>
 
 <body>
@@ -31,28 +32,18 @@
             </div>
 
             <div class="holder" name="ToDo1">
-                <!-- <div class = "assignment" id="assignment1" draggable="true" ondragstart="drag(event)">
-                    <p>Assignment 1</p> 
-                </div>
-                <div class = "shortcut" id="shortcut1" draggable="true" ondragstart="drag(event)">
-                    <p>Shortcut 1</p>   
-                </div> -->
             </div>
             <div class="holder" name="ToDo2">
-                <!-- <div class = "assignment" id="assignment2" draggable="true" ondragstart="drag(event)">
-                    <p>Assignment 2</p>   
-                </div>
-                <div class = "shortcut" id="shortcut2" draggable="true" ondragstart="drag(event)">
-                    <p>Shortcut 2</p>   
-                </div> -->
             </div>
             <div class="holder" name="ToDo3">
-                <!-- <div class = "assignment" id="assignment3" draggable="true" ondragstart="drag(event)">
+                <div class = "assignment" id="assignment3" draggable="true" ondragstart="drag(event)">
+                    <button type="button" id="removeButton">X</button>
                     <p>Assignment 3</p>  
+
                 </div>
                 <div class = "shortcut" id="shortcut3" draggable="true" ondragstart="drag(event)">
                     <p>Shortcut 3</p>   
-                </div> -->
+                </div>
             </div>
         </div>
 
@@ -133,9 +124,9 @@
       </div>
 
               <!--Feel free to move this somehwere else in the code-->
-              <div class="holder" id="calendarBox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-              <div class="holder" id="calendarBox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-              <div class="holder" id="calendarBox" ondrop="drop(event)" ondragover="allowDrop(event)"></div>  
+              <div class="holder" id="calendarBox1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+              <div class="holder" id="calendarBox2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+              <div class="holder" id="calendarBox3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>  
 
     <script src="js/AddAssignmentPopup.js"></script>
     <script>

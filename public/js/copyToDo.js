@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         //hide assignments
         for(let i = 0; i < assignments.length; i++){
-            if(assignments[i].parentElement.id != "calendarBox"){
+            if(!assignments[i].parentElement.id.includes("calendarBox")){
                 assignments[i].style.display = "none";
             }
         }
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         //hide shortcuts
         for(let i = 0; i < shortcuts.length; i++){
-            if(shortcuts[i].parentElement.id != "calendarBox"){
+            if(!shortcuts[i].parentElement.id.includes("calendarBox")){
                 shortcuts[i].style.display = "none";
             }
         }
