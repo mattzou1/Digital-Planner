@@ -3,6 +3,11 @@ body{
     background-color: lightcoral;
 }
 
+p > label{
+    display: block;
+    text-align: start;
+}
+
 #container{
     margin: 30px 10px 10px 450px; /* top, right, bottom, left*/
 
@@ -21,25 +26,45 @@ body{
 form{
     /* border: 1px solid pink;*/
     text-align:center;
-    padding: 10px;
+    padding: 0px;
     border-radius: 30px;
-}
-
-form > p { /*Deals with div elements in form*/
-    border-radius: 35px;
-    padding: 5px;
 }
 
 h1{
     text-align:center;
     background-color: cornsilk;
-    padding: 5px;
-    width: 260px;
-    margin-top: 10px;
+    
+    width: 300px;
+    margin-top: 0px;
+    margin-bottom: 10px;
 }
 
+input{
+    width:100%;
+}
+
+#userP{
+   padding: 0px 0px 0px 0px;; /*top, right, bottom, left */
+}
+
+#passP{
+    padding: 1px 0px 0px 0px;; /*top, right, bottom, left */
+ }
+
+#userInput{
+    display:flex;
+    flex-direction: column;
+}
+
+input[type=text]{
+    width: 100%;
+    padding: 10px 10px; /* padding: topAndBottom px, leftAndRight px*/
+    box-sizing: border-box;
+  }
+
 #submit{
-    width: 90%;
+    width: 223px;
+    height: 35px;
     border-radius: 10px;
     padding: 10px 10px;
     background-color: cornsilk;
@@ -73,7 +98,6 @@ h1{
     width: 90%;
     justify-content: center;
     text-align:center;
-    
 }
 
 /*
