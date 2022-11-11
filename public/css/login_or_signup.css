@@ -59,14 +59,14 @@ input{
 input[type=password]{
     width: 100%;
     padding: 10px 10px; /* padding: topAndBottom px, leftAndRight px*/
-    margin: 5px 0;
+    margin: 3px 0;
     box-sizing: border-box;
   }
 
 input[type=text]{
     width: 100%;
     padding: 10px 10px;
-    margin: 5px 0;
+    margin: 3px 0;
     box-sizing: border-box;
   }
 
