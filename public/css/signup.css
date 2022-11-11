@@ -1,33 +1,44 @@
-#container {
+body{
+    background-color: lightcoral;
+}
+
+#container{
+    margin: 30px 10px 10px 450px; /* top, right, bottom, left*/
     display: flex;
-    flex-direction: column;
-    /* border: 1px green solid; */
-    padding: 50px;
-    justify-content: space-evenly;
-    align-items: center;
+    align-items: center; 
+    flex-direction: column; 
+    width: 350px;
+    height: 450px;
+    justify-content: center;
     
+    border-radius: 30px;
+    padding: 5px;
+    background-color: white;
 }
 
-#container > div {
-    /* border: 1px blue solid; */
-    padding: 10px;
-}
-
-label, #createAccount{
-    display: inline-block;
-    width: 150px;
-    margin-right: 5px;
-    text-align: right;
-    font-size: 20px;
-}
 
 h1{
-    background-color: rgb(200, 204, 204);
-    padding: 10px;
-    margin-top: 10px;
+    text-align:center;
+    background-color: cornsilk;
+    
+    width: 300px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+input{
+    width:100%;
 }
 
 /*
+
+form{
+    background-color: aquamarine;
+    text-align:center;
+    padding: 0px;
+    border-radius: 30px;
+}
+
 #container {
     display: flex;
     flex-direction: column;
