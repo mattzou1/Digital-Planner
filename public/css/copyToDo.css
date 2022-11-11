@@ -156,6 +156,21 @@ table, th, td {
     border:1px solid black;
 }
 
+/*
+ * Styling for the settings button.
+ */
+.settings{
+    position: absolute;
+    top: 7%;
+    left: 92%;
+    width: 40px;
+    height: 40px;
+    border-radius: 2px;
+    border: 1;
+    background: white;
+    color: #007E6F;
+}
+
 #removeButton{
     margin: 30px;
     margin-top: 0px;

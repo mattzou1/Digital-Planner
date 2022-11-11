@@ -1,4 +1,4 @@
-//let classes = require("js/classes.js");
+//let User = require("js/User.js");
 //import {User} from "js/classes";
 
 document.addEventListener('DOMContentLoaded', (event) => {
@@ -6,10 +6,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     //tabs
     const assignmentButton = document.body.querySelector("#button1");
     const shortcutButton = document.body.querySelector("#button2");
-    //add assignment
-    const add = document.body.querySelector("#addAssignment");
-    //constant for event button
-    const eventButton = document.body.querySelector("#eventButton");
+
 
 
     //set assignments as "clicked" by default
@@ -20,8 +17,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     //event listeners for button clicks
     shortcutButton.addEventListener("click", ShortcutTab);
     assignmentButton.addEventListener("click", AssignmentTab);
-    add.addEventListener("click", addAssignment);
-    eventButton.addEventListener("click", eventButtonHandler);
 
     //Change to shortcut tab
     function ShortcutTab(){
@@ -91,13 +86,4 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     }
 
-    //alert that an assignment was added on click
-    function addAssignment(){
-        alert("Assignment Added!")
-    }
-
-    //When event button is clicked, make an alert
-    function eventButtonHandler(){
-        alert("Event Added!")
-    }
 })

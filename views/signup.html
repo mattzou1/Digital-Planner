@@ -8,32 +8,40 @@
      <link href="css/signup.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Sign Up</h1>
+    
     <div id="container">
+        <h1>Create Account</h1>
+
+        <form action="/home" target="_blank" method="POST">
+            
         <div>
+        
+            
             <p>
                 <!-- to do: change action of form -->
-                <form action="/home" target="_blank" method="POST">
                 <label for="username">Username:</label>
-                <input type="text" name="username" id="username">
+                <input type="text" name="username" id="username" maxlength="20" required>
             </p>
             <p>
                 <label for="password">Password:</label>
-                <input type="text" name="password" id="password">
+                <input type="password" name="password" id="password" maxlength="20" required>
             </p>
             <p>
                 <label for="studyStart">Study start time:</label>
-                <input type="time" name="studyStart" id="studyStart">
+                <input type="time" name="studyStart" id="studyStart" required>
             </p>
             <p>
                 <label for="studyStop">Study stop time:</label>
-                <input type="time" name="studyStop" id="studyStop">
+                <input type="time" name="studyStop" id="studyStop" required>
             </p>
         </div>
+        
         <div>
             <input type="submit" id="createAccount" value="Create Account"></button>   
-            </form>
         </div>
+
+    </form>
+
     </div>
 </body>
 </html>

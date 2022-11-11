@@ -5,10 +5,12 @@
     <link rel="stylesheet" href="css/copyToDo.css">
     <link rel="stylesheet" href="css/AddAssignmentPopup.css">
     <link rel="stylesheet" href="css/AddEventPopup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>Copy</title>
     <script type="module" src="js/copyToDo.js"></script>
     <script type="module" src="js/AddAssignmentEventData.js"></script>
+    <script type="module" src="js/test.js"></script>
     <script type="module" src="js/removeAssignments.js"></script>
 </head>
 
@@ -48,7 +50,6 @@
         </div>
 
         <div id="calendar">
-
             <div id="headerAndButtons">
                 <div id="calHeader">
                     <h1>Wednesday November 2, 2022</h1>
@@ -57,9 +58,9 @@
 
             <!-- Creates calendar for user -->
             <div id="table">
-                <table>
+                <table style="width: 100%">
                     <tbody>
-                        <tr>
+                        <tr style="height:50px">
                             <th>Time</th>
                             <th>Monday</th>
                             <!-- <th>Tuesday</th>
@@ -78,7 +79,7 @@
     </div>
 
     <div class="container" id="blur">
-        <button type="button" class="btn" onclick="openPopup()">Add Assignment</button>
+        <button type="button" class="btn" onclick="openPopup()"></i> Add Assignment</button>
     
         <div class="assignment_popup" id="assignment_popup">
           <h2>Add an Assignment</h2>
@@ -121,6 +122,8 @@
           <button type="button" class="cancelbtn2" onclick="closePopup2();">Cancel</button>
           <button type="button" class="addbtn2" onclick="closePopup2();">Submit</button>
         </div>
+
+        <button class="settings"><i class="fa fa-gears" onclick=""></i></button>
       </div>
 
               <!--Feel free to move this somehwere else in the code-->
@@ -162,8 +165,5 @@
             }
         }
     </script>
-    
-    <script src = "../public/js/copyToDo.js"></script>
-    
 </body>
 </html>
