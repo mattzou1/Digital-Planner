@@ -60,6 +60,7 @@ export class Assignment{
         //which they enter themselves
         this.completionTime = completionTime;
         this.shortcut = shortcut; 
+        this.ifDragged = false; 
     } 
 }
 
