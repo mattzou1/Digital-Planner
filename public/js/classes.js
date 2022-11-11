@@ -87,11 +87,12 @@ export let user1 = new User("bob","123","9:30", "13:00");
 // console.log(user1.getCurrentDate());
 
 //exports the classes so we can use them in other js files
-// module.exports.User = User;
-// module.exports.Assignment = Assignment;
-// module.exports.Event = Event;
+//module.exports.User = User;
+//module.exports.Assignment = Assignment;
+//module.exports.Event = Event;
+//module.exports = user1;
 
 //to import them, do:
     //let classes = require("./classes.js");
     //and then access the classes with classes.User, classes.Assignment, etc
-    //ex: let user1 = new classes.User(1,1,"9:30", "13:00");
+    //let user1 = new classes.User(1,1,"9:30", "13:00");

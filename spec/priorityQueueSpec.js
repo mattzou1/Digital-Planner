@@ -1,4 +1,4 @@
-let PriorityQueue = require("/js/priorityqueue.js");
+let PriorityQueue = require("../public/js/priorityqueue.js");
 
 describe("pushing", () => {
 
