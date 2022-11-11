@@ -35,15 +35,18 @@ function populateToDo(){
     let asscount = 1;
     let shortcutcount = 1;
     for(let ass of user.assignments){
-        if(ass.shortcut){
-            let holder = document.querySelector(`[name=ToDo${shortcutcount}]`);
-            holder.innerHTML += `<div class = 'shortcut' id='shortcut${shortcutcount}' draggable='true' ondragstart='drag(event)'> <p>${ass.name}</p> <p>${ass.description}</p> <p>${ass.completionTime} minutes</p> </div>`; 
-            shortcutcount ++;
-        }
-        else{
-            let holder = document.querySelector(`[name=ToDo${asscount}]`);
-            holder.innerHTML += `<div class = 'assignment' id='assignment${asscount}' draggable='true' ondragstart='drag(event)'> <p>${ass.name}</p> <p>${ass.description}</p> <p>${ass.completionTime} minutes</p> </div>`; 
-            asscount ++;
+        if(!ass.ifDragged){
+            if(ass.shortcut){
+                let holder = document.querySelector(`[name=ToDo${shortcutcount}]`);
+                holder.innerHTML += `<div class = 'shortcut' id='shortcut${shortcutcount}' draggable='true' ondragstart='drag(event)'> <p>${ass.name}</p> <p>${ass.description}</p> <p>${ass.completionTime} minutes</p> </div>`; 
+                shortcutcount ++;
+            }
+            else{
+                let holder = document.querySelector(`[name=ToDo${asscount}]`);
+                holder.innerHTML += `<div class = 'assignment' id='assignment${asscount}' draggable='true' ondragstart='drag(event)'> <p>${ass.name}</p> <p>${ass.description}</p> <p>${ass.completionTime} minutes</p> </div>`; 
+                asscount ++;
+            }
+            ass.ifDragged = true; 
         }
     }
 }

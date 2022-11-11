@@ -28,6 +28,7 @@ form{
     text-align:center;
     padding: 0px;
     border-radius: 30px;
+    width: 270px;
 }
 
 h1{
@@ -56,9 +57,17 @@ input{
     flex-direction: column;
 }
 
-input[type=text]{
+input[type=password]{
     width: 100%;
     padding: 10px 10px; /* padding: topAndBottom px, leftAndRight px*/
+    margin: 3px 0;
+    box-sizing: border-box;
+  }
+
+input[type=text]{
+    width: 100%;
+    padding: 10px 10px;
+    margin: 3px 0;
     box-sizing: border-box;
   }
 

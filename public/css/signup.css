@@ -1,33 +1,80 @@
-#container {
+body{
+    background-color: lightcoral;
+}
+
+#container{
+    margin: 30px 10px 10px 450px; /* top, right, bottom, left*/
     display: flex;
-    flex-direction: column;
-    /* border: 1px green solid; */
-    padding: 50px;
-    justify-content: space-evenly;
-    align-items: center;
+    align-items: center; 
+    flex-direction: column; 
+    width: 350px;
+    height: 450px;
+    justify-content: center;
     
+    border-radius: 30px;
+    padding: 5px;
+    background-color: white;
 }
 
-#container > div {
-    /* border: 1px blue solid; */
-    padding: 10px;
-}
-
-label, #createAccount{
-    display: inline-block;
-    width: 150px;
-    margin-right: 5px;
-    text-align: right;
-    font-size: 20px;
-}
 
 h1{
-    background-color: rgb(200, 204, 204);
-    padding: 10px;
-    margin-top: 10px;
+    text-align:center;
+    background-color: cornsilk;
+    
+    width: 300px;
+    margin-top: 0px;
+    margin-bottom: 10px;
 }
 
+input{
+    width:100%;
+}
+
+input[type=password]{
+    width: 100%;
+    padding: 10px 10px; /* padding: topAndBottom px, leftAndRight px*/
+    margin: 3px 0;
+    box-sizing: border-box;
+  }
+
+input[type=text]{
+    width: 100%;
+    padding: 10px 10px;
+    margin: 3px 0;
+    box-sizing: border-box;
+  }
+
+  input[type=time]{
+    width: 100%;
+    padding: 10px 10px;
+    margin: 3px 0;
+    box-sizing: border-box;
+  }
+
+  #createAccount{
+    width: 223px;
+    height: 35px;
+    border-radius: 10px;
+    padding: 10px 10px;
+    background-color: cornsilk;
+    border: 1px black solid;
+  }
+
+  #createAccount:hover{
+    background-color: lightcoral;
+	color: white;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 1.0);
+  }
+
 /*
+
+form{
+    background-color: aquamarine;
+    text-align:center;
+    padding: 0px;
+    border-radius: 30px;
+}
+
 #container {
     display: flex;
     flex-direction: column;
