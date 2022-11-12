@@ -84,7 +84,3 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
 })
-
-//code that updates the current date on the calendar header
-let calheader = document.body.querySelector("#currentDate");
-calheader.innerHTML = user1.getCurrentDate();
