@@ -22,6 +22,12 @@ export class User{
         return `${dayOfWeek} ${month}/${day}`; 
     }
 
+    getDayOfWeek(){
+        let today = new Date();
+        let dayOfWeek = weekdays[today.getDay()];
+        return dayOfWeek;
+    }
+
     //function that clears schedule 
     clearSchedule(){
         this.schedule.clear();
