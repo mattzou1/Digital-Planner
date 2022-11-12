@@ -11,7 +11,7 @@
     <script type="module" src="js/copyToDo.js"></script>
     <script type="module" src="js/AddAssignmentEventData.js"></script>
     <script type="module" src="js/test.js"></script>
-    <script type="module" src="js/removeAssignments.js"></script>
+    <script type="module" src="js/removeAssignments.js"></script> 
 </head>
 
 <body>
@@ -44,6 +44,7 @@
 
                 </div>
                 <div class = "shortcut" id="shortcut3" draggable="true" ondragstart="drag(event)">
+                    <button type="button" id="removeButton">X</button>
                     <p>Shortcut 3</p>   
                 </div>
             </div>
@@ -132,6 +133,13 @@
               <div class="holder" id="calendarBox3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>  
 
     <script src="js/AddAssignmentPopup.js"></script>
+
+    <!--Use this do set initial state of assignments before changing tabs (needed for remove assignments.js) -->
+    <script>
+        document.body.querySelector(".assignment").style.display = "block";
+        document.body.querySelector(".shortcut").style.display = "none";
+    </script>
+
     <script>
         //Make code so that it can't be dragged around when other type of card is being viewed
         function allowDrop(ev) {

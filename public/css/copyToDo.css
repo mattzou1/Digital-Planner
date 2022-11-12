@@ -63,6 +63,7 @@
     width: 100%;
     height: 80%;
     margin: 0%;
+    /*display: block;*/
     border-radius: 35px; /*Curves edges*/
 }
 
@@ -81,7 +82,7 @@
     width: 100%;
     height: 80%;
     margin: 0%;
-    display: none;
+    /*display: none;*/
     border-radius: 35px; 
 }
 
