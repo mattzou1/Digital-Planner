@@ -1,5 +1,5 @@
 //let User = require("js/User.js");
-//import {User} from "js/classes";
+import {User,user1,Assignment, Event} from "./classes.js";
 
 document.addEventListener('DOMContentLoaded', (event) => {
     //constants for buttons
@@ -7,12 +7,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const assignmentButton = document.body.querySelector("#button1");
     const shortcutButton = document.body.querySelector("#button2");
 
-
-
     //set assignments as "clicked" by default
     assignmentButton.style.backgroundColor = "#D47272";
     shortcutButton.style.backgroundColor = "lightcoral";
-
 
     //event listeners for button clicks
     shortcutButton.addEventListener("click", ShortcutTab);
@@ -87,3 +84,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
 })
+
+//code that updates the current date on the calendar header
+let calheader = document.body.querySelector("#currentDate");
+calheader.innerHTML = user1.getCurrentDate();
