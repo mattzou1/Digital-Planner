@@ -14,9 +14,10 @@
 	font-weight: 500;
   margin-left: 10px;
 	width: 100px;
-	transition: background-color 0.5s,
-		color 0.5s,
-		box-shadow 0.5s;
+	transition: background-color 0.1s,
+		color 0.1s,
+		box-shadow 0.1s;
+	
 	position: absolute;
 	top: 6%;
 	left: 39%;

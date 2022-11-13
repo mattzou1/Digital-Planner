@@ -167,9 +167,19 @@ table, th, td {
     width: 40px;
     height: 40px;
     border-radius: 2px;
-    border: 1;
     background: white;
     color: #007E6F;
+    outline: auto;
+    cursor: pointer;
+    transition: background-color 0.1s,
+      color 0.1s,
+      box-shadow 0.1s;
+}
+
+.settings:hover {
+    background-color: lightcoral;
+    color: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 1.0);
 }
 
 #removeButton{

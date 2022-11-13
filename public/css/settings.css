@@ -29,7 +29,8 @@ h1{ /*Makes h1 header in the center*/
     text-align:center;
     font-size: 25pt;
 
-    background-color: cornsilk;
+    background-color: #007E6F;
+    color: white;
     width:550px;
     height: 40px;
 
@@ -50,7 +51,8 @@ form > div { /*Deals with div elements in form*/
     width: 40%;
     border-radius: 10px;
     padding: 10px 10px;
-    background-color: cornsilk;
+    background-color: #007E6F;
+    color: white;
     border: 1px black solid;
 }
 
@@ -58,19 +60,18 @@ form > div { /*Deals with div elements in form*/
     width: 40%;
     padding: 10px 10px;
     border-radius: 10px;
-    background-color: cornsilk;
+    background-color: #007E6F;
+    color: white;
     border: 1px black solid;
 }
 
 #submitButton:hover {
-	background-color: lightcoral;
-	color: white;
+    background-color: #41B3A3;
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 1.0);
 }
 
 #logoutButton:hover {
-	background-color: lightcoral;
-	color: white;
+    background-color: #41B3A3;
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 1.0);
 }
 
