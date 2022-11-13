@@ -15,6 +15,7 @@
 </head>
 
 <body>
+    <div class="blur">
     <div class="container">
         <div id="Todo">
             <h1>ToDo List</h1>
@@ -80,7 +81,7 @@
     
     </div>
 
-    <div class="container" id="blur">
+    <div class="shell" id="blur">
         <button type="button" class="btn" onclick="openPopup()"></i> Add Assignment</button>
     
         <div class="assignment_popup" id="assignment_popup">
@@ -131,7 +132,8 @@
               <!--Feel free to move this somehwere else in the code-->
               <div class="holder" id="calendarBox1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
               <div class="holder" id="calendarBox2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-              <div class="holder" id="calendarBox3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>  
+              <div class="holder" id="calendarBox3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    </div>
 
     <script src="js/AddAssignmentPopup.js"></script>
 
