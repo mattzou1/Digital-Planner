@@ -62,8 +62,8 @@
 }
   
 .event_popup h2 {
-	background-color: brown;
-	color: antiquewhite;
+	background-color: lightcoral;
+	color: black;
   font-size: 25px;
   font-weight: 500;
   margin: 30px 0 10px;
@@ -74,10 +74,10 @@
  */
 .cancelbtn2 {
 	width: 40%;
-	margin-top: 70px;
+	margin-top: 60px;
 	padding: 10px 10px;
-	background-color: brown;
-	color: antiquewhite;
+	background-color: lightcoral;
+	color: black;
 	border-radius: 10px;
 	font-size: 18px;
 	outline: none;
@@ -89,11 +89,11 @@
  */
 .addbtn2 {
 	width: 40%;
-	margin-top: 70px;
+	margin-top: 60px;
 	margin: 10px;
 	padding: 10px 10px;
-	background-color: brown;
-	color: antiquewhite;
+	background-color: lightcoral;
+	color: black;
 	border-radius: 10px;
 	font-size: 18px;
 	outline: none;

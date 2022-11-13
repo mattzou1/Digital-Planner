@@ -31,6 +31,9 @@ app.get("/signup", (req, res) => {
     res.sendFile(__dirname + '/views/signup.html');
 });
 
+app.get("/settings", (req, res, html) => {
+    res.sendFile(__dirname + '/views/settings.html');
+})
 
 // starts web server listening on localhost at port 3000
 app.listen(port, () => {
