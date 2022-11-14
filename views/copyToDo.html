@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/AddEventPopup.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <title>Copy</title>
+    <title>Home</title>
     <script type="module" src="js/copyToDo.js"></script>
     <script type="module" src="js/AddAssignmentEventData.js"></script>
     <script type="module" src="js/test.js"></script>
@@ -95,6 +95,9 @@
     
             <label for="Description">Description:</label>
             <input type="text" id="Description"><br><br>
+
+            <label for="Ctime">Completion Time:</label>
+            <input type="text" id="Ctime"><br><br>
     
             <input type="checkbox" id="Shortcut">
             <label for="Shortcut">Shortcut?</label>
@@ -118,6 +121,10 @@
     
             <label for="Etime">End time:</label>
             <input type="text" id="Etime"><br><br>
+
+            <div>Reoccuring days:</div><br>
+            <input type="checkbox" id="Sunday">
+            <label for="Sunday">Su</label>
     
             <input type="checkbox" id="Monday">
             <label for="Monday">Mo</label>
@@ -137,8 +144,6 @@
             <input type="checkbox" id="Saturday">
             <label for="Saturday">Sa</label>
 
-            <input type="checkbox" id="Sunday">
-            <label for="Sunday">Su</label>
           </form>
           <button type="button" class="cancelbtn2" onclick="closePopup2();">Cancel</button>
           <button type="button" class="addbtn2" onclick="closePopup2();">Submit</button>
