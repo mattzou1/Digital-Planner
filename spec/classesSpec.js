@@ -54,8 +54,12 @@ describe("Add element", () => {
         user4 = new classes.User("Joey",1,"8:30", "9:30");
     });
     it("has correct date", () => {
-        //get today's date
-        expect(user1.getCurrentDate()).toBe("Thursday 11/10");
+        //results of test change depending on what day it is
+        expect(user1.getCurrentDate()).toBe("Sunday 11/13");
+    });
+    it("has correct day of week", () => {
+        //results of test change depending on what day it is
+        expect(user1.getDayOfWeek()).toBe("Sunday");
     });
 });
 
