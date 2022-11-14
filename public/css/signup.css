@@ -6,9 +6,9 @@ body{
     margin: 30px 10px 10px 450px; /* top, right, bottom, left*/
     display: flex;
     align-items: center; 
-    flex-direction: column; 
+    flex-dire\ction: column; 
     width: 350px;
-    height: 450px;
+    height: 500px;
     justify-content: center;
     
     border-radius: 30px;
@@ -19,8 +19,8 @@ body{
 
 h1{
     text-align:center;
-    background-color: cornsilk;
-    
+    background-color: #007E6F;
+    color: white;
     width: 300px;
     margin-top: 0px;
     margin-bottom: 10px;
@@ -55,12 +55,16 @@ input[type=text]{
     height: 35px;
     border-radius: 10px;
     padding: 10px 10px;
-    background-color: cornsilk;
+    background-color: #007E6F;
+    color: white;
     border: 1px black solid;
+    margin-top: 10%;
+    width: 240px;
+    height: 35px;
   }
 
   #createAccount:hover{
-    background-color: lightcoral;
+    background-color: #41B3A3;
 	color: white;
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 1.0);
   }

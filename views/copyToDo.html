@@ -22,7 +22,7 @@
             
             <div id="buttonsAndPlus">
                 <div id="addAssignment">
-                </div>
+            </div>
     
                 <div class="buttons">
                     <div id="button1" name="assignments">
@@ -152,7 +152,7 @@
         <a href="/settings"><button type="button" class="settings" id="settings"><i class="fa fa-gears"></i></button></a>
       </div>
 
-              <!--Feel free to move this somehwere else in the code-->
+              <!--Feel free to move this somewhere else in the code-->
               <div class="holder" id="calendarBox1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
               <div class="holder" id="calendarBox2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
               <div class="holder" id="calendarBox3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
@@ -171,12 +171,16 @@
         function allowDrop(ev) {
                 ev.preventDefault();
         }
+        //Used on Dragged items
+        //Checks if it is hovered over valid location and drop it if it is
         function drag(ev) {
             determineDraggable();
             ev.target.parentNode.setAttribute("ondragover", "allowDrop(event)")
             ev.dataTransfer.setData("text", ev.target.id);
 
         }
+        //Used on Holders
+        //Gets data given in drag() and transfers it into the holder
         function drop(ev) {
             ev.preventDefault();
             var data = ev.dataTransfer.getData("text");
