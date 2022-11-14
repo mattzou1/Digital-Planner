@@ -65,6 +65,7 @@ function clearFields() {
     document.getElementById("reading").checked = false;
     document.getElementById("Description").value = "";
     document.getElementById("Shortcut").checked = false;
+    document.getElementById("Ctime").value = "";
 }
 
 function clearFields2() {
@@ -72,5 +73,11 @@ function clearFields2() {
     document.getElementById("EventDescription").value = "";
     document.getElementById("Stime").value = "";
     document.getElementById("Etime").value = "";
-    document.getElementById("Recurring").checked = false;
+    document.getElementById("Sunday").checked = false;
+    document.getElementById("Monday").checked = false;
+    document.getElementById("Tuesday").checked = false;
+    document.getElementById("Wednesday").checked = false;
+    document.getElementById("Thursday").checked = false;
+    document.getElementById("Friday").checked = false;
+    document.getElementById("Saturday").checked = false;
 }
