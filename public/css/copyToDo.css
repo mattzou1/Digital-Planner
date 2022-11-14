@@ -63,7 +63,6 @@
     width: 100%;
     height: 80%;
     margin: 0%;
-    /*display: block;*/
     border-radius: 35px; /*Curves edges*/
 }
 
@@ -119,18 +118,20 @@
     font-size: large;
 }
 
+/*Properties for buttons*/
 .buttons > div > p {
     margin: 5px;
 }
 
+/*Properties for add assignment buttons*/
 #button1 {
     border-right: none;
 }
-
 #button1:hover{
     background-color: #D47272;
 }
 
+/*Properties for add event buttons*/
 #button2:hover{
     background-color: #D47272;
 }
@@ -143,6 +144,7 @@ body{
     margin: 0%;
 }
 
+/*Properties for the table*/
 .holder{
     margin: 0%;
     border-style: solid;
@@ -182,29 +184,9 @@ table, th, td {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 1.0);
 }
 
+/*Properties for remove buttons*/
 #removeButton{
     margin: 30px;
     margin-top: 0px;
     float: right;
 }
-
-/*
- * attempting to blur the background when popup opens
- */ 
-/* .blur {
-    filter: blur(5px);
-    -webkit-filter: blur(5px);
-    -moz-filter: blur(5px);
-    -o-filter: blur(5px);
-    -ms-filter: blur(5px);
-} */
-/* #overlay {
-    position: fixed;
-    display: none;
-    left: 0px;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    background: rgba(255,255,255,.8);
-    z-index: 999;
-} */
