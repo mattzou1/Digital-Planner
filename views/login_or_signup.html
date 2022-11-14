@@ -7,17 +7,18 @@
     <link href="css/login_or_signup.css" rel="stylesheet">
 </head>
 <body>
-    
     <div id="container">
         <h1>Login</h1>
         <div>
-        <!-- to do: change action of form -->
+        <!-- Form for user to log into Digital Planner -->
         <form action="/home" target="_blank" method="POST">
             <div id="userInput">
+                <!-- User enters username -->
                 <p id="userP">
                     <label for="username">Username:</label>
                     <input type="text" name="username" id="userName" maxlength="20" required>
                 </p>
+                <!-- User enters password -->
                 <p id="passP">
                     <label for="password">Password:</label>
                     <input type="password" name="password" id="password" maxlength="20" required>
@@ -25,21 +26,21 @@
             </div>
 
             <p>
+                <!-- Button to submit login form -->
                 <input type="submit" id="submit"></button>
             </p>
         
         </div>
 
         <div id="signDiv">
-
-         <p>Not a member?</p>
-        <p>
-            <!-- When user clicks button, it takes them to Sign Up page so they can create account -->
-            <a href="/signup"><button type="button" id="signup">Create Account</button></a>
-        </p>
+            <p>Not a member?</p>
+            <p>
+                <!-- Button takes user to Sign Up page so they can create account -->
+                <a href="/signup"><button type="button" id="signup">Create Account</button></a>
+            </p>
         </div>
 
-        </form>
+        </form> <!-- Form ends here -->
         
     </div>
 </div>
