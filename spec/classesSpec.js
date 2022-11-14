@@ -65,7 +65,8 @@ describe("Add element", () => {
 
 //Info about Jasmine tests:
     //can temporarily disable suite using xdescribe() and specs using xit()
-    //declare spec inside suite with it()
+    //declare spec inside a suite with it()
     //specs can contain 1+ expectations, which can be T or F
     //for a spec to pass, all expectations within a spec must be T
     //expectations created using expect()
+    //run tests with 'npm test'
