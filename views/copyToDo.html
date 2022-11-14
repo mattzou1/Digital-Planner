@@ -166,12 +166,16 @@
         function allowDrop(ev) {
                 ev.preventDefault();
         }
+        //Used on Dragged items
+        //Checks if it is hovered over valid location and drop it if it is
         function drag(ev) {
             determineDraggable();
             ev.target.parentNode.setAttribute("ondragover", "allowDrop(event)")
             ev.dataTransfer.setData("text", ev.target.id);
 
         }
+        //Used on Holders
+        //Gets data given in drag() and transfers it into the holder
         function drop(ev) {
             ev.preventDefault();
             var data = ev.dataTransfer.getData("text");
