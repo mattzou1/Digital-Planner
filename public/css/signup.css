@@ -6,7 +6,7 @@ body{
     margin: 30px 10px 10px 450px; /* top, right, bottom, left*/
     display: flex;
     align-items: center; 
-    flex-dire\ction: column; 
+    flex-direction: column; 
     width: 350px;
     height: 500px;
     justify-content: center;
