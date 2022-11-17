@@ -1,42 +1,70 @@
+//let User = require("js/User.js");
+import {User,user1,Assignment, Event} from "./classes.js";
+
 document.addEventListener('DOMContentLoaded', (event) => {
     //constants for buttons
     //tabs
     const assignmentButton = document.body.querySelector("#button1");
     const shortcutButton = document.body.querySelector("#button2");
 
-    //select all the assignments and shortcuts
-    const assignments = document.body.querySelectorAll(".assignment");
-    const shortcuts = document.body.querySelectorAll(".shortcut");
-
     //set assignments as "clicked" by default
     assignmentButton.style.backgroundColor = "#D47272";
     shortcutButton.style.backgroundColor = "lightcoral";
 
     //event listeners for button clicks
-    //idk why null is needed when calling, but it makes it work...
-    //https://stackoverflow.com/questions/256754/how-to-pass-arguments-to-addeventlistener-listener-function
-    shortcutButton.addEventListener("click", changeTab.bind(null ,shortcuts, assignments, shortcutButton, assignmentButton));
-    assignmentButton.addEventListener("click", changeTab.bind(null , assignments, shortcuts, assignmentButton, shortcutButton));
+    shortcutButton.addEventListener("click", ShortcutTab);
+    assignmentButton.addEventListener("click", AssignmentTab);
 
+    //Change to shortcut tab
+    function ShortcutTab(){
+        //select all the assignments and shortcuts
+        const assignments = document.body.querySelectorAll(".assignment");
+        const shortcuts = document.body.querySelectorAll(".shortcut");
 
-    //handles the actions performed when tabs are changed
-    function changeTab(changeTo, changeFrom, toButton, fromButton){
-        //change background color of tab buttons
-        toButton.style.backgroundColor = "#D47272";
-        fromButton.style.backgroundColor = "lightcoral";
+        //change color of tab
+        shortcutButton.style.backgroundColor = "#D47272";
+        assignmentButton.style.backgroundColor = "lightcoral";
+
 
         //show shortcuts
-        for(let i = 0; i < changeTo.length; i++){
-            changeTo[i].style.display = "block";
+        for(let i = 0; i < shortcuts.length; i++){
+            shortcuts[i].style.display = "block";
         }
-
-        //while everything is showing check which spots are taken
+        
+        //while everything is showing
         determineDraggable();
 
         //hide assignments
-        for(let i = 0; i < changeTo.length; i++){
-            if(!changeFrom[i].parentElement.id.includes("calendarBox")){
-                changeFrom[i].style.display = "none";
+        for(let i = 0; i < assignments.length; i++){
+            if(!assignments[i].parentElement.id.includes("calendarBox")){
+                assignments[i].style.display = "none";
+            }
+        }
+    }
+
+    //Change to Assignments tab
+    function AssignmentTab(){
+        //select all the assignments and shortcuts
+        const shortcuts = document.body.querySelectorAll(".shortcut");
+        const assignments = document.body.querySelectorAll(".assignment");
+ 
+        //change color of tab
+        assignmentButton.style.backgroundColor = "#D47272";
+        shortcutButton.style.backgroundColor = "lightcoral";
+
+
+        //show assignments
+        for(let i = 0; i < assignments.length; i++){
+            assignments[i].style.display = "block";
+        }
+
+        //while everything is showing
+        determineDraggable();
+
+        //hide shortcuts
+        for(let i = 0; i < shortcuts.length; i++){
+            if(!shortcuts[i].parentElement.id.includes("calendarBox")){
+                shortcuts[i].style.display = "none";
             }
         }
     }
