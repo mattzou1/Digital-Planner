@@ -30,9 +30,15 @@ for (let [time] of user1.schedule){ //loop through each time in the schedule
     let cell1 = row.insertCell(0); //create a cell
     let cell2 = row.insertCell(1); //create another cell
     
-    let newId = cell2.id = "newId" + count; //create an id ad append the counter
+    let newId = cell2.id = "calendarBox" + count; //create an id ad append the counter
+
+    // <class="holder" id="calendarBox1" ondrop="drop(event)" ondragover="allowDrop(event)">
+
+    cell2.setAttribute("class", "holder");
+    cell2.setAttribute("ondrop", "drop(event)")
+    cell2.setAttribute("ondragover", "allowDrop(event)")
     
-    //console.log(newId);
+    console.log(newId);
     
     count++; //increment counter
 

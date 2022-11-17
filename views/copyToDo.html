@@ -34,11 +34,11 @@
                 </div>
             </div>
 
-            <div class="holder" name="ToDo1">
+            <div class="holder" name="ToDo1" id="todoList">
             </div>
-            <div class="holder" name="ToDo2">
+            <div class="holder" name="ToDo2" id="todoList">
             </div>
-            <div class="holder" name="ToDo3">
+            <div class="holder" name="ToDo3" id="todoList">
                 <div class = "assignment" id="assignment3" draggable="true" ondragstart="drag(event)">
                     <button type="button" id="removeButton">X</button>
                     <p>Assignment 3</p>  
@@ -150,12 +150,10 @@
         </div>
 
         <a href="/settings"><button type="button" class="settings" id="settings"><i class="fa fa-gears"></i></button></a>
-      </div>
+    </div>
 
-              <!--Feel free to move this somewhere else in the code-->
-              <div class="holder" id="calendarBox1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-              <div class="holder" id="calendarBox2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-              <div class="holder" id="calendarBox3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <!--<div class="holder" id="calendarBox1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>-->
+
     </div>
 
     <script src="js/AddAssignmentPopup.js"></script>
