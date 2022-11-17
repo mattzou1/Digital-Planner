@@ -34,11 +34,10 @@ for (let [time] of user1.schedule){ //loop through each time in the schedule
 
     // <class="holder" id="calendarBox1" ondrop="drop(event)" ondragover="allowDrop(event)">
 
+    //added attributes to the calander boxes for dragging
     cell2.setAttribute("class", "holder");
     cell2.setAttribute("ondrop", "drop(event)")
     cell2.setAttribute("ondragover", "allowDrop(event)")
-    
-    console.log(newId);
     
     count++; //increment counter
 
