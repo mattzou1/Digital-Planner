@@ -12,7 +12,7 @@ function registerSubmitButtons(){
     let submitAssButton = document.querySelector(".addbtn");
     submitAssButton.addEventListener("click", function (event) {
         let user = user1;
-        let ass1 = new Assignment(document.getElementById("Aname").value, document.getElementById("Description").value, 30, document.getElementById("Shortcut").checked)
+        let ass1 = new Assignment(document.getElementById("Aname").value, document.getElementById("Description").value, document.getElementById("Ctime").value, document.getElementById("Shortcut").checked)
         user.assignments.push(ass1);
         clearFields();
         clearToDo();
@@ -38,12 +38,12 @@ function populateToDo(){
         if(!ass.ifDragged){
             if(ass.shortcut){
                 let holder = document.querySelector(`[name=ToDo${shortcutcount}]`);
-                holder.innerHTML += `<div class = 'shortcut' id='shortcut${shortcutcount}' draggable='true' ondragstart='drag(event)'> <p>${ass.name}</p> <p>${ass.description}</p> <p>${ass.completionTime} minutes</p> </div>`; 
+                holder.innerHTML += `<div class = 'shortcut' id='shortcut${shortcutcount}' draggable='true' ondragstart='drag(event)'> <button type='button' id='removeButton'>X</button> <p>${ass.name}</p> <p>${ass.description}</p> <p>${ass.completionTime} minutes</p> </div>`; 
                 shortcutcount ++;
             }
             else{
                 let holder = document.querySelector(`[name=ToDo${asscount}]`);
-                holder.innerHTML += `<div class = 'assignment' id='assignment${asscount}' draggable='true' ondragstart='drag(event)'> <p>${ass.name}</p> <p>${ass.description}</p> <p>${ass.completionTime} minutes</p> </div>`; 
+                holder.innerHTML += `<div class = 'assignment' id='assignment${asscount}' draggable='true' ondragstart='drag(event)'> <button type='button' id='removeButton'>X</button> <p>${ass.name}</p> <p>${ass.description}</p> <p>${ass.completionTime} minutes</p> </div>`; 
                 asscount ++;
             }
             ass.ifDragged = true; 
