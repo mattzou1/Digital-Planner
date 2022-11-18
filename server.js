@@ -2,8 +2,7 @@
     The most basic Express web server running locally
 */
 
-const express = require("express");
-//const bcypt = require('bcrypt'); 
+const express = require("express"); 
 
 
 // Creates an Express application: https://expressjs.com/en/4x/api.html#app
