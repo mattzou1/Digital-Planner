@@ -44,7 +44,7 @@ function populateCalendar(){
                 }
             }
             reoccuringString = reoccuringString.substring(0, reoccuringString.length - 2);
-            holder.innerHTML = `<div><p>${slot.name}</p><p>${slot.description}</p><p>${reoccuringString}</p></div>`;
+            holder.innerHTML = `<div class='event'><button type='button' id='removeButton'>X</button><p>${slot.name}</p><p>${slot.description}</p><p>${reoccuringString}</p></div>`;
         }
     }
 }
