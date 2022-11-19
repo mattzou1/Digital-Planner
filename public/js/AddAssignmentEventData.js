@@ -1,36 +1,56 @@
 //code to add event and assignment objects to fields in a user object and populate the ToDoList
-import {User,user1,Assignment, Event} from "./classes.js";
+import {User,user1,Assignment, Event, weekdays} from "./classes.js";
 
 //let classes = require("../js/classes.js");
 //create user1
 //let user1 = new classes.User(("bob","123","9:30", "13:00"));
 
-window.addEventListener("DOMContentLoaded", registerSubmitButtons)
+window.addEventListener("DOMContentLoaded", registerSubmitButtons);
 
+let user = user1;
 
 function registerSubmitButtons(){
     let submitAssButton = document.querySelector(".addbtn");
-    submitAssButton.addEventListener("click", function (event) {
-        let user = user1;
+    submitAssButton.addEventListener("click", function () {
         let ass1 = new Assignment(document.getElementById("Aname").value, document.getElementById("Description").value, document.getElementById("Ctime").value, document.getElementById("Shortcut").checked)
         user.assignments.push(ass1);
         clearFields();
         clearToDo();
         populateToDo();
-    })
+    });
 
     let submitEventButton = document.querySelector(".addbtn2");
-    submitEventButton.addEventListener("click", function (event) {
-        let user = user1;
-        let event1 = new Event(document.getElementById("Ename").value, document.getElementById("EventDescription").value, document.getElementById("Stime").value, document.getElementById("Etime").value)
+    submitEventButton.addEventListener("click", function () {
+        let reoccuring = []; 
+        for(let weekday of weekdays){
+            reoccuring.push(document.getElementById(weekday).checked);
+        }
+        let event1 = new Event(document.getElementById("Ename").value, document.getElementById("EventDescription").value, document.getElementById("Stime").value, document.getElementById("Etime").value, reoccuring)
         user.addElement(event1.startTime, event1.stopTime, event1);
         clearFields2();
-    })
+        populateCalendar();
+    });
+}
+
+function populateCalendar(){
+    for(let [time] of user.schedule){
+        let slot = user.schedule.get(time);
+        if(slot != "empty"){
+            let holder = document.getElementById("calendarBox" + time);
+            let reoccuringString = "Reoccuring: "
+            for(let [day] of slot.reoccuringDays){
+                if(slot.reoccuringDays.get(day)){
+                    reoccuringString += day + ", ";
+                }
+            }
+            reoccuringString = reoccuringString.substring(0, reoccuringString.length - 2);
+            holder.innerHTML = `<div><p>${slot.name}</p><p>${slot.description}</p><p>${reoccuringString}</p></div>`;
+        }
+    }
 }
 
 //can be optimized 
 function populateToDo(){
-    let user = user1; 
     let numHolders = 3;
     let asscount = 1;
     let shortcutcount = 1;
