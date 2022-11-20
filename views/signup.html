@@ -6,6 +6,7 @@
     <title>Sign Up</title>
      <!-- <link href="../public/css/signup.css" rel="stylesheet"> -->
      <link href="css/signup.css" rel="stylesheet">
+     <script type="module" src="js/signup.js"></script>
 </head>
 <body>
     
@@ -27,11 +28,20 @@
             </p>
             <p>
                 <label for="studyStart">Study start time:</label>
-                <input type="time" name="studyStart" id="studyStart" required>
+                <select id="studyStart" name="studyStart" required></select>
+                <select name="AMPM">
+                    <option>AM</option>
+                    <option>PM</option>
+                </select>
             </p>
             <p>
                 <label for="studyStop">Study stop time:</label>
-                <input type="time" name="studyStop" id="studyStop" required>
+                <select id="studyStop" name="studyStop" required></select>
+                <select name="AMPM">
+                    <option>AM</option>
+                    <option>PM</option>
+                </select>
+                
             </p>
         </div>
         
