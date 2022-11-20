@@ -12,7 +12,7 @@
 
     <h1>Settings</h1>
     
-    <form> 
+    <form action="/home" method="POST"> <!--Sends user back to home if submit is pressed-->
         <div>
             <p> <!--User can change their username-->
                 <label for="user">Set Username:</label> 
@@ -62,11 +62,21 @@
         </div>
        
         <div id="buttons">
-            <input type="submit" value="Submit" id="submitButton"> <!--Button to submit data-->
-            <input type="button" value="Logout" id="logoutButton"> <!--Button to logout-->
+            <input type="submit" value="Submit" id="submitButton"> 
+            <input type="button" value="Logout" id="logoutButton">
+        </div>
+
+        <div id="esc">
+            <!--Button to get out of settings if clicked accidentally:-->
+            <input type="submit" value="X" id="escapeButton">
         </div>
         
     </form>
+
+    
+    
+   
+    
 
 </div>
 
