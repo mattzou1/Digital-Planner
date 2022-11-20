@@ -5,16 +5,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
     //constants for buttons
     //tabs
     const assignmentButton = document.body.querySelector("#button1");
-    const shortcutButton = document.body.querySelector("#button2");
+    //const shortcutButton = document.body.querySelector("#button2");
 
     //set assignments as "clicked" by default
     assignmentButton.style.backgroundColor = "#D47272";
-    shortcutButton.style.backgroundColor = "lightcoral";
+    //shortcutButton.style.backgroundColor = "lightcoral";
 
     //event listeners for button clicks
-    shortcutButton.addEventListener("click", ShortcutTab);
+    //shortcutButton.addEventListener("click", ShortcutTab);
     assignmentButton.addEventListener("click", AssignmentTab);
-
+    /*
     //Change to shortcut tab
     function ShortcutTab(){
         //select all the assignments and shortcuts
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             }
         }
     }
-
+*/
     //Change to Assignments tab
     function AssignmentTab(){
         //select all the assignments and shortcuts

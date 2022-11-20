@@ -48,6 +48,7 @@
     border-radius: 35px; /*Curves edges*/
     width: 450px; 
     height: 700px;
+    overflow: auto;
 }
 
 /*Properties for header on Todo*/
@@ -141,6 +142,7 @@
 }
 
 /*Properties for add assignment buttons*/
+/*
 #button1 {
     border-right: none;
 }
@@ -148,7 +150,9 @@
     background-color: #D47272;
 }
 
+
 /*Properties for add event buttons*/
+/*
 #button2:hover{
     background-color: #D47272;
 }
@@ -156,6 +160,7 @@
 #addAssignment:hover{
     background-color: #D47272;
 }
+*/
 
 body{
     margin: 0%;
