@@ -1,10 +1,6 @@
 //code to add event and assignment objects to fields in a user object and populate the ToDoList
 import {User,user1,Assignment, Event, weekdays} from "./classes.js";
 
-//let classes = require("../js/classes.js");
-//create user1
-//let user1 = new classes.User(("bob","123","9:30", "13:00"));
-
 window.addEventListener("DOMContentLoaded", registerSubmitButtons);
 
 let user = user1;
