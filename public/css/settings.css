@@ -47,11 +47,21 @@ form > div { /*Deals with div elements in form*/
     justify-content: space-evenly; /*Space between buttons and edges is equal*/
 }
 
-#esc{
-    border: 1px blue solid;
+form > #escapeButton{
     display: flex;
+    float: right;
+    margin-top: -387px;
+    margin-right: 30px;
+    background-color: #007E6F;
+    border: 1px black solid;
+    color: white;
+
 }
 
+#escapeButton:hover {
+    background-color: #41B3A3;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 1.0);
+}
 
 #submitButton{
     width: 40%;
