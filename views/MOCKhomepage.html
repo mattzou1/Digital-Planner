@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../public/css/AddEventPopup.css">
   <title>Add Assignment Popup</title>
   <script type="module" src="../public/js/AddAssignmentEventData.js"></script>
+  <script type="module" src="js/increment_MOCKhomepage.js"></script>
 </head> 
 <body>
   <div class="container" id="blur">
@@ -42,11 +43,23 @@
         <label for="EventDescription">Description:</label>
         <input type="text" id="EventDescription"><br><br>
 
+        <!-- Dropdown menu that fills start time with times at 30min increments -->
         <label for="Stime">Start time:</label>
-        <input type="text" id="Stime"><br><br>
+        <select id="Stime" name="Stime" required></select>
+        <!-- Dropdown menu for AM/PM selection-->
+        <select name="AMPM">
+          <option>AM</option>
+          <option>PM</option>
+        </select><br><br>
 
+        <!-- Dropdown menu that fills end time with times at 30min increments -->
         <label for="Etime">End time:</label>
-        <input type="text" id="Etime"><br><br>
+        <select id="Etime" name="Etime" required></select>
+         <!-- Dropdown menu for AM/PM selection-->
+        <select name="AMPM">
+          <option>AM</option>
+          <option>PM</option>
+        </select><br><br>
 
         <input type="checkbox" id="Recurring">
         <label for="Recurring">Recurring?</label>
