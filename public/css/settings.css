@@ -47,6 +47,12 @@ form > div { /*Deals with div elements in form*/
     justify-content: space-evenly; /*Space between buttons and edges is equal*/
 }
 
+#esc{
+    border: 1px blue solid;
+    display: flex;
+}
+
+
 #submitButton{
     width: 40%;
     border-radius: 10px;
