@@ -59,13 +59,13 @@ export class User{
 //Assignment class for making assignments
 export class Assignment{
     //shortcut should be boolean 
-    constructor(name, description, completionTime, shortcut){
+    constructor(name, description, completionTime/*, shortcut*/){
         this.name = name;
         this.description = description;
         //completion time is the time it will take the user to complete the assignment,
         //which they enter themselves
         this.completionTime = completionTime;
-        this.shortcut = shortcut; 
+            //this.shortcut = shor tcut; 
         this.ifDragged = false; 
     } 
 }

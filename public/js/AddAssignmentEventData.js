@@ -8,7 +8,7 @@ let user = user1;
 function registerSubmitButtons(){
     let submitAssButton = document.querySelector(".addbtn");
     submitAssButton.addEventListener("click", function () {
-        let ass1 = new Assignment(document.getElementById("Aname").value, document.getElementById("Description").value, document.getElementById("Ctime").value, document.getElementById("Shortcut").checked)
+        let ass1 = new Assignment(document.getElementById("Aname").value, document.getElementById("Description").value, document.getElementById("Ctime").value/*, document.getElementById("Shortcut").checked*/)
         user.assignments.push(ass1);
         clearFields();
         clearToDo();
@@ -49,19 +49,19 @@ function populateCalendar(){
 function populateToDo(){
     let numHolders = 3;
     let asscount = 1;
-    let shortcutcount = 1;
+    //let shortcutcount = 1;
     for(let ass of user.assignments){
         if(!ass.ifDragged){
-            if(ass.shortcut){
-                let holder = document.querySelector(`[name=ToDo${shortcutcount}]`);
+            //if(ass.shortcut){
+                /*let holder = document.querySelector(`[name=ToDo${shortcutcount}]`);
                 holder.innerHTML += `<div class = 'shortcut' id='shortcut${shortcutcount}' draggable='true' ondragstart='drag(event)'> <button type='button' id='removeButton'>X</button> <p>${ass.name}</p> <p>${ass.description}</p> <p>${ass.completionTime} minutes</p> </div>`; 
-                shortcutcount ++;
-            }
-            else{
+                shortcutcount ++;*/
+            //}
+            //else{
                 let holder = document.querySelector(`[name=ToDo${asscount}]`);
                 holder.innerHTML += `<div class = 'assignment' id='assignment${asscount}' draggable='true' ondragstart='drag(event)'> <button type='button' id='removeButton'>X</button> <p>${ass.name}</p> <p>${ass.description}</p> <p>${ass.completionTime} minutes</p> </div>`; 
                 asscount ++;
-            }
+            //}
             ass.ifDragged = true; 
         }
     }
@@ -80,7 +80,7 @@ function clearFields() {
     document.getElementById("Aname").value = "";
     document.getElementById("reading").checked = false;
     document.getElementById("Description").value = "";
-    document.getElementById("Shortcut").checked = false;
+    //document.getElementById("Shortcut").checked = false;
     document.getElementById("Ctime").value = "";
 }
 
