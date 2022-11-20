@@ -7,10 +7,19 @@ export function increments(select){
         let newOption2 = document.createElement("option");
     
         //set new option elements to the time 
-        newOption.innerText = i + ":00";
-        newOption2.innerText = i + ":30";
-    
-        //append options to dropdown menus
+        let number = i + ":00"
+        newOption.innerText = number;
+        let number2 = i + ":30";
+        newOption2.innerText = number2;
+        
+        //set value attribute of new option elements
+        newOption.setAttribute("value", number);
+        newOption2.setAttribute("value", number2);
+
+        //console.log("Value: " + newOption.getAttribute("value"));
+        //console.log("Value: " + newOption2.getAttribute("value"));
+
+        //append options to dropdown menu
         select.appendChild(newOption);
         select.appendChild(newOption2);
     }

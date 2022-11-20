@@ -12,6 +12,8 @@
     <script type="module" src="js/AddAssignmentEventData.js"></script>
     <script type="module" src="js/test.js"></script>
     <script type="module" src="js/removeAssignments.js"></script> 
+    <script type="module" src="js/removeAssignments.js"></script>
+    <script type="module" src="js/increment_copyToDo.js"></script>
 </head>
 
 <body>
@@ -101,9 +103,12 @@
             <label for="Description">Description:</label>
             <input type="text" id="Description"><br><br>
 
-            <label for="Ctime">Completion Time:</label>
-            <input type="text" id="Ctime"><br><br>
-    
+            <!-- <label for="Ctime">Completion Time:</label>
+            <input type="text" id="Ctime"><br><br> -->
+            <label for="Ctime">Completion time:</label>
+            <select id="Ctime" name="Ctime" required></select>
+            <label for="minutes">minutes</label>
+
             <!--<input type="checkbox" id="Shortcut">
             <label for="Shortcut">Shortcut?</label>-->
           </form>
@@ -120,13 +125,31 @@
     
             <label for="EventDescription">Description:</label>
             <input type="text" id="EventDescription"><br><br>
-    
-            <label for="Stime">Start time:</label>
+            
+            <!-- <label for="Stime">Start time:</label>
             <input type="text" id="Stime"><br><br>
-    
-            <label for="Etime">End time:</label>
-            <input type="text" id="Etime"><br><br>
 
+            <label for="Etime">End time:</label>
+            <input type="text" id="Etime"><br><br> -->
+            
+            <!-- Dropdown menu that fills start time with times at 30min increments -->
+            <label for="Stime">Start time:</label>
+            <select id="Stime" name="Stime" required></select>
+            <!-- Dropdown menu for AM/PM selection -->
+            <select name="AMPM">
+                <option value="am">AM</option>
+                <option value="pm">PM</option>
+            </select><br><br>
+    
+            <!-- Dropdown menu that fills end time with times at 30min increments -->
+            <label for="Etime">End time:</label>
+            <select id="Etime" name="Etime" required></select>
+            <!-- Dropdown menu for AM/PM selection -->
+            <select name="AMPM">
+                <option value="am">AM</option>
+                <option vaue="pm">PM</option>
+            </select><br><br>
+        
             <div>Reoccuring days:</div><br>
             <input type="checkbox" id="Sunday">
             <label for="Sunday">Su</label>
