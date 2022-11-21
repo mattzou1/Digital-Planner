@@ -20,43 +20,13 @@
     <div class="blur">
     <div class="container">
 
-        <!--DAVID-->
-                <div id="Todo">
-                    <h1>ToDo List</h1>
-                    
-                    <div id="buttonsAndPlus">
-                        <div id="addAssignment">
-                    </div>
+        <div id="Todo">
+            <h1>ToDo List</h1>
             
-                        <!--<div class="buttons">
-                            
-                            <div id="button1" name="assignments">
-                                <p>Page 1</p>
-                            </div>
-                            <div id="button2" name="shortcuts">
-                                <p>Page 2</p>
-                            </div>
-                        </div>-->
-                    </div>
-
-                    <!--<div class="holder" name="ToDo1" id="todoList">
-                    </div>
-                    <div class="holder" name="ToDo2" id="todoList">
-                    </div>
-                    <div class="holder" name="ToDo3" id="todoList">-->
-                        <!--<div class = "assignment" id="assignment3" draggable="true" ondragstart="drag(event)">
-                            <button type="button" id="removeButton">X</button>
-                            <p>Assignment 3</p>  
-
-                        </div>
-                        <div class = "shortcut" id="shortcut3" draggable="true" ondragstart="drag(event)">
-                            <button type="button" id="removeButton">X</button>
-                            <p>Shortcut 3</p>   
-                        </div>-->
-                    <!--</div>-->
-                </div>
-
-        <!--END-->
+            <div id="buttonsAndPlus">
+                <div id="addAssignment"></div>
+            </div>
+        </div>
 
         <div id="calendar">
             <div id="headerAndButtons">
@@ -180,8 +150,6 @@
         <a href="/settings"><button type="button" class="settings" id="settings"><i class="fa fa-gears"></i></button></a>
     </div>
 
-    <!--<div class="holder" id="calendarBox1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>-->
-
     </div>
 
     <script src="js/AddAssignmentPopup.js"></script>
@@ -215,7 +183,14 @@
             for(let i = 0; i < holders.length; i++){
                 if(holders[i].hasChildNodes()){
                     holders[i].setAttribute("ondragover", "");
-                    holders[i].firstChild.style.height = "90%";
+                    //change assignment style settings for when it is transferred to calander
+                    holders[i].firstChild.style.height = "100%";
+                    holders[i].firstChild.style.position = "absolute"
+                    holders[i].firstChild.style.margin = "0px"
+                    //IDK why but it doesn't work without this line:
+                    holders[i].firstChild.style.bottom = "0%"
+                    holders[i].style.position = "relative"
+
                 }
                 else{
                     holders[i].setAttribute("ondragover", "allowDrop(event)")
