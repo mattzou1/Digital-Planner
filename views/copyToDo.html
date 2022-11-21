@@ -155,6 +155,7 @@
     <script src="js/AddAssignmentPopup.js"></script>
 
     <script>
+        let idCounter = 1;
         //Make code so that it can't be dragged around when other type of card is being viewed
         function allowDrop(ev) {
                 ev.preventDefault();
@@ -165,7 +166,6 @@
             determineDraggable();
             ev.target.parentNode.setAttribute("ondragover", "allowDrop(event)")
             ev.dataTransfer.setData("text", ev.target.id);
-            ev.effectAllowed = "copyMove";
 
         }
         //Used on Holders
@@ -179,7 +179,8 @@
             }
             else{
                 var nodeCopy = document.getElementById(data).cloneNode(true);
-  		        nodeCopy.id = data + "Copy";
+  		        nodeCopy.id = data + "Copy" + idCounter;
+                idCounter++;
                 ev.target.appendChild(nodeCopy)
             }
 
