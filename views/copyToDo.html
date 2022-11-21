@@ -186,12 +186,6 @@
 
     <script src="js/AddAssignmentPopup.js"></script>
 
-    <!--Use this do set initial state of assignments before changing tabs (needed for remove assignments.js) -->
-    <script>
-        document.body.querySelector(".assignment").style.display = "block";
-        document.body.querySelector(".shortcut").style.display = "none";
-    </script>
-
     <script>
         //Make code so that it can't be dragged around when other type of card is being viewed
         function allowDrop(ev) {
@@ -222,7 +216,6 @@
                 if(holders[i].hasChildNodes()){
                     holders[i].setAttribute("ondragover", "");
                     holders[i].firstChild.style.height = "90%";
-                    holders[i].firstChild.style.display = "inline-block";
                 }
                 else{
                     holders[i].setAttribute("ondragover", "allowDrop(event)")
