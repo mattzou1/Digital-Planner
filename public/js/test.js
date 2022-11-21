@@ -1,11 +1,12 @@
-//code that populates the calendar with times
+//code that populates the calendar with times and formats calendar (row width, height length)
 
 import {User,user1,Assignment, Event} from "./classes.js";
 
 let table = document.body.querySelector("table"); //get table
 table.style.width = "100%"; //set table width
 //table.style.height= "100px" //set table height
-//document.body.querySelector("tr").style.height = "50px"; //set header height 
+document.body.querySelector("tr").style.height = "50px"; //set header height 
+//document.body.querySelector("#dayOfWeek").style.font-size = "1.2em"; //increase header font
 
 document.body.querySelector("th").style.width = "10%";  //set time column width
 
