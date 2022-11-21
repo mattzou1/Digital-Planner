@@ -58,6 +58,10 @@ describe("Add element", () => {
         //results of test change depending on what day it is
         expect(user1.getDayOfWeek()).toBe("Sunday");
     });
+    it("has correct middle endian format", () => {
+        //results of test change depending on what day, month, year it is
+        expect(user1.getFormattedDate()).toBe("November 20, 2022");
+    });
 });
 
 //Info about Jasmine tests:
