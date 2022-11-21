@@ -106,7 +106,7 @@ export class Event{
     } 
 }
 
-export let user1 = new User("Bob", "123", "9:30", "12:30");
+export let user1 = new User("Bob", "123", "9:30", "17:00");
 
 
 //exports the classes so we can use them in other js files

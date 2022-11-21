@@ -4,7 +4,7 @@ import {User,user1,Assignment, Event} from "./classes.js";
 
 let table = document.body.querySelector("table"); //get table
 table.style.width = "100%"; //set table width
-table.style.height= "100%" //set table height
+//table.style.height= "100px" //set table height
 //document.body.querySelector("tr").style.height = "50px"; //set header height 
 
 document.body.querySelector("th").style.width = "10%";  //set time column width
@@ -24,15 +24,11 @@ let tableBod = document.body.querySelector("tbody"); //get table body
 let count = 1; //used to increment id number
 
 for (let [time] of user1.schedule){ //loop through each time in the schedule
-    //console.log(time);
-       
     let row = tableBod.insertRow(-1); //insert a row
     let cell1 = row.insertCell(0); //create a cell
     let cell2 = row.insertCell(1); //create another cell
     
-    let newId = cell2.id = "calendarBox" + time; //create an id ad append the counter
-
-    // <class="holder" id="calendarBox1" ondrop="drop(event)" ondragover="allowDrop(event)">
+    cell2.id = "calendarBox" + time; //create an id ad append the counter
 
     //added attributes to the calander boxes for dragging
     cell2.setAttribute("class", "holder");
@@ -43,4 +39,7 @@ for (let [time] of user1.schedule){ //loop through each time in the schedule
 
     cell1.innerHTML = time; //set the time to that cell
     cell1.style.textAlign = "center";
+    let height = "150px"
+    cell1.style.height = height;
+    cell2.style.height = height;
 }
