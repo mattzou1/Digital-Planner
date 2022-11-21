@@ -165,6 +165,7 @@
             determineDraggable();
             ev.target.parentNode.setAttribute("ondragover", "allowDrop(event)")
             ev.dataTransfer.setData("text", ev.target.id);
+            ev.effectAllowed = "copyMove";
 
         }
         //Used on Holders
@@ -172,7 +173,16 @@
         function drop(ev) {
             ev.preventDefault();
             var data = ev.dataTransfer.getData("text");
-            ev.target.appendChild(document.getElementById(data));
+
+            if(data.includes("Copy")){
+                ev.target.appendChild(document.getElementById(data));
+            }
+            else{
+                var nodeCopy = document.getElementById(data).cloneNode(true);
+  		        nodeCopy.id = data + "Copy";
+                ev.target.appendChild(nodeCopy)
+            }
+
             determineDraggable();
         }
 
@@ -190,7 +200,6 @@
                     //IDK why but it doesn't work without this line:
                     holders[i].firstChild.style.bottom = "0%"
                     holders[i].style.position = "relative"
-
                 }
                 else{
                     holders[i].setAttribute("ondragover", "allowDrop(event)")

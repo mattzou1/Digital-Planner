@@ -86,7 +86,7 @@ export class Event{
     } 
 }
 
-export let user1 = new User("bob","123","9:30", "13:00");
+export let user1 = new User("bob","123","9:30", "17:00");
 //console.log(user1.schedule);
 // event1 = new Event(1,1,1,1,[false,true,false,false,false,false,false]);
 // user1.addElement("10:00","11:30", event1);

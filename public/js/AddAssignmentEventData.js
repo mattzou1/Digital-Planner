@@ -4,6 +4,7 @@ import {User,user1,Assignment, Event, weekdays} from "./classes.js";
 window.addEventListener("DOMContentLoaded", registerSubmitButtons);
 
 let user = user1;
+let asscount = 1;
 
 function registerSubmitButtons(){
     let submitAssButton = document.querySelector(".addbtn");
@@ -50,7 +51,7 @@ function populateCalendar(){
 //can be optimized 
 function populateToDo(){
     let numHolders = 3;
-    let asscount = 1;
+
     //let shortcutcount = 1;
     for(let ass of user.assignments){
         if(!ass.ifDragged){
