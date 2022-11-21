@@ -11,7 +11,7 @@ document.body.querySelector("th").style.width = "10%";  //set time column width
 
 //code that updates the current date on the calendar header
 let calheader = document.body.querySelector("#currentDate");
-calheader.innerHTML = user1.getCurrentDate(); //set calendar header to current date
+calheader.innerHTML = user1.getFormattedDate(); //set calendar header to current date
 
 //updates the current day of the week in the calendar table
 let dayOfWeek = document.body.querySelector("#dayOfWeek");

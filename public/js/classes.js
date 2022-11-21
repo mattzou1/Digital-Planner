@@ -22,6 +22,16 @@ export class User{
         return `${dayOfWeek} ${month}/${day}`; 
     }
 
+    //function that returns the date in "Month Day, Year" format
+    getFormattedDate(){
+        let today = new Date();
+        let day = today.getDate();
+        let month = today.toLocaleString("default", { month: "long"});
+        let year = today.getFullYear();
+        return `${month} ${day}, ${year}`;
+    }
+
+    //function that returns the current day of the week
     getDayOfWeek(){
         let today = new Date();
         let dayOfWeek = weekdays[today.getDay()];
