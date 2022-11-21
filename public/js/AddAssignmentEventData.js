@@ -54,16 +54,9 @@ function populateToDo(){
     //let shortcutcount = 1;
     for(let ass of user.assignments){
         if(!ass.ifDragged){
-            //if(ass.shortcut){
-                /*let holder = document.querySelector(`[name=ToDo${shortcutcount}]`);
-                holder.innerHTML += `<div class = 'shortcut' id='shortcut${shortcutcount}' draggable='true' ondragstart='drag(event)'> <button type='button' id='removeButton'>X</button> <p>${ass.name}</p> <p>${ass.description}</p> <p>${ass.completionTime} minutes</p> </div>`; 
-                shortcutcount ++;*/
-            //}
-            //else{
                 let todo = document.querySelector(`#Todo`);
                 todo.innerHTML += `<div class = 'assignment' id='assignment${asscount}' draggable='true' ondragstart='drag(event)'> <button type='button' id='removeButton'>X</button> <p>${ass.name}</p> <p>${ass.description}</p> <p>${ass.completionTime} minutes</p> </div>`; 
                 asscount ++;
-            //}
             ass.ifDragged = true; 
         }
     }
@@ -82,7 +75,6 @@ function clearFields() {
     document.getElementById("Aname").value = "";
     document.getElementById("reading").checked = false;
     document.getElementById("Description").value = "";
-    //document.getElementById("Shortcut").checked = false;
     document.getElementById("Ctime").value = "";
 }
 
