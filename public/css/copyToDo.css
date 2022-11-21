@@ -76,10 +76,11 @@
 /*Properties for assignments on Todo assignments tab*/
 .assignment {
     position: relative;
+    display: inline-block;
     background-color: #7DEBDA;
     width: 100%;
-    height: 80%;
-    margin: 0%;
+    height: 15%;
+    margin-bottom: 10%;
     border-radius: 35px; /*Curves edges*/
 }
 
@@ -90,26 +91,6 @@
     left: 20px;
     top: 10px;
 }
-
-/*Properties for shortcuts on Todo shortcuts tab*/
-/*
-.shortcut {
-    position: relative;
-    background-color: #B2EDC5;
-    width: 100%;
-    height: 80%;
-    margin: 0%;*/
-    /*display: none;*/
-   /* border-radius: 35px; 
-}*/
-
-/*Properties for text saying "shortcuts" on Todo shortcuts tab*/
-/*.shortcut > p{
-    position: relative;
-    width: 50%;
-    left: 20px;
-    top: 10px;
-}*/
 
 /*Properties for Assignments and Shortcuts buttons on Todo*/
 .buttons {
@@ -140,27 +121,6 @@
 .buttons > div > p {
     margin: 5px;
 }
-
-/*Properties for add assignment buttons*/
-/*
-#button1 {
-    border-right: none;
-}
-#button1:hover{
-    background-color: #D47272;
-}
-
-
-/*Properties for add event buttons*/
-/*
-#button2:hover{
-    background-color: #D47272;
-}
-
-#addAssignment:hover{
-    background-color: #D47272;
-}
-*/
 
 body{
     margin: 0%;

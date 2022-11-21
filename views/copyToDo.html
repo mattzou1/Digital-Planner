@@ -221,7 +221,8 @@
             for(let i = 0; i < holders.length; i++){
                 if(holders[i].hasChildNodes()){
                     holders[i].setAttribute("ondragover", "");
-
+                    holders[i].firstChild.style.height = "90%";
+                    holders[i].firstChild.style.display = "inline-block";
                 }
                 else{
                     holders[i].setAttribute("ondragover", "allowDrop(event)")

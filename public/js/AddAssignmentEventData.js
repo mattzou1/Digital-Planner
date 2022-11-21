@@ -61,7 +61,7 @@ function populateToDo(){
             //}
             //else{
                 let todo = document.querySelector(`#Todo`);
-                todo.innerHTML += `<div class="holder" name="ToDo1" id="todoList"><div class = 'assignment' id='assignment${asscount}' draggable='true' ondragstart='drag(event)'> <button type='button' id='removeButton'>X</button> <p>${ass.name}</p> <p>${ass.description}</p> <p>${ass.completionTime} minutes</p> </div> </div>`; 
+                todo.innerHTML += `<div class = 'assignment' id='assignment${asscount}' draggable='true' ondragstart='drag(event)'> <button type='button' id='removeButton'>X</button> <p>${ass.name}</p> <p>${ass.description}</p> <p>${ass.completionTime} minutes</p> </div>`; 
                 asscount ++;
             //}
             ass.ifDragged = true; 

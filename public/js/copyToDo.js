@@ -4,16 +4,16 @@ import {User,user1,Assignment, Event} from "./classes.js";
 document.addEventListener('DOMContentLoaded', (event) => {
     //constants for buttons
     //tabs
-    const assignmentButton = document.body.querySelector("#button1");
+    //const assignmentButton = document.body.querySelector("#button1");
     //const shortcutButton = document.body.querySelector("#button2");
 
     //set assignments as "clicked" by default
-    assignmentButton.style.backgroundColor = "#D47272";
+    //assignmentButton.style.backgroundColor = "#D47272";
     //shortcutButton.style.backgroundColor = "lightcoral";
 
     //event listeners for button clicks
     //shortcutButton.addEventListener("click", ShortcutTab);
-    assignmentButton.addEventListener("click", AssignmentTab);
+    //assignmentButton.addEventListener("click", AssignmentTab);
     /*
     //Change to shortcut tab
     function ShortcutTab(){
