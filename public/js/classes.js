@@ -13,6 +13,16 @@ export class User{
         this.addElement(this.startTime,this.endTime, "empty");  //fills schedule map with hours:minute as key and a string empty.
     }
 
+    //Returns user's start time
+    getStartTime(){
+        return this.startTime;
+    }
+
+    //Returns user's end time
+    getEndTime(){
+        return this.endTime;
+    }
+
     //Returns today's date in the format "Tuesday 11/1"
     getCurrentDate(){
         let today = new Date();
@@ -96,17 +106,15 @@ export class Event{
     } 
 }
 
-export let user1 = new User("bob","123","9:30", "13:00");
-//console.log(user1.schedule);
-// event1 = new Event(1,1,1,1,[false,true,false,false,false,false,false]);
-// user1.addElement("10:00","11:30", event1);
-// console.log(user1.schedule);
-// console.log(user1.getCurrentDate());
+export let user1 = new User("Bob", "123", "9:30", "12:30");
+
 
 //exports the classes so we can use them in other js files
-// module.exports.User = User;
+//module.exports.User = User;
 // module.exports.Assignment = Assignment;
 // module.exports.Event = Event;
+
+
 
 //to import them, do:
     //let classes = require("./classes.js");
