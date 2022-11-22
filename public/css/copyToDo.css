@@ -80,10 +80,12 @@
     position: relative;
     display: inline-block;
     background-color: #7DEBDA;
-    width: 100%;
+    width: 99.3%;
     height: 20%;
     margin-bottom: 10%;
     border-radius: 35px; /*Curves edges*/
+    border-style: solid;
+
 }
 
 /*Properties for text saying "assignments" on Todo assignments tab*/

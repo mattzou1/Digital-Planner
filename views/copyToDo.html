@@ -171,6 +171,8 @@
         //Used on Holders
         //Gets data given in drag() and transfers it into the holder
         function drop(ev) {
+            let rowNum = null;
+
             ev.preventDefault();
             var data = ev.dataTransfer.getData("text");
 
@@ -181,9 +183,52 @@
                 var nodeCopy = document.getElementById(data).cloneNode(true);
   		        nodeCopy.id = data + "Copy" + idCounter;
                 idCounter++;
-                ev.target.appendChild(nodeCopy)
-            }
 
+                let table = ev.target.parentNode.parentNode;
+
+                ev.target.appendChild(nodeCopy)
+                
+                //cycle through cells looking for one with the new element
+                for (let row of table.rows) {
+                    for (let cell of row.cells) {
+                        try{
+                            if(cell.firstChild.id == nodeCopy.id){
+                                //find the child with the minutes listed
+                                let child4 = document.body.querySelector('#' + nodeCopy.id + ' :nth-child(4)')
+
+                                //Extract length of assignments
+                                let cellLengthStr = child4.innerHTML
+                                let length = cellLengthStr.match(/(\d+)/);
+                                length = length[0];
+
+                                //find length in cells not minutes
+                                length /= 30;
+                                console.log("length " + length)
+                                //there really shouldn't be a 0 length so will be set to 1 (or 30) for now
+                                if(length == 0){
+                                    length = 1;
+                                }
+                                    
+                                //print the row number
+                                rowNum = cell.parentNode.rowIndex;
+                                console.log("row " + rowNum);
+
+                                //remove cell(s) below one just added (if needed)
+                                if(length > 1){
+                                    for(let i = 1; i < length; i++){
+                                        table.rows[rowNum + i].deleteCell(1);
+                                    }
+                                }
+                                //extend cell with assignment length
+                                cell.rowSpan = length;
+
+                            }
+                        }
+                        //"catch" for when the cell has no ID
+                        catch{}
+                    }
+                }
+            }
             determineDraggable();
         }
 
@@ -194,6 +239,7 @@
             for(let i = 0; i < holders.length; i++){
                 if(holders[i].hasChildNodes()){
                     holders[i].setAttribute("ondragover", "");
+
                     //change assignment style settings for when it is transferred to calander
                     holders[i].firstChild.style.height = "100%";
                     holders[i].firstChild.style.position = "absolute"
