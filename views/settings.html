@@ -10,7 +10,7 @@
 <body>
     <div class="mainContainer">
 
-    <h1>Settings</h1>
+    <h1 id="h1">Settings</h1>
     
     <form action="/home" method="POST"> <!--Sends user back to home if submit is pressed-->
         <div>
@@ -51,14 +51,14 @@
 
         <div>
             <p>
-                <label for="themes">Theme:</label> <!--Drop-down menu for theme-->
-                <select name="Theme" id="themes"> 
-                    <option value="light">Light</option>
-                    <option value="dark">Dark</option>
-                    <option value="colors">Colors</option>
-                    <option value="pastel">Pastel</option>
+                <label for="themes">Theme:</label> 
+                <select name="themes" id="themes" onchange="themeHandler(this)"> 
+                    <option disabled hidden selected>Select</option>
+                    <option id="Default" value="Default">Default</option>
+                    <option id="Pastel" value="Pastel">Pastel</option>
+                    <option id="Matrix" value="Matrix">Matrix</option>
                 </select>
-                </p>
+            </p>
         </div>
        
         <div id="buttons">
@@ -66,6 +66,7 @@
                 
             <!--takes you back to login page-->
             <a href="/"><button type="button" id="logoutButton">Logout</button></a>
+
         </div>
 
         <!--Button to get out of settings if clicked accidentally:-->
@@ -75,5 +76,6 @@
 
 </div>
 
+<script src="js/themes_settings.js"></script> 
 </body>
 </html>
