@@ -13,7 +13,7 @@
     <script type="module" src="js/test.js"></script>
     <script type="module" src="js/removeAssignments.js"></script> 
     <script type="module" src="js/removeAssignments.js"></script>
-    <script type="module" src="js/increment_copyToDo.js"></script>
+    <script type="module" src="js/increment_popups.js"></script>
 </head>
 
 <body>
@@ -21,7 +21,7 @@
     <div class="container">
 
         <div id="Todo">
-            <h1>ToDo List</h1>
+            <h1 style="font-size:40px">ToDo List</h1>
             
             <div id="buttonsAndPlus">
                 <div id="addAssignment"></div>
@@ -31,7 +31,7 @@
         <div id="calendar">
             <div id="headerAndButtons">
                 <div id="calHeader">
-                    <h1 id="currentDate">Current Date Goes Here</h1>
+                    <h1 id="currentDate" style="font-size:40px">Current Date Goes Here</h1>
                 </div>
             </div>
 
@@ -40,8 +40,8 @@
                 <table>
                     <tbody>
                         <tr>
-                            <th>Time</th>
-                            <th id="dayOfWeek">Day of Week</th>
+                            <th style="font-size:25px">Time</th>
+                            <th id="dayOfWeek" style="font-size:25px">Day of Week</th>
                             <!-- <th>Tuesday</th>
                             <th>Wednesday</th>
                             <th>Thursday</th>
@@ -106,19 +106,19 @@
             <label for="Stime">Start time:</label>
             <select id="Stime" name="Stime" required></select>
             <!-- Dropdown menu for AM/PM selection -->
-            <select name="AMPM">
+            <!-- <select name="AMPM">
                 <option value="am">AM</option>
                 <option value="pm">PM</option>
-            </select><br><br>
+            </select><br><br> -->
     
             <!-- Dropdown menu that fills end time with times at 30min increments -->
             <label for="Etime">End time:</label>
             <select id="Etime" name="Etime" required></select>
             <!-- Dropdown menu for AM/PM selection -->
-            <select name="AMPM">
+            <!-- <select name="AMPM">
                 <option value="am">AM</option>
                 <option vaue="pm">PM</option>
-            </select><br><br>
+            </select><br><br> -->
         
             <div>Reoccuring days:</div><br>
             <input type="checkbox" id="Sunday">
@@ -155,6 +155,7 @@
     <script src="js/AddAssignmentPopup.js"></script>
 
     <script>
+        let idCounter = 1;
         //Make code so that it can't be dragged around when other type of card is being viewed
         function allowDrop(ev) {
                 ev.preventDefault();
@@ -172,7 +173,17 @@
         function drop(ev) {
             ev.preventDefault();
             var data = ev.dataTransfer.getData("text");
-            ev.target.appendChild(document.getElementById(data));
+
+            if(data.includes("Copy")){
+                ev.target.appendChild(document.getElementById(data));
+            }
+            else{
+                var nodeCopy = document.getElementById(data).cloneNode(true);
+  		        nodeCopy.id = data + "Copy" + idCounter;
+                idCounter++;
+                ev.target.appendChild(nodeCopy)
+            }
+
             determineDraggable();
         }
 
@@ -190,7 +201,6 @@
                     //IDK why but it doesn't work without this line:
                     holders[i].firstChild.style.bottom = "0%"
                     holders[i].style.position = "relative"
-
                 }
                 else{
                     holders[i].setAttribute("ondragover", "allowDrop(event)")
