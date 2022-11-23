@@ -3,6 +3,7 @@
 */
 
 const express = require("express"); 
+const fs = require('fs');
 
 
 // Creates an Express application: https://expressjs.com/en/4x/api.html#app
@@ -16,6 +17,8 @@ app.use('/css', express.static(__dirname + 'public/css'));
 app.use('/js', express.static(__dirname + 'public/js'));
 app.use('/img', express.static(__dirname + 'public/img'));
 
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // A route definition
 app.get("/", (req, res) => {
@@ -23,7 +26,32 @@ app.get("/", (req, res) => {
 });
 
 //creates new tab need to fix 
-app.post("/home", (req, res) => {
+app.post("/homeFromLogin", (req, res) => {
+    res.sendFile(__dirname + '/views/copyToDo.html');
+});
+
+app.post("/homeFromSignup", (req, res) => {
+    user = JSON.stringify({username:"Bob", password:"700"});
+    fs.readFile('./userDatabase.json', 'utf8', (err, data) => {
+        if (err) {
+          console.log(`Error reading file from disk: ${err}`)
+        } 
+        else {
+            // parse JSON string to JSON object
+            const databases = JSON.parse(data)
+            
+            // add a new record
+            databases.push(user);
+            //console.log(databases);
+      
+            // write new data back to the file
+            fs.writeFile('./userDatabase.json', JSON.stringify(databases, null, 4), err => {
+                if (err) {
+                    console.log(`Error writing file: ${err}`)
+                }
+            })
+        }
+    })
     res.sendFile(__dirname + '/views/copyToDo.html');
 });
 
