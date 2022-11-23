@@ -13,7 +13,7 @@
     <script type="module" src="js/test.js"></script>
     <script type="module" src="js/removeAssignments.js"></script> 
     <script type="module" src="js/removeAssignments.js"></script>
-    <script type="module" src="js/increment_copyToDo.js"></script>
+    <script type="module" src="js/increment_popups.js"></script>
 </head>
 
 <body>
@@ -21,7 +21,7 @@
     <div class="container">
 
         <div id="Todo">
-            <h1>ToDo List</h1>
+            <h1 style="font-size:40px">ToDo List</h1>
             
             <div id="buttonsAndPlus">
                 <div id="addAssignment"></div>
@@ -31,7 +31,7 @@
         <div id="calendar">
             <div id="headerAndButtons">
                 <div id="calHeader">
-                    <h1 id="currentDate">Current Date Goes Here</h1>
+                    <h1 id="currentDate" style="font-size:40px">Current Date Goes Here</h1>
                 </div>
             </div>
 
@@ -40,8 +40,8 @@
                 <table>
                     <tbody>
                         <tr>
-                            <th>Time</th>
-                            <th id="dayOfWeek">Day of Week</th>
+                            <th style="font-size:25px">Time</th>
+                            <th id="dayOfWeek" style="font-size:25px">Day of Week</th>
                             <!-- <th>Tuesday</th>
                             <th>Wednesday</th>
                             <th>Thursday</th>
@@ -106,19 +106,19 @@
             <label for="Stime">Start time:</label>
             <select id="Stime" name="Stime" required></select>
             <!-- Dropdown menu for AM/PM selection -->
-            <select name="AMPM">
+            <!-- <select name="AMPM">
                 <option value="am">AM</option>
                 <option value="pm">PM</option>
-            </select><br><br>
+            </select><br><br> -->
     
             <!-- Dropdown menu that fills end time with times at 30min increments -->
             <label for="Etime">End time:</label>
             <select id="Etime" name="Etime" required></select>
             <!-- Dropdown menu for AM/PM selection -->
-            <select name="AMPM">
+            <!-- <select name="AMPM">
                 <option value="am">AM</option>
                 <option vaue="pm">PM</option>
-            </select><br><br>
+            </select><br><br> -->
         
             <div>Reoccuring days:</div><br>
             <input type="checkbox" id="Sunday">
@@ -155,6 +155,7 @@
     <script src="js/AddAssignmentPopup.js"></script>
 
     <script>
+        let idCounter = 1;
         //Make code so that it can't be dragged around when other type of card is being viewed
         function allowDrop(ev) {
                 ev.preventDefault();
@@ -170,9 +171,64 @@
         //Used on Holders
         //Gets data given in drag() and transfers it into the holder
         function drop(ev) {
+            let rowNum = null;
+
             ev.preventDefault();
             var data = ev.dataTransfer.getData("text");
-            ev.target.appendChild(document.getElementById(data));
+
+            if(data.includes("Copy")){
+                ev.target.appendChild(document.getElementById(data));
+            }
+            else{
+                var nodeCopy = document.getElementById(data).cloneNode(true);
+  		        nodeCopy.id = data + "Copy" + idCounter;
+                idCounter++;
+
+                let table = ev.target.parentNode.parentNode;
+
+                ev.target.appendChild(nodeCopy)
+                
+                //cycle through cells looking for one with the new element
+                for (let row of table.rows) {
+                    for (let cell of row.cells) {
+                        try{
+                            if(cell.firstChild.id == nodeCopy.id){
+                                //find the child with the minutes listed
+                                let child4 = document.body.querySelector('#' + nodeCopy.id + ' :nth-child(4)')
+
+                                //Extract length of assignments
+                                let cellLengthStr = child4.innerHTML
+                                let length = cellLengthStr.match(/(\d+)/);
+                                length = length[0];
+
+                                //find length in cells not minutes
+                                length /= 30;
+                                console.log("length " + length)
+                                //there really shouldn't be a 0 length so will be set to 1 (or 30) for now
+                                if(length == 0){
+                                    length = 1;
+                                }
+                                    
+                                //print the row number
+                                rowNum = cell.parentNode.rowIndex;
+                                console.log("row " + rowNum);
+
+                                //remove cell(s) below one just added (if needed)
+                                if(length > 1){
+                                    for(let i = 1; i < length; i++){
+                                        table.rows[rowNum + i].deleteCell(1);
+                                    }
+                                }
+                                //extend cell with assignment length
+                                cell.rowSpan = length;
+
+                            }
+                        }
+                        //"catch" for when the cell has no ID
+                        catch{}
+                    }
+                }
+            }
             determineDraggable();
         }
 
@@ -183,6 +239,7 @@
             for(let i = 0; i < holders.length; i++){
                 if(holders[i].hasChildNodes()){
                     holders[i].setAttribute("ondragover", "");
+
                     //change assignment style settings for when it is transferred to calander
                     holders[i].firstChild.style.height = "100%";
                     holders[i].firstChild.style.position = "absolute"
@@ -190,7 +247,6 @@
                     //IDK why but it doesn't work without this line:
                     holders[i].firstChild.style.bottom = "0%"
                     holders[i].style.position = "relative"
-
                 }
                 else{
                     holders[i].setAttribute("ondragover", "allowDrop(event)")

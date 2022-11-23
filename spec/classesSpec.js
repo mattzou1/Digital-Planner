@@ -9,13 +9,19 @@ describe("Checks the schedule", () => {
     });
     it("prints out the schedule", () => {
         expect(user1.schedule.get("8:30")).toBe("empty");
-    })
+    });
     it("prints out the schedule", () => {
         expect(user1.schedule.get("9:30")).toBe(undefined);
-    })
+    });
+    it("gets user's start time", () => {
+        expect(user1.getStartTime()).toBe("8:30");
+    });
+    it("gets user's end time", () => {
+        expect(user1.getEndTime()).toBe("9:30");
+    });
 });
 
- describe("Clear schedule", () => {
+describe("Clear schedule", () => {
     beforeEach(() => {
         user2 = new classes.User("Rachel",1,"8:30", "13:30");
         //add an element to the schedule
@@ -46,19 +52,25 @@ describe("Add element", () => {
     });
  });
 
- xdescribe("Get current date", () => {
+ describe("Get current date", () => {
     beforeEach(() => {
         user4 = new classes.User("Joey",1,"8:30", "9:30");
     });
     it("has correct date", () => {
         //results of test change depending on what day it is
-        expect(user1.getCurrentDate()).toBe("Sunday 11/13");
+        expect(user1.getCurrentDate()).toBe("Monday 11/21");
     });
     it("has correct day of week", () => {
         //results of test change depending on what day it is
-        expect(user1.getDayOfWeek()).toBe("Sunday");
+        expect(user1.getDayOfWeek()).toBe("Monday");
+    });
+    it("has correct middle endian format", () => {
+        //results of test change depending on what day, month, year it is
+        expect(user1.getFormattedDate()).toBe("November 21, 2022");
     });
 });
+
+
 
 //Info about Jasmine tests:
     //can temporarily disable suite using xdescribe() and specs using xit()

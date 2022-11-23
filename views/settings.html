@@ -10,7 +10,7 @@
 <body>
     <div class="mainContainer">
 
-    <h1>Settings</h1>
+    <h1 id="h1">Settings</h1>
     
     <form action="/home" method="POST"> <!--Sends user back to home if submit is pressed-->
         <div>
@@ -31,10 +31,10 @@
             <p> <!--User can update the earliest time they want to be doing work-->
                 <label for="startWorkTime">Set Earliest Work Time:</label> 
                 <select id="startWorkTime" name="startWorkTime" required></select>
-                <select name="AMPM">
+                <!-- <select name="AMPM">
                     <option>AM</option>
                     <option>PM</option>
-                </select> 
+                </select>  -->
             </p>
         </div>
 
@@ -42,42 +42,40 @@
             <p> <!--User can update the latest time they want to be doing work-->
                 <label for="stopWorkTime">Set Latest Work Time:</label>
                 <select id="stopWorkTime" name="stopWorkTime" required></select>
-                <select name="AMPM">
+                <!-- <select name="AMPM">
                     <option>AM</option>
                     <option>PM</option>
-                </select> 
+                </select>  -->
             </p> 
         </div>
 
         <div>
             <p>
-                <label for="themes">Theme:</label> <!--Drop-down menu for theme-->
-                <select name="Theme" id="themes"> 
-                    <option value="light">Light</option>
-                    <option value="dark">Dark</option>
-                    <option value="colors">Colors</option>
-                    <option value="pastel">Pastel</option>
+                <label for="themes">Theme:</label> 
+                <select name="themes" id="themes" onchange="themeHandler(this)"> 
+                    <option disabled hidden selected>Select</option>
+                    <option id="Default" value="Default">Default</option>
+                    <option id="Pastel" value="Pastel">Pastel</option>
+                    <option id="Matrix" value="Matrix">Matrix</option>
                 </select>
-                </p>
+            </p>
         </div>
        
         <div id="buttons">
-            <input type="submit" value="Submit" id="submitButton"> 
-            <input type="button" value="Logout" id="logoutButton">
+            <input type="submit" value="Submit" id="submitButton">
+                
+            <!--takes you back to login page-->
+            <a href="/"><button type="button" id="logoutButton">Logout</button></a>
+
         </div>
 
-        
         <!--Button to get out of settings if clicked accidentally:-->
         <input type="submit" value="Home" id="escapeButton">
 
     </form>
 
-    
-    
-   
-    
-
 </div>
 
+<script src="js/themes_settings.js"></script> 
 </body>
 </html>
