@@ -6,7 +6,28 @@ document.addEventListener('DOMContentLoaded', (event) => {
         if(event.target.id == "removeButton"){
             //remove button pushed
             let targetElement = event.target
+            let table = document.body.querySelector("table");
             let assignment = targetElement.parentElement;
+            let cell = assignment.parentElement;
+
+
+            if(assignment.id.includes("Copy")){
+                //shrink back to 1 cell to then replace missing ones before deletion
+                cell.rowSpan = 1;
+
+                for (let row of table.rows) {
+                    if(row.cells[1] == undefined){
+                        let newCell = row.insertCell(-1)
+                        newCell.id = "calendarBox" + row.cells[0].innerHTML;
+                        newCell.setAttribute("class", "holder");
+                        newCell.setAttribute("ondrop", "drop(event)");
+                        newCell.setAttribute("ondragover", "allowDrop(event)");
+                    }
+                }
+
+
+
+            }
 
             if(assignment.style.display != "none" || assignment.className == "assignment"){
                 assignment.remove()
