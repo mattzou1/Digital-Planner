@@ -17,7 +17,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
                 for (let row of table.rows) {
                     if(row.cells[1] == undefined){
+                        //insert at the end of the row
                         let newCell = row.insertCell(-1)
+
+                        //add cell attributes
                         newCell.id = "calendarBox" + row.cells[0].innerHTML;
                         newCell.setAttribute("class", "holder");
                         newCell.setAttribute("ondrop", "drop(event)");
