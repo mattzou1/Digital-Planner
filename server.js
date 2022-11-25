@@ -26,12 +26,12 @@ app.get("/", (req, res) => {
 });
 
 //creates new tab need to fix 
-app.post("/homeFromLogin", (req, res) => {
+app.post("/home", (req, res) => {
     res.sendFile(__dirname + '/views/copyToDo.html');
 });
 
-app.post("/homeFromSignup", (req, res) => {
-    user = JSON.stringify({username:"Bob", password:"700"});
+app.post("/signup", (req, res) => {
+    user = req.body; 
     fs.readFile('./userDatabase.json', 'utf8', (err, data) => {
         if (err) {
           console.log(`Error reading file from disk: ${err}`)
