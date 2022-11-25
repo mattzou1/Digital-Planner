@@ -191,41 +191,55 @@
                 //cycle through cells looking for one with the new element
                 for (let row of table.rows) {
                     for (let cell of row.cells) {
-                        try{
-                            if(cell.firstChild.id == nodeCopy.id){
+                            //To catch if taken
+                            try{
+                            //make sure cell child has nodecopy id (to prevent errors)
+                            if(cell.querySelector("#" + nodeCopy.id) && cell.firstChild.id == nodeCopy.id){
+                                //set the row number
+                                rowNum = cell.parentNode.rowIndex;
+
                                 //find the child with the minutes listed
                                 let child4 = document.body.querySelector('#' + nodeCopy.id + ' :nth-child(4)')
 
                                 //Extract length of assignments
                                 let cellLengthStr = child4.innerHTML
                                 let length = cellLengthStr.match(/(\d+)/);
-                                length = length[0];
 
-                                //find length in cells not minutes
+                                //Because at the moment you can set length to nothing or 0
+                                if(length != null && length.length > 0) {
+                                    length = length[0];
+                                }
+
+                                //find length in cells, not minutes
                                 length /= 30;
-                                console.log("length " + length)
+
                                 //there really shouldn't be a 0 length so will be set to 1 (or 30) for now
                                 if(length == 0){
                                     length = 1;
                                 }
-                                    
-                                //print the row number
-                                rowNum = cell.parentNode.rowIndex;
-                                console.log("row " + rowNum);
 
-                                //remove cell(s) below one just added (if needed)
                                 if(length > 1){
+                                    //throw error if end of table is reached
                                     for(let i = 1; i < length; i++){
-                                        table.rows[rowNum + i].deleteCell(1);
+                                        if((rowNum + i) >= table.rows.length || table.rows[rowNum + i].cells[1].firstChild != null){
+                                            throw "cell taken"
+                                        }
+                                    }
+                                    for(let i = 1; i < length; i++){
+                                            //if in bounds remove cell(s) below one just added (if needed)
+                                            table.rows[rowNum + i].deleteCell(1);  
                                     }
                                 }
                                 //extend cell with assignment length
                                 cell.rowSpan = length;
-
                             }
                         }
-                        //"catch" for when the cell has no ID
-                        catch{}
+                        //print error about taken cell
+                        catch(taken){
+                            ev.target.removeChild(ev.target.firstChild)
+                            console.error(taken);
+                            alert("Cell taken")
+                        }
                     }
                 }
             }
