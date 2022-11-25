@@ -58,15 +58,15 @@ describe("Add element", () => {
     });
     it("has correct date", () => {
         //results of test change depending on what day it is
-        expect(user1.getCurrentDate()).toBe("Monday 11/21");
+        expect(user4.getCurrentDate()).toBe("Wednesday 11/23");
     });
     it("has correct day of week", () => {
         //results of test change depending on what day it is
-        expect(user1.getDayOfWeek()).toBe("Monday");
+        expect(user4.getDayOfWeek()).toBe("Wednesday");
     });
     it("has correct middle endian format", () => {
         //results of test change depending on what day, month, year it is
-        expect(user1.getFormattedDate()).toBe("November 21, 2022");
+        expect(user4.getFormattedDate()).toBe("November 23, 2022");
     });
 });
 
