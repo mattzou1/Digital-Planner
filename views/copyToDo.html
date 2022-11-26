@@ -199,10 +199,11 @@
                                 rowNum = cell.parentNode.rowIndex;
 
                                 //find the child with the minutes listed
-                                let child4 = document.body.querySelector('#' + nodeCopy.id + ' :nth-child(4)')
+                                //LOOK HERE IF ASSIGNMENT ALWAYS SHOWS UP AS 30MIN LONG (Probably looking for wrong child)
+                                let minutesChild = document.body.querySelector('#' + nodeCopy.id + ' :nth-child(5)')
 
                                 //Extract length of assignments
-                                let cellLengthStr = child4.innerHTML
+                                let cellLengthStr = minutesChild.innerHTML
                                 let length = cellLengthStr.match(/(\d+)/);
 
                                 //Because at the moment you can set length to nothing or 0
