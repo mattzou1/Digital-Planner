@@ -38,3 +38,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     });
 })
+
+import {User,user1,Assignment, Event, weekdays} from "./classes.js";
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    const editButtonWrapper = document.body;
+    editButtonWrapper.addEventListener("click", function(event){
+        //to make sure all removeButtons are detected it detects all clicks and continues if it is on #removeButton
+        if(event.target.id == "editButton") {
+            document.getElementById('removeButton').click();
+            openPopup();
+            document.getElementById("Aname").value = Assignment.name;
+        }
+    })
+})

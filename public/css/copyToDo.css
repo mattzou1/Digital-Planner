@@ -177,3 +177,7 @@ table, th, td {
     margin-top: 0px;
     float: right;
 }
+
+#editButton {
+    float: right;
+}
