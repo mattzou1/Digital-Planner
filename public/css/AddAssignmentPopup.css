@@ -14,8 +14,8 @@ body{
 	border: 1;
 	outline: auto;
 	cursor: pointer;
-  width: 100px;
-	font-size: 13px;
+  width: 8%;
+	font-size: 90%;
 	font-weight: 5000;
   text-align: center;
   transition: background-color 0.1s,
@@ -23,7 +23,7 @@ body{
     box-shadow 0.1s;
 
   position: absolute;
-  top: 9%;
+  top: 10%;
   left: 24%;
 }
 
