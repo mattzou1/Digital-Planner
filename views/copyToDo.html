@@ -193,7 +193,7 @@
                     for (let cell of row.cells) {
                             //To catch if taken
                             try{
-                            //make sure cell child has nodecopy id (to prevent errors)
+                            //make sure cell child has the nodecopy id (to prevent errors)
                             if(cell.querySelector("#" + nodeCopy.id) && cell.firstChild.id == nodeCopy.id){
                                 //set the row number
                                 rowNum = cell.parentNode.rowIndex;
@@ -220,14 +220,14 @@
                                 }
 
                                 if(length > 1){
-                                    //throw error if end of table is reached
+                                    //throw error if end of table is reached or of a cell is full
                                     for(let i = 1; i < length; i++){
                                         if((rowNum + i) >= table.rows.length || table.rows[rowNum + i].cells[1].firstChild != null){
                                             throw "cell taken"
                                         }
                                     }
+                                    //if in bounds remove cell(s) below one just added (if needed)
                                     for(let i = 1; i < length; i++){
-                                            //if in bounds remove cell(s) below one just added (if needed)
                                             table.rows[rowNum + i].deleteCell(1);  
                                     }
                                 }
