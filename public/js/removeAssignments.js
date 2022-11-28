@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         //to make sure all removeButtons are detected it detects all clicks and continues if it is on #removeButton
         if(event.target.id == "removeButton"){
             //remove button pushed
-            let targetElement = event.target
+            let targetElement = event.target;
             let table = document.body.querySelector("table");
             let assignment = targetElement.parentElement;
             let cell = assignment.parentElement;
@@ -68,7 +68,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 })
 
-import {User,user1,Assignment, Event, weekdays} from "./classes.js";
 
 document.addEventListener('DOMContentLoaded', (event) => {
     const editButtonWrapper = document.body;
@@ -76,7 +75,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
         if(event.target.id == "editButton") {
             document.getElementById('removeButton').click();
             openPopup();
-            document.getElementById("Aname").value = asmtName;
+            // need to fill the text fields of the popup with the previously inputted information. 
+            let targetElement = event.target;
+            let assignment = targetElement.parentElement;
+            document.getElementById("Aname").value = assignment.className;
         }
     })
 })

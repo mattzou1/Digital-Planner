@@ -1,6 +1,9 @@
 let popup = document.getElementById('assignment_popup');
 let event_popup = document.getElementById('event_popup');
 let page = document.getElementById('container');
+let a = document.getElementById('asmt');
+let e = document.getElementById('evnt');
+let s = document.getElementById('settings');
 
 function openPopup() {
   popup.classList.add('open-assignment_popup');
@@ -8,6 +11,9 @@ function openPopup() {
     filter: blur(5px);
   `;
   page.style.cssText = blurry;
+  a.style.cssText = blurry;
+  e.style.cssText = blurry;
+  s.style.cssText = blurry;
 }
 
 function closePopup() {
@@ -16,6 +22,9 @@ function closePopup() {
     filter: blur(0px);
   `;
   page.style.cssText = blurry;
+  a.style.cssText = blurry;
+  e.style.cssText = blurry;
+  s.style.cssText = blurry;
 }
 
 function openPopup2() {
@@ -24,6 +33,9 @@ function openPopup2() {
     filter: blur(5px);
   `;
   page.style.cssText = blurry;
+  a.style.cssText = blurry;
+  e.style.cssText = blurry;
+  s.style.cssText = blurry;
 }
 
 function closePopup2() {
@@ -32,6 +44,9 @@ function closePopup2() {
     filter: blur(0px);
   `;
   page.style.cssText = blurry;
+  a.style.cssText = blurry;
+  e.style.cssText = blurry;
+  s.style.cssText = blurry;
 }
 
 // function clearFields() {
