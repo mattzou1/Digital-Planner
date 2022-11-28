@@ -58,8 +58,8 @@
     
     </div>
 
-    <div class="shell" id="blur">
-        <button type="button" class="btn" onclick="openPopup()"></i> Add Assignment</button>
+    <div class="shell">
+        <button type="button" class="btn" id='asmt' onclick="openPopup()"></i> Add Assignment</button>
     
         <div class="assignment_popup" id="assignment_popup">
           <h2>Add an Assignment</h2>
@@ -86,7 +86,7 @@
           <button type="button" class="addbtn" onclick="closePopup();">Submit</button>
         </div>
     
-        <button type="button" class="btn2" onclick="openPopup2()">Add Event</button>
+        <button type="button" class="btn2" id='evnt' onclick="openPopup2()">Add Event</button>
         <div class="event_popup" id="event_popup">
           <h2>Add an event</h2>
           <form>
@@ -164,10 +164,36 @@
         //Checks if it is hovered over valid location and drop it if it is
         function drag(ev) {
             determineDraggable();
+            //if it's being dragged from the calander
+            if(ev.target.id.includes("Copy")){
+                let assignment = event.target.parentNode;
+                console.log("Dragging From Calander")
+                event.target.parentNode.rowSpan = "1";
+                
+                let run = true
+                let rowNum = assignment.parentNode.rowIndex
+                let table = document.body.querySelector("table")
+                while(run){
+                    //check time cell and see if theres a matching calander cell
+                    //if not add a new cell in the empty space
+                    rowNum++;
+                    console.log(rowNum)
+                    console.log(table.rows[rowNum].cells.length)
+                    if(table.rows[rowNum].cells.length < 2){
+                        table.rows[rowNum].insertCell(1)
+                        console.log("expanding")
+                    }
+                    else{
+                        console.log("ending")
+                        run = false;
+                    }
+                }
+            }
             ev.target.parentNode.setAttribute("ondragover", "allowDrop(event)")
             ev.dataTransfer.setData("text", ev.target.id);
-
         }
+
+
         //Used on Holders
         //Gets data given in drag() and transfers it into the holder
         function drop(ev) {
