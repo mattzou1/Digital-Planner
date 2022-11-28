@@ -7,6 +7,7 @@ let user = user1;
 let asscount = 1;
 
 function registerSubmitButtons(){
+    clearFields();
     let submitAssButton = document.querySelector(".addbtn");
     submitAssButton.addEventListener("click", function () {
         let ass1 = new Assignment(document.getElementById("Aname").value, document.getElementById("Description").value, document.getElementById("Ctime").value/*, document.getElementById("Shortcut").checked*/)

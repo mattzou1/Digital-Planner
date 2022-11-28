@@ -68,7 +68,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 })
 
-import {User,user1,Assignment, Event, weekdays} from "./classes.js";
 
 document.addEventListener('DOMContentLoaded', (event) => {
     const editButtonWrapper = document.body;
@@ -76,7 +75,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         if(event.target.id == "editButton") {
             document.getElementById('removeButton').click();
             openPopup();
-            document.getElementById("Aname").value = asmtName;
+            // need to fill the text fields of the popup with the previously inputted information. 
+            document.getElementById("Aname").value;
         }
     })
 })
