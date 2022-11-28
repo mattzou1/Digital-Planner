@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         //to make sure all removeButtons are detected it detects all clicks and continues if it is on #removeButton
         if(event.target.id == "removeButton"){
             //remove button pushed
-            let targetElement = event.target
+            let targetElement = event.target;
             let table = document.body.querySelector("table");
             let assignment = targetElement.parentElement;
             let cell = assignment.parentElement;
@@ -76,7 +76,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
             document.getElementById('removeButton').click();
             openPopup();
             // need to fill the text fields of the popup with the previously inputted information. 
-            document.getElementById("Aname").value;
+            let targetElement = event.target;
+            let assignment = targetElement.parentElement;
+            document.getElementById("Aname").value = assignment.className;
         }
     })
 })
