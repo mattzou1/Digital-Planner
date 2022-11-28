@@ -20,10 +20,12 @@ function registerSubmitButtons(){
 
     let submitEventButton = document.querySelector(".addbtn2");
     submitEventButton.addEventListener("click", function () {
-        const reoccuring = new Array(7); 
+        const reoccuring = new Map(); 
         for(let weekday of weekdays){
             if (weekday.checked) {
-                reoccuring.push(document.getElementById(weekday));
+                for(let i = 0; i < 7; i++) {
+                    reoccuring.set(weekday, i);
+                }
             }
         }
         let event1 = new Event(document.getElementById("Ename").value, document.getElementById("EventDescription").value, document.getElementById("Stime").value, document.getElementById("Etime").value, reoccuring)
