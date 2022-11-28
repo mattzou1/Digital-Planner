@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         if(event.target.id == "editButton") {
             document.getElementById('removeButton').click();
             openPopup();
-            //document.getElementById("Aname").value = this.Assignment.name;
+            document.getElementById("Aname").value = asmtName;
         }
     })
 })

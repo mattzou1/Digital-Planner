@@ -7,7 +7,6 @@ let user = user1;
 let asscount = 1;
 
 function registerSubmitButtons(){
-    clearFields();
     let submitAssButton = document.querySelector(".addbtn");
     submitAssButton.addEventListener("click", function () {
         let ass1 = new Assignment(document.getElementById("Aname").value, document.getElementById("Description").value, document.getElementById("Ctime").value/*, document.getElementById("Shortcut").checked*/)
@@ -21,9 +20,11 @@ function registerSubmitButtons(){
 
     let submitEventButton = document.querySelector(".addbtn2");
     submitEventButton.addEventListener("click", function () {
-        let reoccuring = []; 
+        const reoccuring = new Array(7); 
         for(let weekday of weekdays){
-            reoccuring.push(document.getElementById(weekday).checked);
+            if (weekday.checked) {
+                reoccuring.push(document.getElementById(weekday));
+            }
         }
         let event1 = new Event(document.getElementById("Ename").value, document.getElementById("EventDescription").value, document.getElementById("Stime").value, document.getElementById("Etime").value, reoccuring)
         user.addElement(event1.startTime, event1.stopTime, event1);
