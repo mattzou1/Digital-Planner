@@ -11,7 +11,7 @@
     <script type="module" src="js/copyToDo.js"></script>
     <script type="module" src="js/AddAssignmentEventData.js"></script>
     <script type="module" src="js/test.js"></script>
-    <script type="module" src="js/removeAssignments.js"></script> 
+    <script type="module" src="js/anyClick.js"></script> 
     <script type="module" src="js/increment_popups.js"></script>
 </head>
 
@@ -172,6 +172,7 @@
 
             //if it's being dragged from the calander
             if(ev.target.id.includes("Copy")){
+                //adjust size of assignment to its original spot
                 event.target.parentNode.rowSpan = "1";
 
                 while(run){
