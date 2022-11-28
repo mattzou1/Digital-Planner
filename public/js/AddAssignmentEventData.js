@@ -20,15 +20,12 @@ function registerSubmitButtons(){
 
     let submitEventButton = document.querySelector(".addbtn2");
     submitEventButton.addEventListener("click", function () {
-        const reoccuring = new Map(); 
+        let reoccuring = [];
         for(let weekday of weekdays){
-            if (weekday.checked) {
-                for(let i = 0; i < 7; i++) {
-                    reoccuring.set(weekday, i);
-                }
-            }
+            reoccuring.push(document.getElementById(weekday).checked);
         }
         let event1 = new Event(document.getElementById("Ename").value, document.getElementById("EventDescription").value, document.getElementById("Stime").value, document.getElementById("Etime").value, reoccuring)
+        console.log(event1);
         user.addElement(event1.startTime, event1.stopTime, event1);
         clearFields2();
         populateCalendar();

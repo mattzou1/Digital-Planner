@@ -35,8 +35,8 @@ for(let i = startHour; i < endHour; i++){
     newOption2.innerText = number2;
     
     //set value attribute of new option elements
-    newOption.setAttribute("value", "start" + number);
-    newOption2.setAttribute("value", "start" + number2);
+    newOption.setAttribute("value", number);
+    newOption2.setAttribute("value", number2);
 
     //console.log("Value: " + newOption.getAttribute("value"));
     //console.log("Value: " + newOption2.getAttribute("value"));
