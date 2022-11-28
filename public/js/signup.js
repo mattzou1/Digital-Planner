@@ -17,7 +17,7 @@ function registerPostButtonListener() {
             },
             body: JSON.stringify(user)
         });
-        // let result = await response.json();
-        // input.value = result.text;
+        //let result = await response.json();
+        //console.log(result);
     });
 }

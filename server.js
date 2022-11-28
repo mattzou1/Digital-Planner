@@ -52,7 +52,6 @@ app.post("/signup", (req, res) => {
             })
         }
     })
-    res.sendFile(__dirname + '/views/copyToDo.html');
 });
 
 app.get("/signup", (req, res) => {
