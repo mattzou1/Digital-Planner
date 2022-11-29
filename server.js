@@ -26,11 +26,32 @@ app.get("/", (req, res) => {
 });
 
 //creates new tab need to fix 
-app.post("/home", (req, res) => {
+app.get("/home", (req, res) => {
     res.sendFile(__dirname + '/views/copyToDo.html');
 });
 
-app.post("/signup", (req, res) => {
+app.post("/login", (req, res) => {
+    let username = req.body.username;
+    let password = req.body.password; 
+    fs.readFile('./userDatabase.json', 'utf8', (err, data) => {
+        if (err) {
+          console.log(`Error reading file from disk: ${err}`)
+        } 
+        else {
+            // parse JSON string to JSON object
+            const databases = JSON.parse(data)
+            let userdata = "false"; 
+            for(let user of databases){
+                if(user.username == username && user.password == password){
+                    userdata = user; 
+                }
+            }
+            res.send(userdata);
+        }
+    })
+});
+
+app.post("/createuser", (req, res) => {
     user = req.body; 
     fs.readFile('./userDatabase.json', 'utf8', (err, data) => {
         if (err) {
@@ -39,17 +60,25 @@ app.post("/signup", (req, res) => {
         else {
             // parse JSON string to JSON object
             const databases = JSON.parse(data)
-            
-            // add a new record
-            databases.push(user);
-            //console.log(databases);
-      
-            // write new data back to the file
-            fs.writeFile('./userDatabase.json', JSON.stringify(databases, null, 4), err => {
-                if (err) {
-                    console.log(`Error writing file: ${err}`)
+            let boo = "true";
+            for(let userdata of databases){
+                if(userdata.username == user.username){
+                    boo = "false";
                 }
-            })
+            }
+            if(boo == "true"){
+                // add a new record
+                databases.push(user);
+                //console.log(databases);
+      
+                // write new data back to the file
+                fs.writeFile('./userDatabase.json', JSON.stringify(databases, null, 4), err => {
+                    if (err) {
+                        console.log(`Error writing file: ${err}`)
+                    }
+                })
+            }
+            res.send(boo);
         }
     })
 });
@@ -61,8 +90,6 @@ app.get("/signup", (req, res) => {
 app.get("/settings", (req, res, html) => {
     res.sendFile(__dirname + '/views/settings.html');
 })
-
-app.use(express.json());
 
 // starts web server listening on localhost at port 3000
 app.listen(port, () => {

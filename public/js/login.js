@@ -2,28 +2,29 @@ import {User} from "./classes.js";
 window.addEventListener("DOMContentLoaded", registerPostButtonListener);
 
 function registerPostButtonListener() {
-    let button = document.getElementById("createAccount");
+    let button = document.getElementById("submit");
     button.addEventListener("click", async function (event) {
         event.preventDefault();
-        let username = document.getElementById("username");
+        let username = document.getElementById("userName");
         let password = document.getElementById("password");
-        let startTime = document.getElementById("studyStart");
-        let stopTime = document.getElementById("studyStop");
-        let user = new User(username.value,password.value,startTime.value,stopTime.value);
-        let url = "/createuser"
+        let url = "/login"
         let response = await fetch(url, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(user)
+            body: JSON.stringify({username: document.getElementById("userName").value, password: document.getElementById("password").value})
         });
         let result = await response.text(); 
-        if(result == "true"){
-            window.location.replace("/home");
+        result = JSON.parse(result);
+        if(result == false){
+            window.alert("Invalid username and password");
         }
         else{
-            window.alert("Username already taken");
+            //create user data from json
+            let user = result; 
+            window.location.replace("/home");
+            
         }
     });
 }

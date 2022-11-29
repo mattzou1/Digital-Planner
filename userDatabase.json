@@ -1,2 +1,18 @@
 [
+    {
+        "username": "noah",
+        "password": "ilovefortnite",
+        "startTime": "1:00",
+        "endTime": "1:00",
+        "assignments": [],
+        "schedule": {}
+    },
+    {
+        "username": "bob",
+        "password": "1234",
+        "startTime": "9:00",
+        "endTime": "20:00",
+        "assignments": [],
+        "schedule": {}
+    }
 ]
