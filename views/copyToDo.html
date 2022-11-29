@@ -11,8 +11,7 @@
     <script type="module" src="js/copyToDo.js"></script>
     <script type="module" src="js/AddAssignmentEventData.js"></script>
     <script type="module" src="js/test.js"></script>
-    <script type="module" src="js/removeAssignments.js"></script> 
-    <script type="module" src="js/removeAssignments.js"></script>
+    <script type="module" src="js/anyClick.js"></script> 
     <script type="module" src="js/increment_popups.js"></script>
     <script type="module" src="js/tomorrow.js"></script>
 </head>
@@ -70,8 +69,8 @@
     
     </div>
 
-    <div class="shell" id="blur">
-        <button type="button" class="btn" onclick="openPopup()"></i> Add Assignment</button>
+    <div class="shell">
+        <button type="button" class="btn" id='asmt' onclick="openPopup()"></i> Add Assignment</button>
     
         <div class="assignment_popup" id="assignment_popup">
           <h2>Add an Assignment</h2>
@@ -98,7 +97,7 @@
           <button type="button" class="addbtn" onclick="closePopup();">Submit</button>
         </div>
     
-        <button type="button" class="btn2" onclick="openPopup2()">Add Event</button>
+        <button type="button" class="btn2" id='evnt' onclick="openPopup2()">Add Event</button>
         <div class="event_popup" id="event_popup">
           <h2>Add an event</h2>
           <form>
@@ -176,86 +175,128 @@
         //Checks if it is hovered over valid location and drop it if it is
         function drag(ev) {
             determineDraggable();
+
+            let assignment = event.target.parentNode;
+            let run = true
+            let rowNum = assignment.parentNode.rowIndex
+            let rowNumOriginal = rowNum;
+            let table = document.body.querySelector("table")
+
+            //if it's being dragged from the calander
+            if(ev.target.id.includes("Copy")){
+                //adjust size of assignment to its original spot
+                event.target.parentNode.rowSpan = "1";
+
+                while(run){
+                    //increment row
+                    rowNum++;
+                    //if it is missing a cell (the assignment used to be there)
+                    if(table.rows[rowNum].cells.length < 2){
+                        //add a missing cell
+                        table.rows[rowNum].insertCell(1)
+
+                        let cell2 = table.rows[rowNum].cells[1];
+                        let time = table.rows[rowNum].cells[0].innerHTML;
+
+                        cell2.id = "calendarBox" + time; //create an id ad append the counter
+                        //added attributes to the calander boxes for dragging
+                        cell2.setAttribute("class", "holder");
+                        cell2.setAttribute("ondrop", "drop(event)")
+                        cell2.setAttribute("ondragover", "allowDrop(event)")
+                    }
+                    //otherwise quite loop because all cells have been filled
+                    else{
+                        run = false;
+                    }
+                }
+            }
             ev.target.parentNode.setAttribute("ondragover", "allowDrop(event)")
             ev.dataTransfer.setData("text", ev.target.id);
-
         }
+
+
         //Used on Holders
         //Gets data given in drag() and transfers it into the holder
         function drop(ev) {
             let rowNum = null;
 
             ev.preventDefault();
+
+            //get original assignments id
             var data = ev.dataTransfer.getData("text");
 
-            if(data.includes("Copy")){
-                ev.target.appendChild(document.getElementById(data));
+            //get ready to clone everything over
+            var nodeCopy = document.getElementById(data).cloneNode(true);
+            //add and increment assignemnt id
+            nodeCopy.id = data + "Copy" + idCounter;
+            idCounter++;
+
+            //if the assingment is being moved(asmt. already has copy in id) delete the original
+            let originalAssignment = document.body.querySelector("#" + data)
+            if(originalAssignment.id.includes("Copy")){
+                originalAssignment.parentElement.innerHTML = ""
             }
-            else{
-                var nodeCopy = document.getElementById(data).cloneNode(true);
-  		        nodeCopy.id = data + "Copy" + idCounter;
-                idCounter++;
 
-                let table = ev.target.parentNode.parentNode;
+            let table = ev.target.parentNode.parentNode;
 
-                ev.target.appendChild(nodeCopy)
-                
-                //cycle through cells looking for one with the new element
-                for (let row of table.rows) {
-                    for (let cell of row.cells) {
-                            //To catch if taken
-                            try{
-                            //make sure cell child has nodecopy id (to prevent errors)
-                            if(cell.querySelector("#" + nodeCopy.id) && cell.firstChild.id == nodeCopy.id){
-                                //set the row number
-                                rowNum = cell.parentNode.rowIndex;
+            ev.target.appendChild(nodeCopy)
+            
+            //cycle through cells looking for one with the new element
+            for (let row of table.rows) {
+                for (let cell of row.cells) {
+                        //To catch if taken
+                        try{
+                        //make sure cell child has the nodecopy id (to prevent errors)
+                        if(cell.querySelector("#" + nodeCopy.id) && cell.firstChild.id == nodeCopy.id){
+                            //set the row number
+                            rowNum = cell.parentNode.rowIndex;
 
-                                //find the child with the minutes listed
-                                //LOOK HERE IF ASSIGNMENT ALWAYS SHOWS UP AS 30MIN LONG (Probably looking for wrong child)
-                                let minutesChild = document.body.querySelector('#' + nodeCopy.id + ' :nth-child(5)')
+                            //find the child with the minutes listed
+                            //LOOK HERE IF ASSIGNMENT ALWAYS SHOWS UP AS 30MIN LONG (Probably looking for wrong child)
+                            let minutesChild = document.body.querySelector('#' + nodeCopy.id + ' :nth-child(5)')
 
-                                //Extract length of assignments
-                                let cellLengthStr = minutesChild.innerHTML
-                                let length = cellLengthStr.match(/(\d+)/);
+                            //Extract length of assignments
+                            let cellLengthStr = minutesChild.innerHTML
+                            let length = cellLengthStr.match(/(\d+)/);
 
-                                //Because at the moment you can set length to nothing or 0
-                                if(length != null && length.length > 0) {
-                                    length = length[0];
-                                }
-
-                                //find length in cells, not minutes
-                                length /= 30;
-
-                                //there really shouldn't be a 0 length so will be set to 1 (or 30) for now
-                                if(length == 0){
-                                    length = 1;
-                                }
-
-                                if(length > 1){
-                                    //throw error if end of table is reached
-                                    for(let i = 1; i < length; i++){
-                                        if((rowNum + i) >= table.rows.length || table.rows[rowNum + i].cells[1].firstChild != null){
-                                            throw "cell taken"
-                                        }
-                                    }
-                                    for(let i = 1; i < length; i++){
-                                            //if in bounds remove cell(s) below one just added (if needed)
-                                            table.rows[rowNum + i].deleteCell(1);  
-                                    }
-                                }
-                                //extend cell with assignment length
-                                cell.rowSpan = length;
+                            //Because at the moment you can set length to nothing or 0
+                            if(length != null && length.length > 0) {
+                                length = length[0];
                             }
+
+                            //find length in cells, not minutes
+                            length /= 30;
+
+                            //there really shouldn't be a 0 length so will be set to 1 (or 30) for now
+                            if(length == 0){
+                                length = 1;
+                            }
+
+                            if(length > 1){
+                                //throw error if end of table is reached or of a cell is full
+                                for(let i = 1; i < length; i++){
+                                    if((rowNum + i) >= table.rows.length || table.rows[rowNum + i].cells[1].firstChild != null){
+                                        throw "cell taken"
+                                    }
+                                }
+                                //if in bounds remove cell(s) below one just added (if needed)
+                                for(let i = 1; i < length; i++){
+                                        table.rows[rowNum + i].deleteCell(1);  
+                                }
+                            }
+                            //extend cell with assignment length
+                            cell.rowSpan = length;
                         }
-                        //print error about taken cell
-                        catch(taken){
-                            ev.target.removeChild(ev.target.firstChild)
-                            console.error(taken);
-                            alert("Cell taken")
-                        }
+                    }
+                    //print error about taken cell
+                    catch(taken){
+                        ev.target.removeChild(ev.target.firstChild)
+                        console.error(taken);
+                        alert("Cell taken")
                     }
                 }
             }
+
             determineDraggable();
         }
 

@@ -13,14 +13,14 @@
 	font-size: 13px;
 	font-weight: 500;
   margin-left: 10px;
-	width: 100px;
+	width: 7%;
 	transition: background-color 0.1s,
 		color 0.1s,
 		box-shadow 0.1s;
 	
 	position: absolute;
-	top: 6%;
-	left: 39%;
+	top: 4vw;
+	left: 38vw;
 }
 
 .btn2:hover {

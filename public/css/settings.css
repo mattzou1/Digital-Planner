@@ -50,18 +50,28 @@ form > div { /*Deals with div elements in form*/
 form > #escapeButton{
     display: flex;
     float: right;
-    margin-top: -390px;
+    margin-top: -392px;
     margin-right: 35px;
-    background-color: white;
-    border: 1px black solid;
-    color: black;
-    border-radius: 5px;
-    height: 7%;
-
+    padding: 0px 10px;
+    background: white;
+    color: #007E6F;
+    border: 1;
+    border-radius: 2px;
+    outline: auto;
+    cursor: pointer;
+    width: 10%;
+    height: 6%;
+    font-size: 90%;
+	font-weight: 5000;
+    text-align: center;
+    transition: background-color 0.1s,
+        color 0.1s,
+        box-shadow 0.1s;
 }
 
 #escapeButton:hover {
     background-color: lightcoral;
+    color: white;
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 1.0);
 }
 

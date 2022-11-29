@@ -6,7 +6,7 @@ body{
  * Styling for the Add Assignment button
  */
 .btn {
-	padding: 10px 20px;
+	padding: 10px 15px;
 	background: white;
   color: #007E6F;
   border-width: 0px;
@@ -14,7 +14,7 @@ body{
 	border: 1;
 	outline: auto;
 	cursor: pointer;
-  width: 8%;
+  width: 7%;
 	font-size: 90%;
 	font-weight: 5000;
   text-align: center;
@@ -23,8 +23,8 @@ body{
     box-shadow 0.1s;
 
   position: absolute;
-  top: 10%;
-  left: 24%;
+  top: 4vw;
+  left: 24vw;
 }
 
 .btn:hover {

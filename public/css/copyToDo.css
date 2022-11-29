@@ -191,10 +191,10 @@ table, th, td {
  */
 .settings{
     position: absolute;
-    top: 7%;
-    left: 92%;
-    width: 40px;
-    height: 40px;
+    top: 4vw;
+    left: 93vw;
+    width: 3vw;
+    height: 3vw;
     border-radius: 2px;
     background: white;
     color: #007E6F;
@@ -214,10 +214,11 @@ table, th, td {
 /*Properties for remove buttons*/
 #removeButton{
     margin: 30px;
-    margin-top: 0px;
+    margin-top: 1px;
     float: right;
 }
 
 #editButton {
+    margin-top: 1px;
     float: right;
 }
