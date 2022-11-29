@@ -1,6 +1,18 @@
 
 body{
-    background-color: lightcoral;
+    --main-dark: rgb(6, 40, 112); 
+    --background-color: lightcoral; /*variable for light background color theme*/
+    --white: white;
+    --green: #007E6F;
+
+    background-color: var(--background-color);
+}
+
+/*New colors for when switching to dark theme*/
+body.dark{
+    --background-color: black; /*variable for light background color theme*/
+    --main-dark: rgb(77, 130, 243); 
+    --green: #64d6c8;
 }
 
 .mainContainer{
@@ -11,7 +23,7 @@ body{
     flex-direction: column; 
     width: 600px;
     height: 450px;
-    background-color: white;
+    background-color:var(--white);
     border-radius: 30px;
     padding: 5px;
 }
@@ -21,7 +33,7 @@ form{
     height: 430px;
     text-align:center;
     padding: 5px;
-    background-color: white;
+    background-color: var(--white);
     border-radius: 30px;
 }
 
@@ -29,14 +41,14 @@ h1{ /*Makes h1 header in the center*/
     text-align:center;
     font-size: 25pt;
 
-    background-color: #007E6F;
-    color: white;
+    color: var(--white);
+    background-color: var(--green);
     width:550px;
     height: 40px;
 }
 
 form > div { /*Deals with div elements in form*/
-    border: 1px white solid;
+    border: 1px var(--white) solid;
     border-radius: 35px;
     padding: 2px;
 }
@@ -49,7 +61,7 @@ form > div { /*Deals with div elements in form*/
 form > #escapeButton{
     display: flex;
     float: right;
-    margin-top: -392px;
+    margin-top: -360px;
     margin-right: 35px;
     padding: 0px 10px;
     background: white;
@@ -69,8 +81,8 @@ form > #escapeButton{
 }
 
 #escapeButton:hover {
-    background-color: lightcoral;
-    color: white;
+    background-color: var(--background-color);
+    color: var(--white);
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 1.0);
 }
 
@@ -78,8 +90,8 @@ form > #escapeButton{
     width: 200px;
     border-radius: 10px;
     padding: 10px 10px;
-    background-color: #007E6F;
-    color: white;
+    background-color: var(--green);
+    color: var(--white);
     border: 1px black solid;
 }
 
@@ -87,8 +99,8 @@ form > #escapeButton{
     width: 200px;
     padding: 10px 10px;
     border-radius: 10px;
-    background-color: #007E6F;
-    color: white;
+    background-color: var(--green);
+    color: var(--white);
     border: 1px black solid;
 }
 
@@ -101,6 +113,49 @@ form > #escapeButton{
     background-color: #41B3A3;
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 1.0);
 }
+
+.mainTheme{
+    width: 40px;
+    height: 20px;
+    border-radius: 35px;
+    cursor: pointer;
+}
+
+.inputTheme{
+    display:none; /*Hides checkbox itself*/
+}
+
+.divTheme{
+    display: inline-block;
+    position: relative; 
+    width: 40px;
+    height: 20px;
+    border-radius: 35px;
+    background-color: rgb(215, 211, 211);
+    transition: background 0.2s;
+}
+
+.inputTheme:checked ~ .divTheme { /*If input is checked, select its simbling element which is divTheme*/
+    background-color: greenyellow;
+}
+
+/*Code for the circle*/
+.divTheme::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    border-radius: 35px;
+    background: var(--main-dark);
+    transition: transform 0.2s;
+}
+
+.inputTheme:checked ~ .divTheme::after { /*For moving the actual circle*/
+    transform:translateX(20px); /*move 20px to right side */
+}
+
 
 /*
 

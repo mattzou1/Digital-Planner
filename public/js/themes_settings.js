@@ -1,5 +1,18 @@
+
+let checkbox = document.body.querySelector("#theme"); //Gets the theme checkbox
+
+checkbox.addEventListener("click", checkboxHandler);
+
+function checkboxHandler(){
+    document.body.classList.toggle('dark');
+
+}
+
+
+
 //changes themes of settings 
 //event listener for if drop down menu got a one
+
 
 
 
