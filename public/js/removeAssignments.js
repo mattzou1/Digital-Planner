@@ -1,3 +1,5 @@
+import {User,user1,Assignment, Event, weekdays} from "./classes.js";
+
 document.addEventListener('DOMContentLoaded', (event) => {
 
     const removeButtonWrapper = document.body;
@@ -68,17 +70,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 })
 
-
 document.addEventListener('DOMContentLoaded', (event) => {
     const editButtonWrapper = document.body;
     editButtonWrapper.addEventListener("click", function(event){
         if(event.target.id == "editButton") {
             document.getElementById('removeButton').click();
             openPopup();
-            // need to fill the text fields of the popup with the previously inputted information. 
-            let targetElement = event.target;
-            let assignment = targetElement.parentElement;
-            document.getElementById("Aname").value = assignment.className;
+            // fills the text fields with the previous assignment information. 
+            document.getElementById("Aname").value = user1.assignments[0].name;
+            document.getElementById("reading").checked = false;
+            document.getElementById("Description").value = user1.assignments[0].description;
+            document.getElementById("Ctime").value = user1.assignments[0].completionTime;
+            // need to correspond the edit button with the assignment. 
         }
     })
 })

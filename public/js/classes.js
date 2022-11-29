@@ -41,7 +41,14 @@ export class User{
         return `${month} ${day}, ${year}`;
     }
 
-    //function that returns the current day of the week
+    // //Returns tomorrow's date
+    // getTomorrow(today){
+    //     //let today = new Date();
+    //     let dayOfWeek = weekdays[today.getDay() + 1];
+    //     return dayOfWeek;
+    // }
+
+    //Returns the current day of the week in formate "Tuesday"
     getDayOfWeek(){
         let today = new Date();
         let dayOfWeek = weekdays[today.getDay()];
@@ -85,7 +92,7 @@ export class Assignment{
         //completion time is the time it will take the user to complete the assignment,
         //which they enter themselves
         this.completionTime = completionTime;
-            //this.shortcut = shor tcut; 
+        //this.shortcut = shortcut; 
         this.ifDragged = false; 
     } 
 }
