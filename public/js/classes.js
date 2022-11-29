@@ -92,7 +92,7 @@ export class Assignment{
         //completion time is the time it will take the user to complete the assignment,
         //which they enter themselves
         this.completionTime = completionTime;
-            //this.shortcut = shor tcut; 
+        //this.shortcut = shortcut; 
         this.ifDragged = false; 
     } 
 }
