@@ -5,7 +5,7 @@ import {User,user1,Assignment, Event} from "./classes.js";
 let table = document.body.querySelector("table"); //get table
 //remove weird empty second row
 table.deleteRow(1)
-//table.style.width = "100%"; //set table width
+table.style.width = "100%"; //set table width
 //table.style.height= "100px" //set table height
 document.body.querySelector("tr").style.height = "50px"; //set header height 
 //document.body.querySelector("#dayOfWeek").style.font-size = "1.2em"; //increase header font
