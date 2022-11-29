@@ -41,10 +41,10 @@ describe("Add element", () => {
     it("check the event", () => {
         expect(user3.schedule.get("8:30")).toBe("empty");
     });
-    it("check the event", () => {
+    it("check the event is scheduled", () => {
         expect(user3.schedule.get("9:30")).toBe("Drinking tea");
     });
-    it("check the event", () => {
+    it("check the event is scheduled", () => {
         expect(user3.schedule.get("10:00")).toBe("Drinking tea");
     });
     it("check the event", () => {
@@ -52,21 +52,22 @@ describe("Add element", () => {
     });
  });
 
+ //results of test change depending on what day it is
  describe("Get current date", () => {
     beforeEach(() => {
         user4 = new classes.User("Joey",1,"8:30", "9:30");
     });
     it("has correct date", () => {
-        //results of test change depending on what day it is
-        expect(user4.getCurrentDate()).toBe("Wednesday 11/23");
+        expect(user4.getCurrentDate()).toBe("Monday 11/28");
     });
     it("has correct day of week", () => {
-        //results of test change depending on what day it is
-        expect(user4.getDayOfWeek()).toBe("Wednesday");
+        expect(user4.getDayOfWeek()).toBe("Monday");
     });
     it("has correct middle endian format", () => {
-        //results of test change depending on what day, month, year it is
-        expect(user4.getFormattedDate()).toBe("November 23, 2022");
+        expect(user4.getFormattedDate()).toBe("November 28, 2022");
+    });
+    it("gets tomorrow's day of week", () => {
+        expect(user4.getTomorrow()).toBe("Tuesday");
     });
 });
 
