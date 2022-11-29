@@ -1,88 +1,92 @@
 //changes themes of settings 
 //event listener for if drop down menu got a one
 
-function themeHandler(event){
-    let choice = event.value;
 
-    let ran1 = 0; 
-    let ran2 = 0; 
-    let ran3 = 0;
 
-    if (choice == "Default"){
-        document.body.style.background = "lightcoral";
-        document.body.querySelector("#escapeButton").style.background = "white";
-        document.body.querySelector("#h1").style.background = "#007E6F";
-        document.body.querySelector("#logoutButton").style.background = "#007E6F";
-        document.body.querySelector("#submitButton").style.background = "#007E6F";
-    }
-    if (choice == "Pastel"){
-        ran1 = 190;
-        ran2 = 190;
-        ran3 = 247;
-        document.body.style.background = "rgb(" + ran1 + ", " + ran2 + ", " +  ran3 + ")";
-        document.body.querySelector("#escapeButton").style.background = "white";
-        document.body.querySelector("#logoutButton").style.background = "#bbfcdd";
-        document.body.querySelector("#submitButton").style.background = "#bbfcdd";
-        document.body.querySelector("#h1").style.background = "#bbfcdd";
-        document.body.querySelector("#h1").style.color = "black";
-        document.body.querySelector("#logoutButton").style.color = "black";
-        document.body.querySelector("#submitButton").style.color = "black";
+// function themeHandler(event){
+//     let choice = event.value;
 
-    }
-    if (choice == "Matrix"){
-        ran1 = 0;
-        ran2 = 0;
-        ran3 = 0;
-        document.body.style.background = "rgb(" + ran1 + ", " + ran2 + ", " +  ran3 + ")";
-        document.body.querySelector("#escapeButton").style.background = "white";
-        document.body.querySelector("#logoutButton").style.background = "#5fe868";
-        document.body.querySelector("#submitButton").style.background = "#5fe868";
-        document.body.querySelector("#h1").style.background = "#5fe868";
-        document.body.querySelector("#h1").style.color = "black";
-        document.body.querySelector("#logoutButton").style.color = "black";
-        document.body.querySelector("#submitButton").style.color = "black";
+//     let ran1 = 0; 
+//     let ran2 = 0; 
+//     let ran3 = 0;
 
-    }
-    
-}
+//     if (choice == "Default"){
+//         document.body.style.background = "lightcoral";
+//         document.body.querySelector("#escapeButton").style.background = "white";
+//         document.body.querySelector("#h1").style.background = "#007E6F";
+//         document.body.querySelector("#logoutButton").style.background = "#007E6F";
+//         document.body.querySelector("#submitButton").style.background = "#007E6F";
+//     }
+//     if (choice == "Pastel"){
+//         ran1 = 190;
+//         ran2 = 190;
+//         ran3 = 247;
+//         document.body.style.background = "rgb(" + ran1 + ", " + ran2 + ", " +  ran3 + ")";
+//         document.body.querySelector("#escapeButton").style.background = "white";
+//         document.body.querySelector("#logoutButton").style.background = "#bbfcdd";
+//         document.body.querySelector("#submitButton").style.background = "#bbfcdd";
+//         document.body.querySelector("#h1").style.background = "#bbfcdd";
+//         document.body.querySelector("#h1").style.color = "black";
+//         document.body.querySelector("#logoutButton").style.color = "black";
+//         document.body.querySelector("#submitButton").style.color = "black";
 
-function mouseIn(event){
-    let choice = event.value;
+//     }
+//     if (choice == "Matrix"){
+//         ran1 = 0;
+//         ran2 = 0;
+//         ran3 = 0;
+//         document.body.style.background = "rgb(" + ran1 + ", " + ran2 + ", " +  ran3 + ")";
+//         document.body.querySelector("#escapeButton").style.background = "white";
+//         document.body.querySelector("#logoutButton").style.background = "#5fe868";
+//         document.body.querySelector("#submitButton").style.background = "#5fe868";
+//         document.body.querySelector("#h1").style.background = "#5fe868";
+//         document.body.querySelector("#h1").style.color = "black";
+//         document.body.querySelector("#logoutButton").style.color = "black";
+//         document.body.querySelector("#submitButton").style.color = "black";
+//     }
 
-    if (choice == "default"){
-        document.body.querySelector("#logoutButton").style.background = "#41B3A3";
-        document.body.querySelector("#submitButton").style.background = "#41B3A3"; 
-    }
-    if (choice == "one"){
-        document.body.querySelector("#logoutButton").style.background = "black";
-        document.body.querySelector("#submitButton").style.background = "black"; 
+// }
 
-    }
-    if (choice == "two"){
-        document.body.querySelector("#logoutButton").style.background = "blue";
-        document.body.querySelector("#submitButton").style.background = "blue"; 
-    }
+//if submit is pressed, settings should be changed 
 
-}
 
-function mouseOut(event){
-    let choice = event.value;
+// function mouseIn(event){
+//     let choice = event.value;
 
-    if (choice == "default"){
-        document.body.querySelector("#logoutButton").style.background = "#007E6F";
-        document.body.querySelector("#submitButton").style.background = "#007E6F";
-    }
-    if (choice == "one"){
-        document.body.querySelector("#logoutButton").style.background = "black";
-        document.body.querySelector("#submitButton").style.background = "black"; 
+//     if (choice == "default"){
+//         document.body.querySelector("#logoutButton").style.background = "#41B3A3";
+//         document.body.querySelector("#submitButton").style.background = "#41B3A3"; 
+//     }
+//     if (choice == "one"){
+//         document.body.querySelector("#logoutButton").style.background = "black";
+//         document.body.querySelector("#submitButton").style.background = "black"; 
 
-    }
-    if (choice == "two"){
-        document.body.querySelector("#logoutButton").style.background = "blue";
-        document.body.querySelector("#submitButton").style.background = "blue"; 
-    }
+//     }
+//     if (choice == "two"){
+//         document.body.querySelector("#logoutButton").style.background = "blue";
+//         document.body.querySelector("#submitButton").style.background = "blue"; 
+//     }
 
-}
+// }
+
+// function mouseOut(event){
+//     let choice = event.value;
+
+//     if (choice == "default"){
+//         document.body.querySelector("#logoutButton").style.background = "#007E6F";
+//         document.body.querySelector("#submitButton").style.background = "#007E6F";
+//     }
+//     if (choice == "one"){
+//         document.body.querySelector("#logoutButton").style.background = "black";
+//         document.body.querySelector("#submitButton").style.background = "black"; 
+
+//     }
+//     if (choice == "two"){
+//         document.body.querySelector("#logoutButton").style.background = "blue";
+//         document.body.querySelector("#submitButton").style.background = "blue"; 
+//     }
+
+// }
 
 
 
