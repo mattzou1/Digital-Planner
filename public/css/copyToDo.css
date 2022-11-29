@@ -43,6 +43,46 @@
     float: right;
 }
 
+/*Properties for the tomorrow and back buttons on calendar*/
+#dateButtons{
+    display: flex;
+    justify-content: space-between; 
+    flex-direction: row-reverse;
+    align-items: center;
+    margin-right: 6%;
+    margin-left: 2%;
+}
+
+/*Properties for 'tomorrow' button on calendar*/
+#tmrButton{
+    /* position: relative;
+    top: 40px;
+    left: 720px; */
+    padding: 5px;
+    background-color: #7db4eb;
+}
+
+#tmrButton:hover {
+    background-color: lightcoral;
+    color: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 1.0);
+}
+
+/*Properties for 'back' button on calendar*/
+#backButton{
+    /* position: relative;
+    top: 35px;
+    left: 100px; */
+    padding: 5px;
+    background-color: #7db4eb;
+}
+
+#backButton:hover {
+    background-color: lightcoral;
+    color: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 1.0);
+}
+
 /*Properties for left hand side Todo section*/
 #Todo{
     background-color: lightcoral; 
