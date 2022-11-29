@@ -2,7 +2,7 @@
 #table{
     background-color:#7db4eb;
     width: 95%;
-    height: auto;
+    height: 500px;
     max-height: 83%;
     margin: 2%;
     overflow-y: auto;
@@ -41,6 +41,46 @@
     width: 80%;
     height: 20%;
     float: right;
+}
+
+/*Properties for the tomorrow and back buttons on calendar*/
+#dateButtons{
+    display: flex;
+    justify-content: space-between; 
+    flex-direction: row-reverse;
+    align-items: center;
+    margin-right: 6%;
+    margin-left: 2%;
+}
+
+/*Properties for 'tomorrow' button on calendar*/
+#tmrButton{
+    /* position: relative;
+    top: 40px;
+    left: 720px; */
+    padding: 5px;
+    background-color: #7db4eb;
+}
+
+#tmrButton:hover {
+    background-color: lightcoral;
+    color: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 1.0);
+}
+
+/*Properties for 'back' button on calendar*/
+#backButton{
+    /* position: relative;
+    top: 35px;
+    left: 100px; */
+    padding: 5px;
+    background-color: #7db4eb;
+}
+
+#backButton:hover {
+    background-color: lightcoral;
+    color: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 1.0);
 }
 
 /*Properties for left hand side Todo section*/
@@ -151,10 +191,10 @@ table, th, td {
  */
 .settings{
     position: absolute;
-    top: 7%;
-    left: 92%;
-    width: 40px;
-    height: 40px;
+    top: 4vw;
+    left: 93vw;
+    width: 3vw;
+    height: 3vw;
     border-radius: 2px;
     background: white;
     color: #007E6F;
@@ -174,10 +214,11 @@ table, th, td {
 /*Properties for remove buttons*/
 #removeButton{
     margin: 30px;
-    margin-top: 0px;
+    margin-top: 1px;
     float: right;
 }
 
 #editButton {
+    margin-top: 1px;
     float: right;
 }
