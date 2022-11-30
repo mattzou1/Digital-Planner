@@ -41,13 +41,6 @@ export class User{
         return `${month} ${day}, ${year}`;
     }
 
-    // //Returns tomorrow's date
-    // getTomorrow(today){
-    //     //let today = new Date();
-    //     let dayOfWeek = weekdays[today.getDay() + 1];
-    //     return dayOfWeek;
-    // }
-
     //Returns the current day of the week in formate "Tuesday"
     getDayOfWeek(){
         let today = new Date();
