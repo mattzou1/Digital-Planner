@@ -12,8 +12,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             let assignment = targetElement.parentElement;
             let cell = assignment.parentElement;
 
-
-            if(assignment.id.includes("Copy")){
+            if(assignment.id.includes("Copy") || assignment.className == "event"){
                 //shrink back to 1 cell to then replace missing ones before deletion
                 cell.rowSpan = 1;
 
