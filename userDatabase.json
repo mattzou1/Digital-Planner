@@ -38,5 +38,13 @@
         "endTime": "1:00",
         "assignments": [],
         "schedule": {}
+    },
+    {
+        "username": "David",
+        "password": "David!",
+        "startTime": "8:00",
+        "endTime": "20:00",
+        "assignments": [],
+        "schedule": {}
     }
 ]

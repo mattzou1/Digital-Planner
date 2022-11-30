@@ -1,6 +1,6 @@
 /*Properties for where table will be*/
 #table{
-    background-color:#7db4eb;
+    background-color:#bfe0f9;
     width: 95%;
     height: 500px;
     max-height: 83%;
@@ -24,6 +24,8 @@
     border-radius: 35px; /*Makes edges curved*/
     width: 900px;
     height: 700px;
+    border-style: solid;
+    border-width: 5px;
 }
 
 /*Properties for the header and event button on calendar*/
@@ -59,7 +61,7 @@
     top: 40px;
     left: 720px; */
     padding: 5px;
-    background-color: #7db4eb;
+    background-color: #bfe0f9;
 }
 
 #tmrButton:hover {
@@ -74,7 +76,7 @@
     top: 35px;
     left: 100px; */
     padding: 5px;
-    background-color: #7db4eb;
+    background-color: #bfe0f9;
 }
 
 #backButton:hover {
@@ -91,6 +93,8 @@
     width: 450px; 
     height: 700px;
     overflow: auto;
+    border-style: solid;
+    border-width: 5px;
 }
 
 /*Properties for header on Todo*/
@@ -168,6 +172,7 @@
 
 body{
     margin: 0%;
+    background-color: rgb(141, 249, 245);
 }
 
 /*Properties for the table*/
@@ -241,6 +246,6 @@ table, th, td {
 
 #editButton:hover {
     background-color: lightcoral;
-    color: white;
+    color: rgb(255, 255, 255);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 1.0);
 }
