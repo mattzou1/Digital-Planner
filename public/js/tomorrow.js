@@ -10,8 +10,14 @@ function handler(){ //event handler for after DOM is loaded
 
     let date = document.querySelector("#dayOfWeek");
 
+    let calheader = document.body.querySelector("#currentDate");
+
+    //create array
+    let nums = [0,1,2,3,4,5,6];
+    //0 is Sunday... 6 is Saturday
+
     let today = new Date();
-    let num = today.getDay() + 1;
+    let num = today.getDay();
 
     //if tomorrow button is clicked
     tmrButton.addEventListener("click", function() {
@@ -20,18 +26,16 @@ function handler(){ //event handler for after DOM is loaded
         //console.log(user1.getTomorrow());
 
         //console.log(weekdays[num]);
-        //update date to tomorrow
-        date.innerHTML = weekdays[num];
-        console.log(weekdays[num]);
 
-        num = num + 1;
-        
         if(num > 6){
-            num = 0;
+             num = -1;
         }
 
-        // let today = new Date();
-        // date.innerHTML = user1.getTomorrow(today);
+        //update date to tomorrow
+        date.innerHTML = weekdays[nums[num + 1]];
+        console.log(weekdays[nums[num + 1]]);
+
+        num = num + 1;
     
         let newDate = today.setDate(today.getDate() + 1);
         today = new Date(newDate);
@@ -41,83 +45,63 @@ function handler(){ //event handler for after DOM is loaded
         let month = today.toLocaleString("default", { month: "long"});
         let year = today.getFullYear();
         
-        let calheader = document.body.querySelector("#currentDate");
         calheader.innerHTML = `${month} ${day}, ${year}`;
 
+        console.log("num: " + num);
         //clear all events from calendar
         //keep repeating events
         
     });
 
-    //make 'back' button to go back to original date
-
     //get the back button
     let backButton = document.querySelector("#backButton");
-    
-    //num = num - 1;
-    //if back button is clicked
-    //back button just goes back to today's date
+
     backButton.addEventListener("click", function() {
-        //update date to today
-        date.innerHTML = user1.getDayOfWeek();
-        
-        //update cal header
-        let calheader = document.body.querySelector("#currentDate");
-        calheader.innerHTML = user1.getFormattedDate();
-
-        //Work in Progress:
-        // num = num - 1;
-        // console.log("num: " + num);
-
-        // let date = document.querySelector("#dayOfWeek");
-
-        // if(num === 0){
-        //     //add to num
-        //     num = num + 1;
-
-        //     //update date to today
-        //     date.innerHTML = weekdays[num];
-
-        //     num = 6;
-        // }
-        // else if(num > 0){
-        //     //subtract from num
-        //     //get whatever day user scrolled to
-        //     //console.log("day scrolled to: " + weekdays[num]);
-
-        //     //go back by one day
+        // if(num < 7 && num > 0){
         //     num = num - 1;
-        //     console.log("new num: " + num);
-
-        //     //update date
         //     date.innerHTML = weekdays[num];
-        //     console.log("weekday: " + weekdays[num]);
-
-        //     if(num <= 0){
-        //         num = 7;
-        //     }
+        //     console.log("num: " + num);
+        //     console.log(weekdays[num]);
         // }
+
+        //get nums
+        //subtract num to get the previous day
+
+        if(num === nums[0]){
+            num = 7;
+        }
+        num = num - 1;
+        console.log("num: " + num);
+        console.log(weekdays[nums[num]]);
+        date.innerHTML = weekdays[nums[num]];
+        
+
+        let newDate = today.setDate(today.getDate() - 1);
+        today = new Date(newDate);
+        console.log(today);
+
+        let day = today.getDate();
+        let month = today.toLocaleString("default", { month: "long"});
+        let year = today.getFullYear();
+        
+        calheader.innerHTML = `${month} ${day}, ${year}`;
 
         //get events back from calendar
         //keep repeating events
         
     });
+
+    let todayButton = document.querySelector("#todayButton");
+    //get button for 'today'
+    todayButton.addEventListener("click", function() {
+        //update date to today
+        date.innerHTML = user1.getDayOfWeek();
+        
+        //update cal header
+        calheader.innerHTML = user1.getFormattedDate();
+    });
+
+
 }
 
-//go forward more than one day
 //add button that takes user to 'today' if they scroll too far
-
-//for button 'today':
-    // //update date to today
-    // date.innerHTML = user1.getDayOfWeek();
-        
-    // //update cal header
-    // let calheader = document.body.querySelector("#currentDate");
-    // calheader.innerHTML = user1.getFormattedDate();
-
-//loop through entire week:
-// for(let i = 0; i < 7; i++){
-        //     let today = new Date();
-        //     let dayOfWeek = weekdays[(today.getDay() + 1 + i) % 7];
-        //     console.log(dayOfWeek);
-        // }
