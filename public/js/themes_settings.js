@@ -1,19 +1,32 @@
 
 let checkbox = document.body.querySelector("#theme"); //Gets the theme checkbox
 
-checkbox.addEventListener("click", checkboxHandler);
+checkbox.addEventListener("click", checkboxHandler); //Listens for if checkbox for dark theme is checked
 
-function checkboxHandler(){
-    document.body.classList.toggle('dark');
-
+function checkboxHandler(){ //gets list of classes and will add or remove the dark class depending on if it is hidden or not
+    document.body.classList.toggle('dark'); //switches between dark mode and our chosen default theme
+    
+    if (document.body.classList.contains('dark')){ //if dark mode is turned on...
+        localStorage.setItem("dark", "on"); //set localstorage to dark/on as key/value pair
+    }
+    else{ //if dark mode is not turned on/if it is turned off...
+        localStorage.setItem("dark", "off");
+    }
 }
 
+if (localStorage.getItem("dark") == "on"){ //if localstorage has the value "on" for "dark" key...
+    document.body.classList.toggle('dark');  //toggle to dark mode
+}
 
-
-//changes themes of settings 
-//event listener for if drop down menu got a one
-
-
+//could use localstorage to make dark theme persist when user goes away from page or to other pages
+//to-do:
+    //toggle to dark theme
+    //if toggled to dark, in localstorage set the key to "dark" and String value to "on"
+    //do i need an else if not toggled then "dark" is "off"??
+//then get from local storage the key value pairs
+    //if dark mode is "on"
+    //make the theme dark
+//this should remember what user did...
 
 
 // function themeHandler(event){
