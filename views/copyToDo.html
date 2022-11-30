@@ -195,6 +195,7 @@
                     rowNum++;
                     //if it is missing a cell (the assignment used to be there)
                     if(table.rows[rowNum].cells.length < 2){
+                        console.log("Missing Cell")
                         //add a missing cell
                         table.rows[rowNum].insertCell(1)
 
