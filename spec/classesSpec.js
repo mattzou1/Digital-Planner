@@ -63,11 +63,8 @@ describe("Add element", () => {
     it("has correct day of week", () => {
         expect(user4.getDayOfWeek()).toBe("Monday");
     });
-    it("has correct middle endian format", () => {
+    it("has correct long date format", () => {
         expect(user4.getFormattedDate()).toBe("November 28, 2022");
-    });
-    it("gets tomorrow's day of week", () => {
-        expect(user4.getTomorrow()).toBe("Tuesday");
     });
 });
 

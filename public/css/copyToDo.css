@@ -57,9 +57,6 @@
 
 /*Properties for 'tomorrow' button on calendar*/
 #tmrButton{
-    /* position: relative;
-    top: 40px;
-    left: 720px; */
     padding: 5px;
     background-color: #bfe0f9;
 }
@@ -70,11 +67,22 @@
     box-shadow: 0 5px 10px rgba(0, 0, 0, 1.0);
 }
 
+/*Properties for 'today' button on calendar*/
+#todayButton{
+    padding: 10px;
+    background-color: #7db4eb;
+    border: #7db4eb;
+    font-size: 15px;
+}
+
+#todayButton:hover {
+    background-color: lightcoral;
+    color: white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 1.0);
+}
+
 /*Properties for 'back' button on calendar*/
 #backButton{
-    /* position: relative;
-    top: 35px;
-    left: 100px; */
     padding: 5px;
     background-color: #bfe0f9;
 }
