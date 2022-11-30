@@ -14,5 +14,13 @@
         "endTime": "20:00",
         "assignments": [],
         "schedule": {}
+    },
+    {
+        "username": "sbrar",
+        "password": "sumneet",
+        "startTime": "5:00",
+        "endTime": "24:00",
+        "assignments": [],
+        "schedule": {}
     }
 ]
