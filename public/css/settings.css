@@ -4,6 +4,8 @@ body{
     --background-color: lightcoral; /*variable for light background color theme*/
     --white: white;
     --green: #007E6F;
+    --button-Color: #007E6F;
+    --escape-Hover: lightcoral;
 
     background-color: var(--background-color);
 }
@@ -13,6 +15,8 @@ body.dark{
     --background-color: black; /*variable for light background color theme*/
     --main-dark: rgb(77, 130, 243); 
     --green: #64d6c8;
+    --button-Color: black;
+    --escape-Hover:#64d6c8;
 }
 
 .mainContainer{
@@ -42,7 +46,7 @@ h1{ /*Makes h1 header in the center*/
     font-size: 25pt;
 
     color: var(--white);
-    background-color: var(--green);
+    background-color: var(--button-Color);
     width:550px;
     height: 40px;
 }
@@ -58,12 +62,19 @@ form > div { /*Deals with div elements in form*/
     justify-content: space-evenly; /*Space between buttons and edges is equal*/
 }
 
-form > #escapeButton{
+#escapeButton{
     display: flex;
     float: right;
-    margin-top: -360px;
-    margin-right: 35px;
-    padding: 0px 10px;
+    margin-top: -421px;
+    margin-right: -260px;
+    background-color: white;
+    color: var(--button-Color);
+    border-radius: 5px;
+    border: thick double;
+    cursor: pointer;
+   
+
+    /*padding: 0px 10px;
     background: white;
     color: #007E6F;
     border: 1;
@@ -78,10 +89,11 @@ form > #escapeButton{
     transition: background-color 0.1s,
         color 0.1s,
         box-shadow 0.1s;
+    */
 }
 
 #escapeButton:hover {
-    background-color: var(--background-color);
+    background-color: var(--escape-Hover);
     color: var(--white);
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 1.0);
 }
@@ -90,18 +102,20 @@ form > #escapeButton{
     width: 200px;
     border-radius: 10px;
     padding: 10px 10px;
-    background-color: var(--green);
+    background-color: var(--button-Color);
     color: var(--white);
     border: 1px black solid;
+    cursor: pointer;
 }
 
 #logoutButton{
     width: 200px;
     padding: 10px 10px;
     border-radius: 10px;
-    background-color: var(--green);
+    background-color: var(--button-Color);
     color: var(--white);
     border: 1px black solid;
+    cursor: pointer;
 }
 
 #submitButton:hover {
@@ -155,36 +169,3 @@ form > #escapeButton{
 .inputTheme:checked ~ .divTheme::after { /*For moving the actual circle*/
     transform:translateX(20px); /*move 20px to right side */
 }
-
-
-/*
-
-form{
-    width: 600px;
-    height: 430px;
-    text-align:center;
-    padding: 5px;
-    background-color: white;
-    border-radius: 30px;
-}
-
-.mainContainer{
-    display: flex; 
-    align-items: center; 
-    flex-direction: column; 
-    height: 100%;
-    width: 100%;
-}
-
-form{
-    width: 600px;
-    height: 430px;
-    text-align:center;
-    padding: 5px;
-
-    border-radius: 30px;
-    background-color: white;
-    gap:0;
-}
-*/
-
