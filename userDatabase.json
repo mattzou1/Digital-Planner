@@ -22,5 +22,21 @@
         "endTime": "24:00",
         "assignments": [],
         "schedule": {}
+    },
+    {
+        "username": "",
+        "password": "",
+        "startTime": "1:00",
+        "endTime": "1:00",
+        "assignments": [],
+        "schedule": {}
+    },
+    {
+        "username": "s",
+        "password": "s",
+        "startTime": "1:00",
+        "endTime": "1:00",
+        "assignments": [],
+        "schedule": {}
     }
 ]
