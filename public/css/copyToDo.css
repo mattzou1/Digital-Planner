@@ -6,6 +6,9 @@
     max-height: 83%;
     margin: 2%;
     overflow-y: auto;
+    border-style: solid;
+    border-width: 4px;
+    border-radius: 40px;
 }
 
 /*Properties for container around whole page*/
@@ -59,6 +62,7 @@
 #tmrButton{
     padding: 5px;
     background-color: #bfe0f9;
+    border-radius: 10px;
 }
 
 #tmrButton:hover {
@@ -73,6 +77,7 @@
     background-color: #bfe0f9;
     border: #7db4eb;
     font-size: 15px;
+    border-radius: 10px;
 }
 
 #todayButton:hover {
@@ -85,6 +90,7 @@
 #backButton{
     padding: 5px;
     background-color: #bfe0f9;
+    border-radius: 10px;
 }
 
 #backButton:hover {
@@ -210,7 +216,7 @@ table, th, td {
     height: 3vw;
     border-radius: 2px;
     background: white;
-    color: #007E6F;
+    color: #7a7a7a;
     outline: auto;
     cursor: pointer;
     transition: background-color 0.1s,

@@ -4,14 +4,14 @@
 .btn2 {
 	padding: 10px 30px;
 	background: white;
-  color: #007E6F;
+  color: #7a7a7a;
   border-width: 0px;
   border-radius: 2px;
 	border: 1;
 	outline: auto;
 	cursor: pointer;
-	font-size: 13px;
-	font-weight: 500;
+	font-size: 90%;
+	font-weight: 5000;
   margin-left: 10px;
 	width: 7%;
 	transition: background-color 0.1s,
