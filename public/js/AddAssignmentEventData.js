@@ -39,7 +39,13 @@ let originalCell = null;
 
 //Made so I can tell if it's the first loop to save the first cell
 let firstLoop = true
-
+    for(let[time] of user.schedule){
+        if(document.getElementById("calendarBox" + time).hasChildNodes()){
+            console.log(document.getElementById("calendarBox" + time).firstChild)
+            alert("Time already full");
+            return;
+        }
+    }
     //cannot figure out how to only get 1 time so loop will stay but will quit after first one
     for(let [time] of user.schedule){
         let slot = user.schedule.get(time);
