@@ -34,9 +34,6 @@ function handler(){ //event handler for after DOM is loaded
 
         //update date to tomorrow
         date.innerHTML = weekdays[nums[num]];
-        console.log(weekdays[nums[num]]);
-
-        console.log("num: " + num);
 
         let newDate = today.setDate(today.getDate() + 1);
         today = new Date(newDate);
