@@ -1,4 +1,4 @@
-import {User,user1,Assignment, Event, weekdays} from "./classes.js";
+import {currentUser} from "./login.js";
 
 document.addEventListener('DOMContentLoaded', (event) => {
 
@@ -88,13 +88,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const editButtonWrapper = document.body;
     editButtonWrapper.addEventListener("click", function(event){
         if(event.target.id == "editButton") {
-            document.getElementById('removeButton').click();
             openPopup();
             // need to fill the text fields of the popup with the previously inputted information. 
-            document.getElementById("Aname").value = Assignment.name;
-            //document.getElementById("reading").checked = false;
-            document.getElementById("Description").value = Assignment.description;
-            document.getElementById("Ctime").value = Assignment.completionTime;
+            document.getElementById("Aname").value = currentUser.assignments[0].name;
+            document.getElementById("reading").checked = false;
+            document.getElementById("Description").value = currentUser.assignments[0].description;
+            document.getElementById("Ctime").value = currentUser.assignments[0].completionTime;
         }
     })
 })

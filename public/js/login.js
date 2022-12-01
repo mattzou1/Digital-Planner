@@ -1,5 +1,6 @@
 import {User} from "./classes.js";
 window.addEventListener("DOMContentLoaded", registerPostButtonListener);
+export let currentUser;
 
 function registerPostButtonListener() {
     let button = document.getElementById("submit");
@@ -22,7 +23,7 @@ function registerPostButtonListener() {
         }
         else{
             //create user data from json
-            let user = result; 
+            currentUser = result; 
             window.location.replace("/home");
             
         }
