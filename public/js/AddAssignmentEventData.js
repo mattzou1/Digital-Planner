@@ -33,19 +33,34 @@ function registerSubmitButtons(){
 }
 
 function populateCalendar(){
-let placed = false
-let eventLength = 1;
-let originalCell = null;
+    let placed = false
+    let eventLength = 1;
+    let originalCell = null;
 
-//Made so I can tell if it's the first loop to save the first cell
-let firstLoop = true
-    for(let[time] of user.schedule){
-        if(document.getElementById("calendarBox" + time).hasChildNodes()){
-            console.log(document.getElementById("calendarBox" + time).firstChild)
-            alert("Time already full");
-            return;
+    //Made so I can tell if it's the first loop to save the first cell
+    let firstLoop = true
+    let table = document.body.querySelector("table")
+    let size = 0;
+
+    //go through adding an attribute to every cell with the avaliable spaces to place
+    for(let i = user.schedule.size; i > 0; i--){
+        let cell = table.rows[i].cells[1]
+        //if first child throws error from missing row (because of longer assignments/events) just ignore and keep running
+        try{
+            if(cell.firstChild != null){
+                //cell full so set space to 0
+                size = 0
+                cell.setAttribute("space", size)
+            }
+            else{
+                size = size + 1;
+                cell.setAttribute("space", size)
+            }
         }
+        catch{}
     }
+
+    console.log(user.schedule)
     //cannot figure out how to only get 1 time so loop will stay but will quit after first one
     for(let [time] of user.schedule){
         let slot = user.schedule.get(time);
