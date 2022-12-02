@@ -16,6 +16,7 @@ function checkboxHandler(){ //gets list of classes and will add or remove the da
 
 if (localStorage.getItem("dark") == "on"){ //if localstorage has the value "on" for "dark" key...
     document.body.classList.toggle('dark');  //toggle to dark mode
+    //somehow keep toggle CHECKED even if page reloads
 }
 
 //could use localstorage to make dark theme persist when user goes away from page or to other pages

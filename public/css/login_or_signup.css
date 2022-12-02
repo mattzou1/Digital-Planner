@@ -1,6 +1,14 @@
 
 body{
-    background-color: lightcoral;
+    --background-color: lightcoral;
+    --buttons:#007E6F;
+
+    background-color: var(--background-color);
+}
+
+body.dark{
+    --background-color: black;
+    --buttons: black;
 }
 
 p > label{
@@ -33,7 +41,7 @@ form{
 
 h1{
     text-align:center;
-    background-color: #007E6F;
+    background-color: var(--buttons);
     color: white;
     width: 300px;
     margin-top: 0px;
@@ -76,7 +84,7 @@ input[type=text]{
     height: 35px;
     border-radius: 10px;
     padding: 10px 10px;
-    background-color: #007E6F;
+    background-color: var(--buttons);
     color: white;
     border: 1px black solid;
 }
@@ -86,7 +94,7 @@ input[type=text]{
     width: 223px;
     height: 35px;
     border: 1px black solid;
-    background-color: #007E6F;
+    background-color: var(--buttons);
     color: white;
 }
 

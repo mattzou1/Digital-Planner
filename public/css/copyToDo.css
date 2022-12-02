@@ -1,6 +1,28 @@
+body{
+    margin: 0%;
+    --background-color: rgb(141, 249, 245); /*variable for background color*/
+    --table-background: #bfe0f9;  /*variable for table background color*/
+    --calendar-background: lightcoral; /*variable for calendar background color*/
+    --buttons: #bfe0f9;
+    --assignments: #7DEBDA;
+    --hover: lightcoral;
+
+    background-color: var(--background-color); /*Makes body cyan color*/
+}
+
+/*When dark mode is on, colors will change to these ones*/
+body.dark{
+    --background-color: black;
+    --table-background: white;
+    --calendar-background: white;
+    --buttons:#dfecf6;
+    --assignments:#f6dff0;
+    --hover: rgb(182, 239, 222);
+}
+
 /*Properties for where table will be*/
 #table{
-    background-color:#bfe0f9;
+    background-color:var(--table-background);
     width: 95%;
     height: 500px;
     max-height: 83%;
@@ -22,7 +44,7 @@
 
 /*CSS properties for right hand side calendar container*/
 #calendar{
-    background-color: lightcoral; /*Background color*/
+    background-color: var(--calendar-background); /*Background color*/
     margin: 2%;
     border-radius: 35px; /*Makes edges curved*/
     width: 900px;
@@ -61,12 +83,12 @@
 /*Properties for 'tomorrow' button on calendar*/
 #tmrButton{
     padding: 5px;
-    background-color: #bfe0f9;
+    background-color: var(--buttons);
     border-radius: 10px;
 }
 
 #tmrButton:hover {
-    background-color: lightcoral;
+    background-color: var(--hover);
     color: white;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 1.0);
 }
@@ -74,14 +96,14 @@
 /*Properties for 'today' button on calendar*/
 #todayButton{
     padding: 10px;
-    background-color: #bfe0f9;
+    background-color: var(--buttons);
     border: #7db4eb;
     font-size: 15px;
     border-radius: 10px;
 }
 
 #todayButton:hover {
-    background-color: lightcoral;
+    background-color:  var(--hover);
     color: white;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 1.0);
 }
@@ -89,19 +111,19 @@
 /*Properties for 'back' button on calendar*/
 #backButton{
     padding: 5px;
-    background-color: #bfe0f9;
+    background-color:var(--buttons);
     border-radius: 10px;
 }
 
 #backButton:hover {
-    background-color: lightcoral;
+    background-color:  var(--hover);
     color: white;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 1.0);
 }
 
 /*Properties for left hand side Todo section*/
 #Todo{
-    background-color: lightcoral; 
+    background-color: var(--calendar-background); 
     margin: 2%;
     border-radius: 35px; /*Curves edges*/
     width: 450px; 
@@ -137,7 +159,7 @@
 .assignment {
     position: relative;
     display: inline-block;
-    background-color: #7DEBDA;
+    background-color: var(--assignments);
     width: 99.3%;
     height: 20%;
     margin-bottom: 10%;
@@ -184,11 +206,6 @@
     margin: 5px;
 }
 
-body{
-    margin: 0%;
-    background-color: rgb(141, 249, 245);
-}
-
 /*Properties for the table*/
 #todoList{
     margin: 2%;
@@ -225,7 +242,7 @@ table, th, td {
 }
 
 .settings:hover {
-    background-color: lightcoral;
+    background-color:  var(--hover);
     color: white;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 1.0);
 }
@@ -243,7 +260,7 @@ table, th, td {
 }
 
 #removeButton:hover {
-    background-color: lightcoral;
+    background-color:  var(--hover);
     color: white;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 1.0);
 }
@@ -259,7 +276,7 @@ table, th, td {
 }
 
 #editButton:hover {
-    background-color: lightcoral;
+    background-color:  var(--hover);
     color: rgb(255, 255, 255);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 1.0);
 }

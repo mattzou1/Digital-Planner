@@ -1,0 +1,3 @@
+if (localStorage.getItem("dark") == "on"){ //if localstorage has the value "on" for "dark" key...
+    document.body.classList.toggle('dark');  //toggle to dark mode
+}
