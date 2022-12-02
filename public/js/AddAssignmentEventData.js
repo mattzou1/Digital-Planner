@@ -33,14 +33,10 @@ function registerSubmitButtons(){
 }
 
 function populateCalendar(){
-    let placed = false
-    let eventLength = 1;
     let originalCell = null;
-
-    //Made so I can tell if it's the first loop to save the first cell
-    let firstLoop = true
     let table = document.body.querySelector("table")
     let size = 0;
+    let length = 0;
 
     //go through adding an attribute to every cell with the avaliable spaces to place
     for(let i = user.schedule.size; i > 0; i--){
@@ -60,18 +56,31 @@ function populateCalendar(){
         catch{}
     }
 
+    let lastTime = null
     console.log(user.schedule)
     //cannot figure out how to only get 1 time so loop will stay but will quit after first one
     for(let [time] of user.schedule){
         let slot = user.schedule.get(time);
-        if(slot != "empty" && !placed){
-            let cell = document.getElementById("calendarBox" + time);
-
-            if(firstLoop){
-                originalCell = cell;
-                firstLoop = false
+        //catch if stoptime doesnt exist
+        try{
+            let hours = parseInt(slot.stopTime.substring(0,time.indexOf(":")));
+            let minutes = parseInt(slot.stopTime.substring(time.indexOf(":") + 1));
+            if(minutes == 30){
+                minutes = 0
+                lastTime = hours + ":" + minutes + 0
             }
+            else{
+                hours --;
+                minutes = 30
+                lastTime = hours + ":" + minutes
+            }
+            console.log(lastTime)
+        }
+        catch{}
 
+        if(slot != "empty" && slot.startTime == time){
+            let cell = document.getElementById("calendarBox" + time)
+            originalCell = cell
             //make recurring string
             let reoccuringString = "Reoccuring: "
             for(let [day] of slot.reoccuringDays){
@@ -83,29 +92,37 @@ function populateCalendar(){
 
             //add event
             cell.innerHTML = `<div class='event'><button type='button' id='removeButton'>X</button><p>${slot.name}</p><p>${slot.description}</p><p>${reoccuringString}</p></div>`;
-            
-            //change so no more will be placed
-            placed = true
+            length++;
         }
-        else if(slot != "empty" && placed){
-            let cell = document.getElementById("calendarBox" + time);
-            cell.remove()
-            eventLength++
+        else if(slot != "empty" && lastTime == time){
+
+            let cell = document.getElementById("calendarBox" + time)
+            cell.remove();
+
+            let event = document.body.querySelector(".event")
+
+            //change event style settings for when it is added to calander
+            event.style.height = "100%";
+            event.style.position = "absolute"
+            //IDK why but it doesn't work without this line:
+            event.style.bottom = "0%"
+            event.parentElement.style.position = "relative"
+            length++;
+        
+            //add span
+            console.log(length)
+            originalCell.rowSpan = length;
+
+        }
+        else if(slot != "empty" && slot.startTime != time){
+            let cell = document.getElementById("calendarBox" + time)
+            cell.remove();
+            length++
         }
     }
 
-    let event = document.body.querySelector(".event")
-
-    //change event style settings for when it is added to calander
-    event.style.height = "100%";
-    event.style.position = "absolute"
-    //IDK why but it doesn't work without this line:
-    event.style.bottom = "0%"
-    event.parentElement.style.position = "relative"
-
-    //add span
-    originalCell.rowSpan = eventLength;
 }
+
 
 //can be optimized 
 function populateToDo(){
