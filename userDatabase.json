@@ -1,50 +1,44 @@
 [
     {
-        "username": "noah",
-        "password": "ilovefortnite",
-        "startTime": "1:00",
-        "endTime": "1:00",
-        "assignments": [],
-        "schedule": {}
-    },
-    {
         "username": "bob",
         "password": "1234",
-        "startTime": "9:00",
-        "endTime": "20:00",
-        "assignments": [],
-        "schedule": {}
-    },
-    {
-        "username": "sbrar",
-        "password": "sumneet",
-        "startTime": "5:00",
-        "endTime": "24:00",
-        "assignments": [],
-        "schedule": {}
-    },
-    {
-        "username": "",
-        "password": "",
-        "startTime": "1:00",
-        "endTime": "1:00",
-        "assignments": [],
-        "schedule": {}
-    },
-    {
-        "username": "s",
-        "password": "s",
-        "startTime": "1:00",
-        "endTime": "1:00",
-        "assignments": [],
-        "schedule": {}
-    },
-    {
-        "username": "David",
-        "password": "David!",
         "startTime": "8:00",
-        "endTime": "20:00",
+        "endTime": "15:30",
         "assignments": [],
-        "schedule": {}
+        "schedule": {},
+        "scheduleKeys": [
+            "8:00",
+            "8:30",
+            "9:00",
+            "9:30",
+            "10:00",
+            "10:30",
+            "11:00",
+            "11:30",
+            "12:00",
+            "12:30",
+            "13:00",
+            "13:30",
+            "14:00",
+            "14:30",
+            "15:00"
+        ],
+        "scheduleValues": [
+            "empty",
+            "empty",
+            "empty",
+            "empty",
+            "empty",
+            "empty",
+            "empty",
+            "empty",
+            "empty",
+            "empty",
+            "empty",
+            "empty",
+            "empty",
+            "empty",
+            "empty"
+        ]
     }
 ]

@@ -1,9 +1,9 @@
 import {User} from "./classes.js";
 window.addEventListener("DOMContentLoaded", registerPostButtonListener);
-export let currentUser;
 
 function registerPostButtonListener() {
     let button = document.getElementById("submit");
+    
     button.addEventListener("click", async function (event) {
         event.preventDefault();
         let username = document.getElementById("userName");
@@ -23,9 +23,13 @@ function registerPostButtonListener() {
         }
         else{
             //create user data from json
-            currentUser = result; 
+            let currentUser = result;
+            currentUser.schedule = new Map();
+            for(let i = 0; i < currentUser.scheduleKeys.length; i++){
+                currentUser.schedule.set(currentUser.scheduleKeys[i], currentUser.scheduleValues[i]);
+            }
             window.location.replace("/home");
-            
         }
     });
 }
+
