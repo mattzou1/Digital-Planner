@@ -37,27 +37,29 @@ function populateCalendar(){
     let table = document.body.querySelector("table")
     let size = 0;
     let length = 0;
-
-    //go through adding an attribute to every cell with the avaliable spaces to place
-    for(let i = user.schedule.size; i > 0; i--){
-        let cell = table.rows[i].cells[1]
-        //if first child throws error from missing row (because of longer assignments/events) just ignore and keep running
+    let lastTime = null
+  
+    //clear out schedule before adding everything back
+    for(let row of table.rows){
+        //if there is no cell there throw error and add cell
         try{
-            if(cell.firstChild != null){
-                //cell full so set space to 0
-                size = 0
-                cell.setAttribute("space", size)
-            }
-            else{
-                size = size + 1;
-                cell.setAttribute("space", size)
-            }
+            row.cells[1].rowSpan = 1
+            row.cells[1].innerHTML = ""
         }
-        catch{}
+        catch{
+            row.insertCell(1)
+
+            let newCell = row.cells[1];
+            let time = row.cells[0].innerHTML;
+
+            newCell.id = "calendarBox" + time; //create an id ad append the counter
+            //added attributes to the calander boxes for dragging
+            newCell.setAttribute("class", "holder");
+            newCell.setAttribute("ondrop", "drop(event)")
+            newCell.setAttribute("ondragover", "allowDrop(event)")
+        }
     }
 
-    let lastTime = null
-    console.log(user.schedule)
     //cannot figure out how to only get 1 time so loop will stay but will quit after first one
     for(let [time] of user.schedule){
         let slot = user.schedule.get(time);
@@ -99,7 +101,7 @@ function populateCalendar(){
             let cell = document.getElementById("calendarBox" + time)
             cell.remove();
 
-            let event = document.body.querySelector(".event")
+            let event = originalCell.firstChild
 
             //change event style settings for when it is added to calander
             event.style.height = "100%";
@@ -110,8 +112,8 @@ function populateCalendar(){
             length++;
         
             //add span
-            console.log(length)
             originalCell.rowSpan = length;
+            length = 0
 
         }
         else if(slot != "empty" && slot.startTime != time){
