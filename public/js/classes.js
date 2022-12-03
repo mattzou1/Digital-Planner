@@ -74,6 +74,31 @@ export class User{
             }
         }
     }
+
+    ifEmpty(startTime, endTime){
+        let boo = false; 
+        let increment = 30; 
+        let time = startTime; 
+        while(time != endTime){
+            if(this.schedule.get(time) != "empty"){
+                boo = true; 
+            }
+            let hours = parseInt(time.substring(0,time.indexOf(":")));
+            let minutes = parseInt(time.substring(time.indexOf(":") + 1));
+            minutes += increment; 
+            if(minutes >= 60){
+                hours += 1;
+                minutes = 0; 
+            }
+            if(minutes == 0){
+                time = `${hours}:${minutes}0`;
+            }
+            else{
+                time = `${hours}:${minutes}`;
+            }
+        }
+        return boo; 
+    } 
 }
 
 //Assignment class for making assignments
