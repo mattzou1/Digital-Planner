@@ -1,5 +1,14 @@
 export let weekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 
+export function getUser(){
+    let user = JSON.parse(window.localStorage.getItem("user"));
+    user.schedule = new Map();
+    for(let i = 0; i < user.scheduleKeys.length; i++){
+        user.schedule.set(user.scheduleKeys[i], user.scheduleValues[i]);
+    }
+    return user; 
+}
+
 //All times should be a string using miltary time with minutes as 00 or 30 for example "14:30"
 //user class containing user information and schedule for one day
 export class User{    

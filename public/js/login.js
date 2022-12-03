@@ -1,4 +1,5 @@
-import {User} from "./classes.js";
+let currentUser;
+
 window.addEventListener("DOMContentLoaded", registerPostButtonListener);
 
 function registerPostButtonListener() {
@@ -23,13 +24,11 @@ function registerPostButtonListener() {
         }
         else{
             //create user data from json
-            let currentUser = result;
-            currentUser.schedule = new Map();
-            for(let i = 0; i < currentUser.scheduleKeys.length; i++){
-                currentUser.schedule.set(currentUser.scheduleKeys[i], currentUser.scheduleValues[i]);
-            }
+            currentUser = result;
+            window.localStorage.setItem("user", JSON.stringify(currentUser));
             window.location.replace("/home");
         }
     });
 }
+
 

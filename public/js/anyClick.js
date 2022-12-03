@@ -1,4 +1,6 @@
-//import {currentUser} from "./login.js";
+import {getUser} from "./classes.js"
+
+let user1 = getUser();
 
 document.addEventListener('DOMContentLoaded', (event) => {
 
