@@ -1,7 +1,8 @@
 //connects to copyToDo.html
 //import {increments} from "./increments.js"
-import {User, Assignment, Event, weekdays, user1} from "./classes.js"
+import {getUser} from "./classes.js"
 
+let user1 = getUser();
 //fills "start time" and "stop time" with times in 30 minute increments on the add assignment pop-up
 
 //get dropdown menu for start time

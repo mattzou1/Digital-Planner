@@ -1,12 +1,37 @@
 export let weekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 
 export function getUser(){
-    let user = JSON.parse(window.localStorage.getItem("user"));
-    user.schedule = new Map();
-    for(let i = 0; i < user.scheduleKeys.length; i++){
-        user.schedule.set(user.scheduleKeys[i], user.scheduleValues[i]);
+    let userdata = JSON.parse(window.localStorage.getItem("user"));
+    let user = new User(userdata.username, userdata.password, userdata.startTime, userdata.endTime);
+    for(let i = 0; i < userdata.scheduleKeys.length; i++){
+        user.schedule.set(userdata.scheduleKeys[i], userdata.scheduleValues[i]);
     }
     return user; 
+}
+
+//Returns today's date in the format "Tuesday 11/1"
+export function getCurrentDate(){
+    let today = new Date();
+    let day = today.getDate();
+    let month = today.getMonth() + 1;
+    let dayOfWeek = weekdays[today.getDay()];
+    return `${dayOfWeek} ${month}/${day}`; 
+}
+
+//function that returns the date in "Month Day, Year" format
+export function getFormattedDate(){
+    let today = new Date();
+    let day = today.getDate();
+    let month = today.toLocaleString("default", { month: "long"});
+    let year = today.getFullYear();
+    return `${month} ${day}, ${year}`;
+}
+
+//Returns the current day of the week in formate "Tuesday"
+export function getDayOfWeek(){
+    let today = new Date();
+    let dayOfWeek = weekdays[today.getDay()];
+    return dayOfWeek;
 }
 
 //All times should be a string using miltary time with minutes as 00 or 30 for example "14:30"
@@ -32,30 +57,6 @@ export class User{
         return this.endTime;
     }
 
-    //Returns today's date in the format "Tuesday 11/1"
-    getCurrentDate(){
-        let today = new Date();
-        let day = today.getDate();
-        let month = today.getMonth() + 1;
-        let dayOfWeek = weekdays[today.getDay()];
-        return `${dayOfWeek} ${month}/${day}`; 
-    }
-
-    //function that returns the date in "Month Day, Year" format
-    getFormattedDate(){
-        let today = new Date();
-        let day = today.getDate();
-        let month = today.toLocaleString("default", { month: "long"});
-        let year = today.getFullYear();
-        return `${month} ${day}, ${year}`;
-    }
-
-    //Returns the current day of the week in formate "Tuesday"
-    getDayOfWeek(){
-        let today = new Date();
-        let dayOfWeek = weekdays[today.getDay()];
-        return dayOfWeek;
-    }
 
     //function that clears schedule 
     clearSchedule(){

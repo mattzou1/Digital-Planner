@@ -1,6 +1,8 @@
 //code that populates the calendar with times and formats calendar (row width, height length)
 
-import {User,user1,Assignment, Event} from "./classes.js";
+import {getUser,getFormattedDate,getDayOfWeek} from "./classes.js";
+
+let user1 = getUser();
 
 let table = document.body.querySelector("table"); //get table
 //remove weird empty second row
@@ -14,11 +16,11 @@ document.body.querySelector("th").style.width = "10%";  //set time column width
 
 //code that updates the current date on the calendar header
 let calheader = document.body.querySelector("#currentDate");
-calheader.innerHTML = user1.getFormattedDate(); //set calendar header to current date
+calheader.innerHTML = getFormattedDate(); //set calendar header to current date
 
 //updates the current day of the week in the calendar table
 let dayOfWeek = document.body.querySelector("#dayOfWeek");
-dayOfWeek.innerHTML = user1.getDayOfWeek() //set calendar header to day of week
+dayOfWeek.innerHTML = getDayOfWeek() //set calendar header to day of week
 
 //code that adds times to the table
 

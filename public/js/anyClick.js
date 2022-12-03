@@ -2,7 +2,6 @@ import {getUser} from "./classes.js"
 
 let user1 = getUser();
 
-import {User,user1,Assignment, Event, weekdays} from "./classes.js";
 
 document.addEventListener('DOMContentLoaded', (event) => {
 
