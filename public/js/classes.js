@@ -76,12 +76,12 @@ export class User{
     }
 
     ifEmpty(startTime, endTime){
-        let boo = false; 
+        let boo = true; 
         let increment = 30; 
         let time = startTime; 
         while(time != endTime){
             if(this.schedule.get(time) != "empty"){
-                boo = true; 
+                boo = false; 
             }
             let hours = parseInt(time.substring(0,time.indexOf(":")));
             let minutes = parseInt(time.substring(time.indexOf(":") + 1));

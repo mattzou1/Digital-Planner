@@ -26,16 +26,20 @@ function registerSubmitButtons(){
             reoccuring.push(document.getElementById(weekday).checked);
         }
         let event1 = new Event(document.getElementById("Ename").value, document.getElementById("EventDescription").value, document.getElementById("Stime").value, document.getElementById("Etime").value, reoccuring)
-        user.addElement(event1.startTime, event1.stopTime, event1);
-        clearFields2();
-        populateCalendar();
+        if(!user.ifEmpty(event1.startTime, event1.stopTime)){
+            window.alert("Space is taken");
+        }
+        else{
+            user.addElement(event1.startTime, event1.stopTime, event1);
+            clearFields2();
+            populateCalendar();
+        }
     });
 }
 
 function populateCalendar(){
     let originalCell = null;
     let table = document.body.querySelector("table")
-    let size = 0;
     let length = 0;
     let lastTime = null
   

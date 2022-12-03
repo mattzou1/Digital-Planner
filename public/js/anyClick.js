@@ -1,4 +1,4 @@
-import {currentUser} from "./login.js";
+//import {currentUser} from "./login.js";
 
 document.addEventListener('DOMContentLoaded', (event) => {
 
@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 }
             }
 
+            //if it is in the todo list, not the calander
             if(assignment.style.display != "none" || assignment.className == "assignment"){
                 assignment.remove()
             }
