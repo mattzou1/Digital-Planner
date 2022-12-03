@@ -15,7 +15,7 @@ function registerSubmitButtons(){
         clearFields();
 
         //commented out when changing the way todo works with shortcuts and stuff
-        //clearToDo();
+        clearToDo();
         populateToDo();
     });
 
@@ -132,26 +132,18 @@ function populateCalendar(){
 
 //can be optimized 
 function populateToDo(){
-    let numHolders = 3;
-
-    //let shortcutcount = 1;
     for(let ass of user.assignments){
-        if(!ass.ifDragged){
-                let todo = document.querySelector(`#Todo`);
-                todo.innerHTML += `<div class = 'assignment' id='assignment${asscount}' draggable='true' ondragstart='drag(event)'> <button type='button' id='removeButton'>X</button> <button type ='button' id='editButton'>Edit</button> <p>${ass.name}</p> <p>${ass.description}</p> <p>${ass.completionTime} minutes</p> </div>`; 
-                asscount ++;
-            ass.ifDragged = true; 
-        }
+        let todo = document.querySelector(`#Todo`);
+        todo.innerHTML += `<div class = 'assignment' id='assignment${asscount}' draggable='true' ondragstart='drag(event)'> <button type='button' id='removeButton'>X</button> <button type ='button' id='editButton'>Edit</button> <p>${ass.name}</p> <p>${ass.description}</p> <p>${ass.completionTime} minutes</p> </div>`; 
+        asscount ++;    
     }
 }
 
 //Clears toDoList
 function clearToDo(){
-    let numHolders = 3
-    for(let i = 1; i <= numHolders; i++){
-        let holder = document.querySelector(`[name=ToDo${i}]`);
-        holder.innerHTML = "";
-    }
+    let todo = document.querySelector(`#Todo`);
+    todo.innerHTML = "<h1 style='font-size:40px'>ToDo List</h1> <div id='buttonsAndPlus'> <div id='addAssignment'></div></div>";
+    asscount = 0;
 }
 
 function clearFields() {
