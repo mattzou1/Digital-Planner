@@ -9,6 +9,27 @@ export function getUser(){
     return user; 
 }
 
+export function getStopTime(startTime, cTime){
+    let increment = 30; 
+    let time = startTime;
+    for(let i = 0; i < cTime/30; i++){
+        let hours = parseInt(time.substring(0,time.indexOf(":")));
+        let minutes = parseInt(time.substring(time.indexOf(":") + 1));
+        minutes += increment; 
+        if(minutes >= 60){
+            hours += 1;
+            minutes = 0; 
+        }
+        if(minutes == 0){
+            time = `${hours}:${minutes}0`;
+        }
+        else{
+            time = `${hours}:${minutes}`;
+        }
+    }
+    return time;  
+}
+
 //Returns today's date in the format "Tuesday 11/1"
 export function getCurrentDate(){
     let today = new Date();
