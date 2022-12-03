@@ -22,6 +22,7 @@ function registerPostButtonListener() {
         });
         let result = await response.text(); 
         if(result == "true"){
+            window.localStorage.setItem("user", JSON.stringify(user));
             window.location.replace("/home");
         }
         else{
