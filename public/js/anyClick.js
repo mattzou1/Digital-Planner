@@ -1,5 +1,7 @@
 //import {currentUser} from "./login.js";
 
+import {User,user1,Assignment, Event, weekdays} from "./classes.js";
+
 document.addEventListener('DOMContentLoaded', (event) => {
 
     const click = document.body;
@@ -33,6 +35,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
             //if it is in the todo list, not the calander
             if(assignment.style.display != "none" || assignment.className == "assignment"){
                 assignment.remove()
+                let idIndex = assignment.id
+                let index = idIndex.match(/(\d+)/);
+                index = index[0]
+                delete user1.assignments[index]
             }
         }
 

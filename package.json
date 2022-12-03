@@ -19,6 +19,7 @@
   "homepage": "https://github.com/mattzou1/Digital-Planner#readme",
   "dependencies": {
     "bcrypt": "^5.1.0",
+    "expre": "^0.1.1",
     "express": "^4.18.2"
   },
   "devDependencies": {
