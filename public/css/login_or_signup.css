@@ -4,6 +4,11 @@ body{
     --buttons:#007E6F;
 
     background-color: var(--background-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 body.dark{
@@ -17,20 +22,32 @@ p > label{
 }
 
 #container{
-    margin: 30px 10px 10px 450px; /* top, right, bottom, left*/
-
-    display:flex;
+    position: relative;
+    display: flex;
     align-items: center; 
     flex-direction: column; 
-    width: 350px;
-    height: 450px;
     justify-content: center;
-    
-    border-radius: 30px;
-    padding: 5px;
-    background-color: white;
 }
 
+#container #drop {
+    position: relative;
+    width: 700px;
+    height: 700px;
+    box-shadow: inset 20px 20px 20px rgba(0,0,0,0.05),
+    25px 35px 20px rgba(0,0,0,0.05),
+    25px 30px 30px rgba(0,0,0,0.05),
+    inset -20px -20px 25px rgba(255,255,255,0.9);
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0% 100% 24% 76% / 9% 75% 25% 91%;
+    flex-direction: column;
+}
+
+#container #drop:hover {
+    border-radius: 20%;
+}
 form{
     /* border: 1px solid pink;*/
     text-align:center;
@@ -43,9 +60,11 @@ h1{
     text-align:center;
     background-color: var(--buttons);
     color: white;
-    width: 300px;
+    width: 250px;
     margin-top: 0px;
     margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 1.0);
 }
 
 input{
@@ -63,6 +82,19 @@ input{
 #userInput{
     display:flex;
     flex-direction: column;
+    border-radius: 20px;
+}
+
+#userInput input {
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 100%;
+    font-size: 1em;
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 1.0);
+    background-color: rgb(255, 255, 255);
 }
 
 input[type=password]{
@@ -87,15 +119,29 @@ input[type=text]{
     background-color: var(--buttons);
     color: white;
     border: 1px black solid;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 1.0);
+    font-size: 15px;
 }
 
 #signup{
-    border-radius: 10px;
-    width: 223px;
-    height: 35px;
+    border-radius: 0% 100% 24% 76% / 9% 75% 25% 91%;
+    width: 200px;
+    height: 200px;
     border: 1px black solid;
     background-color: var(--buttons);
     color: white;
+
+    position: absolute;
+    right: -250px;
+    bottom: 50px;
+
+    box-shadow: inset 20px 20px 20px rgba(0,0,0,0.05),
+    25px 35px 20px rgba(0,0,0,0.05),
+    25px 30px 30px rgba(0,0,0,0.05),
+    inset -20px -20px 25px rgba(255,255,255,0.5);
+    
+    transition: 0.5s;
+    font-size: 15px;
 }
 
 #submit:hover{
@@ -110,14 +156,14 @@ input[type=text]{
 	box-shadow: 0 5px 10px rgba(0, 0, 0, 1.0);
 }
 
-#signDiv{
+/* #signDiv{
     display:flex;
     flex-direction: column;
     border-top: 1px solid grey;
-    width: 90%;
+    width: 70%;
     justify-content: center;
     text-align:center;
-}
+} */
 
 /*
 #container {
