@@ -29,6 +29,23 @@ p > label{
     justify-content: center;
 }
 
+/* 
+* Adds the background logo styling. 
+*/
+#container::before {
+    content: "Digital Planner";
+    position: absolute;
+    top: 22%;
+    left: 15%;
+    font-size: 10em;
+    font-weight: 800;
+    font-style: italic;
+    color: rgba(255,255,255,0.05);
+}
+
+/* 
+* styling for the tear drop container
+*/
 #container #drop {
     position: relative;
     width: 700px;
@@ -36,8 +53,8 @@ p > label{
     box-shadow: inset 20px 20px 20px rgba(0,0,0,0.05),
     25px 35px 20px rgba(0,0,0,0.05),
     25px 30px 30px rgba(0,0,0,0.05),
-    inset -20px -20px 25px rgba(255,255,255,0.9);
-    transition: 0.5s;
+    inset -2px -20px 25px rgba(255,255,255,0.9);
+    transition: 1s;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -48,6 +65,7 @@ p > label{
 #container #drop:hover{
     border-radius: 20%;
 }
+
 form{
     /* border: 1px solid pink;*/
     text-align:center;
@@ -56,15 +74,21 @@ form{
     width: 270px;
 }
 
-h1{
-    text-align:center;
+#title{
+    text-align: center;
     background-color: var(--buttons);
     color: white;
+    padding: 20px 50px;
     width: 250px;
     margin-top: 0px;
     margin-bottom: 10px;
     border-radius: 5px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 1.0);
+    transition: 1s;
+}
+
+#container #drop:hover #title {
+    transform: translate(0%, -10%) scale(0.8);
 }
 
 input{
@@ -83,6 +107,11 @@ input{
     display:flex;
     flex-direction: column;
     border-radius: 20px;
+    display: none;
+}
+
+#container #drop:hover #userInput {
+    display: block;
 }
 
 #userInput input {
@@ -113,14 +142,19 @@ input[type=text]{
 
 #submit{
     width: 223px;
-    height: 35px;
     border-radius: 10px;
-    padding: 10px 10px;
+    padding: 15px 10px 15px 10px;
     background-color: var(--buttons);
     color: white;
     border: 1px black solid;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 1.0);
-    font-size: 15px;
+    font-size: 17px;
+    display: none;
+    margin-top: 15%;
+}
+
+#container #drop:hover #submit {
+    display: block;
 }
 
 #signup{
