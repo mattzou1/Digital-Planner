@@ -45,7 +45,7 @@ p > label{
     flex-direction: column;
 }
 
-#container #drop:hover {
+#container #drop:hover{
     border-radius: 20%;
 }
 form{

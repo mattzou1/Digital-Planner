@@ -47,7 +47,7 @@
   left: 50%;
   transform: translate(-50%, -50%) scale(0.1);
   text-align: center;
-  padding: 0 30px 0px;
+  padding: 0px 20px;
   color: #333;
   visibility: hidden;
   transition: transform 0.4s, top 0.4s;
@@ -64,6 +64,7 @@
 }
 
 .assignment_popup h2 {
+  padding: 15px 20px;
   font-size: 25px;
   font-weight: 500;
   background-color: #007E6F;
