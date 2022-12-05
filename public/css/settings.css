@@ -8,6 +8,11 @@ body{
     --escape-Hover: lightcoral;
 
     background-color: var(--background-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 /*New colors for when switching to dark theme*/
@@ -20,21 +25,32 @@ body.dark{
 }
 
 .mainContainer{
-    margin: 30px 10px 10px 300px; /* top, right, bottom, left*/
-
+    position: relative;
     display: flex; 
     align-items: center; 
     flex-direction: column; 
-    width: 600px;
-    height: 450px;
+    justify-content: center;
+
+    width: 700px;
+    height: 700px;
+
     background-color:var(--white);
-    border-radius: 30px;
+    border-radius: 36% 64% 46% 54% / 44% 39% 61% 56%;
     padding: 5px;
+
+    box-shadow: inset 20px 20px 20px rgba(0,0,0,0.05),
+    25px 35px 20px rgba(0,0,0,0.05),
+    25px 30px 30px rgba(0,0,0,0.05),
+    inset -20px -20px 25px rgba(255,255,255,0.9);
+
+    transition: 0.5s;
+}
+
+.mainContainer:hover {
+    border-radius: 20%;
 }
 
 form{
-    width: 600px;
-    height: 430px;
     text-align:center;
     padding: 5px;
     background-color: var(--white);
@@ -49,6 +65,8 @@ h1{ /*Makes h1 header in the center*/
     background-color: var(--button-Color);
     width:550px;
     height: 40px;
+
+    border-radius: 50px;
 }
 
 form > div { /*Deals with div elements in form*/
@@ -106,6 +124,7 @@ form > div { /*Deals with div elements in form*/
     color: var(--white);
     border: 1px black solid;
     cursor: pointer;
+    margin-top: 50px;
 }
 
 #logoutButton{
@@ -116,6 +135,8 @@ form > div { /*Deals with div elements in form*/
     color: var(--white);
     border: 1px black solid;
     cursor: pointer;
+    margin-top: 50px;
+    margin-left: 10px;
 }
 
 #submitButton:hover {
