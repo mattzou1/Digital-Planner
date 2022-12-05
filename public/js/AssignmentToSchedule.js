@@ -16,9 +16,8 @@ function assToSchedule(){
             let assignmentid = targetElement.id; 
             let index = assignmentid.substring(10,11);
             user.addElement(startTime, getStopTime(startTime, length), user.assignments[index]);
-            console.log(user.assignments);
-            console.log(user.schedule);
-
+            //console.log(user.assignments);
+            //console.log(user.schedule);
         }
     });
 }
