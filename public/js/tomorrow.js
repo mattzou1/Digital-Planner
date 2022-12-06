@@ -12,6 +12,9 @@ function handler(){ //event handler for after DOM is loaded
 
     let calheader = document.body.querySelector("#currentDate");
 
+    //testing ability to commit
+    console.log("Testing commit ability");
+
     //create array
     let nums = [0,1,2,3,4,5,6];
     //0 is Sunday... 6 is Saturday
