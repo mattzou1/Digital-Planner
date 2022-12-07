@@ -1,5 +1,7 @@
-import {getUser,getStopTime} from "./classes.js";
-let user = getUser();
+import {getUser,getStopTime, currentUser} from "./classes.js";
+
+getUser(currentUser);
+let user = currentUser;
 
 window.addEventListener("DOMContentLoaded", assToSchedule);
 

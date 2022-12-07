@@ -1,8 +1,9 @@
 //code that populates the calendar with times and formats calendar (row width, height length)
 
-import {getUser,getFormattedDate,getDayOfWeek} from "./classes.js";
+import {getUser,getFormattedDate,getDayOfWeek, currentUser} from "./classes.js";
 
-let user1 = getUser();
+getUser(currentUser);
+let user1 = currentUser;
 
 //formatting for table:
 let table = document.body.querySelector("table"); //get table

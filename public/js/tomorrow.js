@@ -1,5 +1,8 @@
 //import classes
-import {User, Assignment, Event, weekdays, user1} from './classes.js'
+import {weekdays, currentUser, getUser} from './classes.js'
+
+getUser(currentUser);
+let user1 = currentUser;
 
 //DOM is loaded
 window.addEventListener("DOMContentLoaded", handler);

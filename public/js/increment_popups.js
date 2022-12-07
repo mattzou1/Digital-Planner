@@ -1,9 +1,11 @@
 //connects to copyToDo.html
 //import {increments} from "./increments.js"
-import {getUser} from "./classes.js"
+import {getUser,currentUser} from "./classes.js"
+
+getUser(currentUser);
+let user1 = currentUser;
 
 document.body.querySelector("#evnt").addEventListener("click", function(){
-    let user1 = getUser();
     //fills "start time" and "stop time" with times in 30 minute increments on the add assignment pop-up
 
     //get dropdown menu for start time
