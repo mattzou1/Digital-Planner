@@ -12,18 +12,12 @@ function handler(){ //event handler for after DOM is loaded
 
     let calheader = document.body.querySelector("#currentDate");
 
-    //testing ability to commit
-    console.log("Testing commit ability");
-
     //create array
     let nums = [0,1,2,3,4,5,6];
     //0 is Sunday... 6 is Saturday
 
     let today = new Date();
     let num = today.getDay();
-    // let storeToday = today.getDay();
-    // let storeToday2 = today;
-    ///console.log("storeToday2" + storeToday2);
 
     //if tomorrow button is clicked
     tmrButton.addEventListener("click", function() {
@@ -53,11 +47,10 @@ function handler(){ //event handler for after DOM is loaded
         
         calheader.innerHTML = `${month} ${day}, ${year}`;
 
-        ///console.log("today: " + today);
-        //console.log("num: " + num);
-        //clear all events from calendar
-        //keep repeating events
-        ///console.log("num: " + num);
+        //remove assignments on the current day
+        clearAssignments();
+
+
     });
 
     //get the back button
@@ -75,7 +68,6 @@ function handler(){ //event handler for after DOM is loaded
         ///console.log(weekdays[nums[num]]);
         date.innerHTML = weekdays[nums[num]];
         
-
         let newDate = today.setDate(today.getDate() - 1);
         today = new Date(newDate);
         //today.setDate(today.getDate() - 1);
@@ -87,8 +79,8 @@ function handler(){ //event handler for after DOM is loaded
         
         calheader.innerHTML = `${month} ${day}, ${year}`;
 
-        //get events back from calendar
-        //keep repeating events
+        //remove assignments from today
+        clearAssignments();
         
     });
 
@@ -116,6 +108,25 @@ function handler(){ //event handler for after DOM is loaded
 
 
     // });
+
+    //remove assignments on the current day
+    function clearAssignments(){
+        let counter = 0;
+        for (let [time] of user1.schedule) {
+            //if it is in the todo list, not the calander
+            let assignment2 = document.getElementById("assignment" + counter + "Copy" + (counter + 1));
+            //if(assignment2.className == "assignment"){
+                assignment2.remove();
+                let idIndex = assignment2.id;
+                let index = idIndex.match(/(\d+)/);
+                index = index[0];
+                delete user1.assignments[index]
+
+                //console.log(assignment2);
+
+                counter++;
+            }
+    }
 
 
 }
