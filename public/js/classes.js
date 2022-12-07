@@ -1,14 +1,5 @@
 export let weekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 
-export function getUser(){
-    let userdata = JSON.parse(window.localStorage.getItem("user"));
-    let user = new User(userdata.username, userdata.password, userdata.startTime, userdata.endTime);
-    for(let i = 0; i < userdata.scheduleKeys.length; i++){
-        user.schedule.set(userdata.scheduleKeys[i], userdata.scheduleValues[i]);
-    }
-    return user; 
-}
-
 export function getStopTime(startTime, cTime){
     let increment = 30; 
     let time = startTime;
@@ -162,7 +153,21 @@ export class Event{
     } 
 }
 
-export let user1 = new User("Bob", "123", "9:30", "17:00");
+export let currentUser = new User("", "", "0:00", "0:00");
+
+export function getUser(user){
+    let userdata = JSON.parse(window.localStorage.getItem("user"));
+    user.username = userdata.username; 
+    user.password = userdata.password;
+    user.startTime = userdata.startTime; 
+    user.endTime = userdata.endTime;
+    user.assignments = userdata.assignments; 
+    for(let i = 0; i < userdata.scheduleKeys.length; i++){
+        user.schedule.set(userdata.scheduleKeys[i], userdata.scheduleValues[i]);
+    }
+}
+
+//export let user1 = new User("Bob", "123", "9:30", "17:00");
 
 
 //exports the classes so we can use them in other js files

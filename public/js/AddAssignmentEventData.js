@@ -1,9 +1,10 @@
 //code to add event and assignment objects to fields in a user object and populate the ToDoList
-import {getUser, Assignment, Event, weekdays} from "./classes.js";
+import {getUser, Assignment, Event, weekdays, currentUser} from "./classes.js";
 
 window.addEventListener("DOMContentLoaded", registerSubmitButtons);
 
-let user = getUser();
+getUser(currentUser);
+let user = currentUser;
 let asscount = 0;
 
 function registerSubmitButtons(){

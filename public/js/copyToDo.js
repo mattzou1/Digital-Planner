@@ -1,5 +1,4 @@
 //let User = require("js/User.js");
-import {User,user1,Assignment, Event} from "./classes.js";
 
 document.addEventListener('DOMContentLoaded', (event) => {
     //check and see if "holder" boxes are empty and set make them droppaple if they are

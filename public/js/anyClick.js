@@ -1,7 +1,7 @@
-import {getUser} from "./classes.js"
+import {getUser,currentUser} from "./classes.js"
 
-let user1 = getUser();
-
+getUser(currentUser);
+let user1 = currentUser;
 
 document.addEventListener('DOMContentLoaded', (event) => {
 
@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             }
 
             //if it is in the todo list, not the calander
+            //THIS CODE HAS A BUG 
             if(assignment.style.display != "none" || assignment.className == "assignment"){
                 assignment.remove()
                 let idIndex = assignment.id

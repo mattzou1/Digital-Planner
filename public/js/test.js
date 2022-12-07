@@ -1,9 +1,11 @@
 //code that populates the calendar with times and formats calendar (row width, height length)
 
-import {getUser,getFormattedDate,getDayOfWeek} from "./classes.js";
+import {getUser,getFormattedDate,getDayOfWeek, currentUser} from "./classes.js";
 
-let user1 = getUser();
+getUser(currentUser);
+let user1 = currentUser;
 
+//formatting for table:
 let table = document.body.querySelector("table"); //get table
 //remove weird empty second row
 table.deleteRow(1)
@@ -30,6 +32,8 @@ let count = 1; //used to increment id number
 
 for (let [time] of user1.schedule){ //loop through each time in the schedule
     let row = tableBod.insertRow(-1); //insert a row
+    row.id = "myRow";
+
     let cell1 = row.insertCell(0); //create a cell
     let cell2 = row.insertCell(1); //create another cell
     
