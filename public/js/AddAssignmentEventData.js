@@ -1,11 +1,13 @@
 //code to add event and assignment objects to fields in a user object and populate the ToDoList
 import {getUser, Assignment, Event, weekdays, currentUser} from "./classes.js";
 
+let user = currentUser;
+let asscount = 0;
+
 window.addEventListener("DOMContentLoaded", registerSubmitButtons);
 
 getUser(currentUser);
-let user = currentUser;
-let asscount = 0;
+
 
 function registerSubmitButtons(){
     let submitAssButton = document.querySelector(".addbtn");
@@ -136,8 +138,8 @@ function populateToDo(){
     for(let ass of user.assignments){
         let todo = document.querySelector(`#Todo`);
         if(ass != undefined){
-            todo.innerHTML += `<div class = 'assignment' id='assignment${asscount}' draggable='true' ondragstart='drag(event)'> <button type='button' id='removeButton'>X</button> <button type ='button' id='editButton'>Edit</button> <p>${ass.name}</p> <p>${ass.description}</p> <p>${ass.completionTime} minutes</p> </div>`; 
-            asscount ++;    
+            console.log(user.assignments.indexOf(ass))
+            todo.innerHTML += `<div class = 'assignment' id='assignment${user.assignments.indexOf(ass)}' draggable='true' ondragstart='drag(event)'> <button type='button' id='removeButton'>X</button> <button type ='button' id='editButton'>Edit</button> <p>${ass.name}</p> <p>${ass.description}</p> <p>${ass.completionTime} minutes</p> </div>`;    
         }
     }
 }

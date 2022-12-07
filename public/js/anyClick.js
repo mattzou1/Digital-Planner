@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
             if(assignment.id.includes("Copy") || assignment.className == "event"){
                 //shrink back to 1 cell to then replace missing ones before deletion
                 cell.rowSpan = 1;
-
                 for (let row of table.rows) {
                     if(row.cells[1] == undefined){
                         //insert at the end of the row
@@ -35,12 +34,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
             //if it is in the todo list, not the calander
             //THIS CODE HAS A BUG 
-            if(assignment.style.display != "none" || assignment.className == "assignment"){
+            if(assignment.className == "assignment" && assignment.parentElement.id == "Todo"){
                 assignment.remove()
                 let idIndex = assignment.id
                 let index = idIndex.match(/(\d+)/);
                 index = index[0]
                 delete user1.assignments[index]
+                console.log(index)
+                console.log(user1.assignments)
             }
         }
 
