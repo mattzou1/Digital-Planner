@@ -33,6 +33,8 @@ body.dark{
     border-radius: 40px;
 }
 
+/*Properties for where table will be*/
+
 tr:first-child {
     position: sticky;
     top: 0;
