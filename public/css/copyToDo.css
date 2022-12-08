@@ -54,6 +54,18 @@ body.dark{
     border-width: 5px;
 }
 
+/* Hide assigments class
+.hideAss{
+    visibility: hidden;
+}
+*/
+
+/* Show assigments class
+.showAss{
+    visibility: visible;
+}
+*/
+
 /*Properties for the header and event button on calendar*/
 #headerAndButtons{
     display: flex;
