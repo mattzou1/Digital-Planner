@@ -1,4 +1,5 @@
-//code that populates the calendar with times and formats calendar (row width, height length)
+//code that populates the calendar with times
+//also, this code formats the calendar (row width, height length)
 
 import {getUser,getFormattedDate,getDayOfWeek, currentUser} from "./classes.js";
 
