@@ -69,11 +69,16 @@ function populateCalendar(){
 
     //cannot figure out how to only get 1 time so loop will stay but will quit after first one
     for(let [time] of user.schedule){
+
         let slot = user.schedule.get(time);
         //catch if stoptime doesnt exist
         try{
             let hours = parseInt(slot.stopTime.substring(0,time.indexOf(":")));
             let minutes = parseInt(slot.stopTime.substring(time.indexOf(":") + 1));
+
+            console.log(hours)
+            console.log(minutes)
+            
             if(minutes == 30){
                 minutes = 0
                 lastTime = hours + ":" + minutes + 0
@@ -83,7 +88,6 @@ function populateCalendar(){
                 minutes = 30
                 lastTime = hours + ":" + minutes
             }
-            console.log(lastTime)
         }
         catch{}
 
@@ -118,6 +122,7 @@ function populateCalendar(){
             event.parentElement.style.position = "relative"
             length++;
         
+            console.log("length")
             //add span
             originalCell.rowSpan = length;
             length = 0
@@ -138,7 +143,6 @@ function populateToDo(){
     for(let ass of user.assignments){
         let todo = document.querySelector(`#Todo`);
         if(ass != undefined){
-            console.log(user.assignments.indexOf(ass))
             todo.innerHTML += `<div class = 'assignment' id='assignment${user.assignments.indexOf(ass)}' draggable='true' ondragstart='drag(event)'> <button type='button' id='removeButton'>X</button> <button type ='button' id='editButton'>Edit</button> <p>${ass.name}</p> <p>${ass.description}</p> <p>${ass.completionTime} minutes</p> </div>`;    
         }
     }
