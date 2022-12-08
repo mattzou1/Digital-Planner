@@ -17,15 +17,15 @@
     <form action="/home" method="POST"> <!--Sends user back to home if submit is pressed-->
         <div>
             <p> <!--User can change their username-->
-                <label for="user">Set Username:</label> 
-                <input type="text" name="changeUsername" id="user" placeholder="New Username" maxlength="20">
+                <label for="changeUsername">Set Username:</label> 
+                <input type="text" name="changeUsername" id="changeUsername" placeholder="New Username" maxlength="20">
             </p>
         </div>
 
         <div>
             <p> <!--User can change their password-->
-                <label for="password">Set Password:</label> 
-                <input type="text" name="changePassword" id="password" placeholder="New Password" maxlength="20">
+                <label for="changePassword">Set Password:</label> 
+                <input type="text" name="changePassword" id="changePassword" placeholder="New Password" maxlength="20">
             </p>
         </div>
 
@@ -70,7 +70,8 @@
         </div>
        
         <div id="buttons">
-           <!--<a href="/home">--> <input type="button" id="submitButton">Submit</button><!--</a>-->
+            <!-- takes you back to the home page -->
+            <a href="/home"><button type="button" id="submitButton">Submit</button></a>
                 
             <!--takes you back to login page-->
             <a href="/"><button type="button" id="logoutButton">Logout</button></a>

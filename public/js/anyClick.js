@@ -1,4 +1,4 @@
-import {getUser,currentUser} from "./classes.js"
+import {getUser,currentUser, getStopTime} from "./classes.js"
 
 getUser(currentUser);
 let user1 = currentUser;
@@ -14,11 +14,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
             let table = document.body.querySelector("table");
             let assignment = targetElement.parentElement;
             let cell = assignment.parentElement;
-
             if(assignment.id.includes("Copy") || assignment.className == "event"){
                 //shrink back to 1 cell to then replace missing ones before deletion
+                let duration = cell.rowSpan * 30
                 cell.rowSpan = 1;
-
+                cell.firstChild.remove()
+                let startTime = cell.parentElement.cells[0].innerHTML
+                let endTime = getStopTime(startTime, duration);
+                user1.addElement(startTime, endTime, "empty")
+                console.log(user1.schedule)
+                
                 for (let row of table.rows) {
                     if(row.cells[1] == undefined){
                         //insert at the end of the row
@@ -34,18 +39,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
             }
 
             //if it is in the todo list, not the calander
-            //THIS CODE HAS A BUG 
-            if(assignment.style.display != "none" || assignment.className == "assignment"){
-                assignment.remove()
-                let idIndex = assignment.id
-                let index = idIndex.match(/(\d+)/);
-                index = index[0]
-                delete user1.assignments[index]
+            try{
+                if(assignment.className == "assignment" && assignment.parentElement.id == "Todo"){
+                    assignment.remove()
+                    let idIndex = assignment.id
+                    let index = idIndex.match(/(\d+)/);
+                    index = index[0]
+                    delete user1.assignments[index]
+                }
             }
+            catch{}
         }
 
 
-        //cycle through looking for incorrectly sized assignments and sizing them correctly
+        //cycle through looking for incorrectly sized cells and sizing them correctly
         let table = document.body.querySelector("table")
         for(let i = 0; i < table.rows.length; i++){
             try{

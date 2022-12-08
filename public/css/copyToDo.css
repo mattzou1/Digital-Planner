@@ -33,13 +33,6 @@ body.dark{
     border-radius: 40px;
 }
 
-/*Properties for where table will be*/
-
-tr:first-child {
-    position: sticky;
-    top: 0;
-    background-color:var(--table-background) ;
-}
 
 /*Properties for container around whole page*/
 .container{
