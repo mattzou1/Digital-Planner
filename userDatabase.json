@@ -146,5 +146,51 @@
             "empty",
             "empty"
         ]
+    },
+    {
+        "username": "",
+        "password": "",
+        "startTime": "1:00",
+        "endTime": "1:00",
+        "assignments": [],
+        "schedule": {},
+        "scheduleKeys": [],
+        "scheduleValues": []
+    },
+    {
+        "username": "Sasha",
+        "password": "heehee",
+        "startTime": "1:00",
+        "endTime": "1:00",
+        "assignments": [],
+        "schedule": {},
+        "scheduleKeys": [],
+        "scheduleValues": []
+    },
+    {
+        "username": "Palm",
+        "password": "Palm",
+        "startTime": "2:00",
+        "endTime": "3:00",
+        "assignments": [],
+        "schedule": {},
+        "scheduleKeys": [
+            "2:00",
+            "2:30"
+        ],
+        "scheduleValues": [
+            "empty",
+            "empty"
+        ]
+    },
+    {
+        "username": "Nina",
+        "password": "hoohoo",
+        "startTime": "1:00",
+        "endTime": "1:00",
+        "assignments": [],
+        "schedule": {},
+        "scheduleKeys": [],
+        "scheduleValues": []
     }
 ]

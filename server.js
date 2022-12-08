@@ -51,6 +51,42 @@ app.post("/login", (req, res) => {
     })
 });
 
+app.post("/changeuser", (req, res) => {
+    user = req.body;
+
+    fs.readFile('./userDatabase.json', 'utf8', (err, data) => {
+        if (err){
+            console.log("Error.");
+        }
+        else{
+            const parsed = JSON.parse(data); //parse data
+            let match = "false";
+
+            for(let userdata of parsed){
+                //check that you are looking at the correct/current user
+                if(userdata.username == user.username){
+                    match = "true";
+                    //delete the username
+                    delete parsed.username;
+                }
+            }
+
+            if (match == "true"){
+                //write back
+                fs.writeFile('./userDatabase.json', JSON.stringify(databases, null, 4), err => {
+                    if (err) {
+                        console.log("Error deleting.");
+                    }
+                });
+            }
+            res.send(match);
+
+        }
+    });
+
+
+});
+
 app.post("/createuser", (req, res) => {
     user = req.body; 
     fs.readFile('./userDatabase.json', 'utf8', (err, data) => {

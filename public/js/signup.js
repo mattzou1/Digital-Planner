@@ -12,6 +12,7 @@ function registerPostButtonListener() {
         let user = new User(username.value,password.value,startTime.value,stopTime.value);
         user.scheduleKeys = Array.from(user.schedule.keys());
         user.scheduleValues = Array.from(user.schedule.values());
+
         let url = "/createuser"
         let response = await fetch(url, {
             method: "POST",
@@ -21,6 +22,9 @@ function registerPostButtonListener() {
             body: JSON.stringify(user)
         });
         let result = await response.text(); 
+
+        console.log("result is: " + result);
+
         if(result == "true"){
             window.localStorage.setItem("user", JSON.stringify(user));
             window.location.replace("/home");
