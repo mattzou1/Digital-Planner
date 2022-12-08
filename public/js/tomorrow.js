@@ -1,5 +1,5 @@
 //import classes
-import {weekdays, currentUser, getUser, getFormattedDate} from './classes.js'
+import {weekdays, currentUser, getUser, getFormattedDate, getDayOfWeek} from './classes.js'
 
 getUser(currentUser);
 let user1 = currentUser;
@@ -20,11 +20,14 @@ function handler(){ //event handler for after DOM is loaded
     //0 is Sunday... 6 is Saturday
 
     let today = new Date();
+    let storeToday = today.getDate();
+    //console.log(today);
     let num = today.getDay();
+    let storeNum = num;
+    //console.log(num);
 
     //if tomorrow button is clicked
     tmrButton.addEventListener("click", function() {
-        //hideAss();
         //get day of week
         
         if(num > 5){
@@ -45,35 +48,18 @@ function handler(){ //event handler for after DOM is loaded
         //console.log("day: " + day);
         let month = today.toLocaleString("default", { month: "long"});
         let year = today.getFullYear();
-
-        //console.log("month: " + day);
-        //console.log("year: " + day);
         
         calheader.innerHTML = `${month} ${day}, ${year}`;
 
         //remove assignments on the current day
         clearAssignments();
        
-        console.log(getFormattedDate());
-        console.log(calheader.innerHTML);
-
-        // //if you're on today's date, show assignments
-        // if(calheader.innerHTML === getFormattedDate()){
-        //     console.log("Hi!");
-        //     showAss();
-        // }
-        // else{
-        //     hideAss();
-        //     console.log("hide");
-        // }
-        
     });
 
-    //get the back button
+    //get the 'back' button
     let backButton = document.querySelector("#backButton");
 
     backButton.addEventListener("click", function() {
-        //hideAss();
         //get nums
         //subtract num to get the previous day
 
@@ -99,25 +85,24 @@ function handler(){ //event handler for after DOM is loaded
         //remove assignments from today
         clearAssignments();
 
-        console.log(getFormattedDate());
-        console.log(calheader.innerHTML);
-        
-        //if you're on today's date, show assignments
-        // if(calheader.innerHTML === getFormattedDate()){
-        //     console.log("Hi!");
-        //     showAss();
-        // }
-        // else{
-        //     hideAss();
-        //     console.log("hide");
-        // }
-        
     });
 
-    let todayButton = document.querySelector("#todayButton");
     //get button for 'today'
+    let todayButton = document.querySelector("#todayButton");
+    //if today clicked, update calendar headers to today's date
     todayButton.addEventListener("click", function() {
+        //update date to today
+        date.innerHTML = getDayOfWeek();
         
+        //update cal header
+        calheader.innerHTML = getFormattedDate();
+
+        num = storeNum; //re-set num to the current day of week number
+        //console.log("should be 4: " + num);
+
+        //console.log(storeToday);
+        today.setDate(storeToday);
+        //console.log("today.getDate: " + today.getDate());
         //clearToDo();
 
     //     ///console.log("storeToday2: " + storeToday2);
@@ -141,68 +126,55 @@ function handler(){ //event handler for after DOM is loaded
 
     });
 
-    //hide Calendar test
-    // function hideAss(){
-    //     let counter = 0;
-    //     let assignment2 = document.getElementById("assignment" + counter + "Copy" + (counter + 1));
-    //     assignment2.classList.add('hideAss');
-
-    //     //add table to 'removeCal' class, which hides the table
-    //     //table.classList.add('removeCal');
-
-    //     //add a new table element
-    //     //let newTable = table.cloneNode(true);
-    //     // let newTable = document.createElement("#table");
-    //     // let newRow = document.createElement();
-    //     // let box = document.body.querySelector("#calendar");
-    //     // box.appendChild(newTable);
-    //     // //newTable.innerHTML = "Hi there!"
-    //     // newTable.id = "newTable";
-
-    // }
-
-    // function showAss(){
-    //     let counter = 0;
-    //     let assignment2 = document.getElementById("assignment" + counter + "Copy" + (counter + 1));
-    //     assignment2.classList.add('showAss');
-    // }
-
-    //remove assignments on the current day
+    //remove assignments when user goes past the current day
     function clearAssignments(){
-        //let counter = 0;
-        //get number of rows
-        
-        for (let i = 0; i < 10; i++) {
-            let assignment2 = document.querySelector("#assignment" + i + "Copy" + (i + 1));
-            for(let counter = 0; counter < 5; counter++){
-                console.log(assignment2);
-                if(assignment2.id !== "null"){
-                    assignment2.remove();
-                }
-                console.log(counter);
-            } 
-            console.log("i: " + i);
+        //get any assignments with an id that contains "Copy" (which means they are on the calendar)
+        let assignment = document.querySelectorAll(`[id*="Copy"]`);
+
+        //store the assignments currently on calendar for today's date
+        //create copy of assignment
+        let copy = document.querySelectorAll(`[id*="Copy"]`);
+    
+        //create array to store parent nodes of the assignments
+        let storeParents = [];
+        for(let i = 0; i < copy.length; i ++){
+            let parent = copy[i].parentNode;
+            storeParents.push(parent);
         }
-        //for (let [time] of user1.schedule) {
-            //if it is in the todo list, not the calander
-            //let assignment2 = document.getElementById("assignment" + counter + "Copy" + (counter + 1));
-            //if(assignment2.className == "assignment"){
-                //assignment2.remove();
-                // let idIndex = assignment2.id;
-                // let index = idIndex.match(/(\d+)/);
-                // index = index[0];
-                // delete user1.assignments[index]
 
-                //console.log(user1.assignments);
-                //make hide and show features?
-                //when date changes --> hide assignments
-                //when today clicked --> show assignments
+        //if assignments exist, remove them
+        if(assignment !== "null"){
+            //cycle through each element, and remove it from the calendar
+            assignment.forEach(ass => {
+                if(ass.parentNode.rowSpan > 1){
+                    //console.log(ass.parentNode.rowSpan);
+                    ass.parentNode.setAttribute("rowSpan", 1);
+                    //console.log("new rowspan: " + ass.parentNode.rowSpan);
 
-                //counter++;
-            //}
+                    //make cells beneath it have rowspan of 1 as well
+                }
+                ass.remove();
+            });
+        }
+
+        //get button for 'today'
+        //let todayButton = document.querySelector("#todayButton");
+        //if today button pushed, add assignments for current date back to calendar
+        todayButton.addEventListener("click", function() {
+            for(let i = 0; i < copy.length; i++){
+                //get an assignment
+                let firstAss = copy[i];
+            
+                //get parent of that assignment
+                let firstParent = storeParents[i];
+
+                //firstParent.setAttribute("rowSpan", firstParent.rowSpan);
+                //console.log(firstParent.rowSpan);
+
+                //append assignment to parent to add it back to calendar
+                firstParent.appendChild(firstAss);
+            }
+        });
     }
 
-
 }
-
-//add button that takes user to 'today' if they scroll too far
