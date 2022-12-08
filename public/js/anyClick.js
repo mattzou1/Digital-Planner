@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 let startTime = cell.parentElement.cells[0].innerHTML
                 let endTime = getStopTime(startTime, duration);
                 user1.addElement(startTime, endTime, "empty")
-                console.log(user1.schedule)
+                //console.log(user1.schedule)
                 
                 for (let row of table.rows) {
                     if(row.cells[1] == undefined){
