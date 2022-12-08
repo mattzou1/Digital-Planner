@@ -60,6 +60,9 @@ app.post("/changeuser", (req, res) => {
         }
         else{
             const parsed = JSON.parse(data); //parse data
+
+            console.log("parsed is: " + parsed);
+
             let match = "false";
 
             for(let userdata of parsed){
@@ -79,6 +82,7 @@ app.post("/changeuser", (req, res) => {
                     }
                 });
             }
+            console.log(match)
             res.send(match);
 
         }

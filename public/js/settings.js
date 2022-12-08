@@ -20,11 +20,13 @@ import {User} from "./classes.js";
             console.log("submit was just clicked");
             
             //gets all the data that user has the option of updating
-            let username = document.getElementById("user"); //gets the username
-            let password = document.getElementById("password"); //gets the password
+            let username = document.getElementById("changeUsername"); //gets the username
+            let password = document.getElementById("changePassword"); //gets the password
             let startTime = document.getElementById("startWorkTime");//gets the start time
             let stopTime = document.getElementById("stopWorkTime");//gets the stop time
             
+            console.log("username is: " + username.value);
+
             //if user did not update anything and clicked submit, nothing should get updated
             if (username.value == "" && password.value == ""){
             //get the current username
@@ -33,6 +35,7 @@ import {User} from "./classes.js";
             }
             else{
                 let user = localStorage.getItem("user"); //get the user
+
                 console.log("the user is: " + user);
 
                 let url = "/changeuser";

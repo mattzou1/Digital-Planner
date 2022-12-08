@@ -5,8 +5,8 @@ function registerPostButtonListener() {
     let button = document.getElementById("createAccount");
     button.addEventListener("click", async function (event) {
         event.preventDefault();
-        let username = document.getElementById("username");
-        let password = document.getElementById("password");
+        let username = document.getElementById("changeUsername");
+        let password = document.getElementById("changePassword");
         let startTime = document.getElementById("studyStart");
         let stopTime = document.getElementById("studyStop");
         let user = new User(username.value,password.value,startTime.value,stopTime.value);
@@ -22,8 +22,6 @@ function registerPostButtonListener() {
             body: JSON.stringify(user)
         });
         let result = await response.text(); 
-
-        console.log("result is: " + result);
 
         if(result == "true"){
             window.localStorage.setItem("user", JSON.stringify(user));
