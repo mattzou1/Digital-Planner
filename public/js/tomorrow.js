@@ -53,6 +53,8 @@ function handler(){ //event handler for after DOM is loaded
 
         //remove assignments on the current day
         clearAssignments();
+
+        //bringAssBack();
        
     });
 
@@ -84,6 +86,8 @@ function handler(){ //event handler for after DOM is loaded
 
         //remove assignments from today
         clearAssignments();
+
+        //bringAssBack();
 
     });
 
@@ -150,10 +154,26 @@ function handler(){ //event handler for after DOM is loaded
                     //console.log(ass.parentNode.rowSpan);
                     ass.parentNode.setAttribute("rowSpan", 1);
                     //console.log("new rowspan: " + ass.parentNode.rowSpan);
-
                     //make cells beneath it have rowspan of 1 as well
                 }
+                //remove the assignments
                 ass.remove();
+
+                //resize any cells that are not sized properly
+                let table = document.body.querySelector("table");
+                for (let row of table.rows) {
+                    //if any cells were removed when assignment was deleted
+                    if(row.cells[1] == undefined){
+                        //insert a cell at the end of the row
+                        let newCell = row.insertCell(-1)
+
+                        //add cell attributes to make it a holder for assignments
+                        newCell.id = "calendarBox" + row.cells[0].innerHTML;
+                        newCell.setAttribute("class", "holder");
+                        newCell.setAttribute("ondrop", "drop(event)");
+                        newCell.setAttribute("ondragover", "allowDrop(event)");
+                    }
+                }
             });
         }
 
@@ -175,6 +195,30 @@ function handler(){ //event handler for after DOM is loaded
                 firstParent.appendChild(firstAss);
             }
         });
+
+        if(calheader.innerHTML === getFormattedDate()){
+            console.log("Hiya back!")
+            for(let i = 0; i < copy.length; i++){
+                //get an assignment
+                let firstAss = copy[i];
+            
+                //get parent of that assignment
+                let firstParent = storeParents[i];
+    
+                //firstParent.setAttribute("rowSpan", firstParent.rowSpan);
+                //console.log(firstParent.rowSpan);
+    
+                //append assignment to parent to add it back to calendar
+                firstParent.appendChild(firstAss);
+            }
+       }
     }
+
+    // function bringAssBack(){
+    //     //if user scrolls back to today's date, bring assignments back
+    //     if(calheader.innerHTML === getFormattedDate()){
+    //         console.log("Hiya, back!");
+    //    }
+    // }
 
 }
