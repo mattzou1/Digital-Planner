@@ -1,6 +1,7 @@
-export let weekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+let weekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 
-export function getStopTime(startTime, cTime){
+//function that
+function getStopTime(startTime, cTime){
     let increment = 30; 
     let time = startTime;
     for(let i = 0; i < cTime/30; i++){
@@ -22,7 +23,7 @@ export function getStopTime(startTime, cTime){
 }
 
 //Returns today's date in the format "Tuesday 11/1"
-export function getCurrentDate(){
+function getCurrentDate(){
     let today = new Date();
     let day = today.getDate();
     let month = today.getMonth() + 1;
@@ -31,7 +32,7 @@ export function getCurrentDate(){
 }
 
 //function that returns the date in "Month Day, Year" format
-export function getFormattedDate(){
+function getFormattedDate(){
     let today = new Date();
     let day = today.getDate();
     let month = today.toLocaleString("default", { month: "long"});
@@ -40,7 +41,7 @@ export function getFormattedDate(){
 }
 
 //Returns the current day of the week in formate "Tuesday"
-export function getDayOfWeek(){
+function getDayOfWeek(){
     let today = new Date();
     let dayOfWeek = weekdays[today.getDay()];
     return dayOfWeek;
@@ -48,7 +49,7 @@ export function getDayOfWeek(){
 
 //All times should be a string using miltary time with minutes as 00 or 30 for example "14:30"
 //user class containing user information and schedule for one day
-export class User{    
+class User{    
     constructor(username, password, startTime, endTime){
         this.username = username;
         this.password = password;
@@ -97,6 +98,7 @@ export class User{
         }
     }
 
+    //function that checks if a schedule is empty between the startTime and endTime
     ifEmpty(startTime, endTime){
         let boo = true; 
         let increment = 30; 
@@ -124,7 +126,7 @@ export class User{
 }
 
 //Assignment class for making assignments
-export class Assignment{
+class Assignment{
     //shortcut should be boolean 
     constructor(name, description, completionTime/*, shortcut*/){
         this.name = name;
@@ -138,8 +140,7 @@ export class Assignment{
 }
 
 //Event class for making events
-
-export class Event{
+class Event{
     //reocuring should be an boolean array corresponding to ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"] 
     constructor(name, description, startTime, stopTime, reoccuring){
         this.name = name;
@@ -153,9 +154,10 @@ export class Event{
     } 
 }
 
-export let currentUser = new User("", "", "0:00", "0:00");
+let currentUser = new User("", "", "0:00", "0:00");
 
-export function getUser(user){
+//function that gets the user
+function getUser(user){
     let userdata = JSON.parse(window.localStorage.getItem("user"));
     user.username = userdata.username; 
     user.password = userdata.password;
@@ -171,11 +173,13 @@ export function getUser(user){
 
 
 //exports the classes so we can use them in other js files
-//module.exports.User = User;
-// module.exports.Assignment = Assignment;
-// module.exports.Event = Event;
-
-
+module.exports.User = User;
+module.exports.Assignment = Assignment;
+module.exports.Event = Event;
+//exports.getUser = getUser;
+//module.exports.getCurrentDate;
+//module.exports.getFormattedDate = getFormattedDate;
+//module.exports.getDayOfWeek = getDayOfWeek;
 
 //to import them, do:
     //let classes = require("./classes.js");
