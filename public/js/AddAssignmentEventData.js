@@ -73,22 +73,27 @@ function populateCalendar(){
         let slot = user.schedule.get(time);
         //catch if stoptime doesnt exist
         try{
-            let hours = parseInt(slot.stopTime.substring(0,time.indexOf(":")));
-            let minutes = parseInt(slot.stopTime.substring(time.indexOf(":") + 1));
-
-            console.log(hours)
-            console.log(minutes)
+            //Split the time into hours and minutes
+            let parts = time.split(':');
+            let hours = parseInt(parts[0], 10);
+            let minutes = parseInt(parts[1], 10);
             
-            if(minutes == 30){
-                minutes = 0
-                lastTime = hours + ":" + minutes + 0
+            // Add 30 minutes to the time
+            minutes += 30;
+            
+            //if min > 60 carry over to next hour
+            if (minutes >= 60) {
+                minutes -= 60;
+                hours++;
             }
-            else{
-                hours --;
-                minutes = 30
-                lastTime = hours + ":" + minutes
+            
+            if(minutes == 0){
+                minutes = "00"
             }
-        }
+            
+            // Format the resulting time as a string in the "HH:MM" format
+            lastTime = `${hours}:${minutes}`;
+            }
         catch{}
 
         if(slot != "empty" && slot.startTime == time){
@@ -107,7 +112,7 @@ function populateCalendar(){
             cell.innerHTML = `<div class='event'><button type='button' id='removeButton'>X</button><p>${slot.name}</p><p>${slot.description}</p><p>${reoccuringString}</p></div>`;
             length++;
         }
-        else if(slot != "empty" && lastTime == time){
+        else if(slot != "empty" && lastTime == slot.stopTime){
 
             let cell = document.getElementById("calendarBox" + time)
             cell.remove();
@@ -121,8 +126,7 @@ function populateCalendar(){
             event.style.bottom = "0%"
             event.parentElement.style.position = "relative"
             length++;
-        
-            console.log("length")
+
             //add span
             originalCell.rowSpan = length;
             length = 0
