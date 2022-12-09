@@ -5,6 +5,8 @@
 const express = require("express"); 
 const fs = require('fs');
 
+const bodyParser = require("body-parser"); 
+
 
 // Creates an Express application: https://expressjs.com/en/4x/api.html#app
 // Returns the Express application object
@@ -19,6 +21,8 @@ app.use('/img', express.static(__dirname + 'public/img'));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.use(bodyParser.json());
 
 // A route definition
 app.get("/", (req, res) => {
@@ -52,41 +56,44 @@ app.post("/login", (req, res) => {
 });
 
 app.post("/changeuser", (req, res) => {
-    user = req.body;
+    
+    console.log(req.body);
 
-    fs.readFile('./userDatabase.json', 'utf8', (err, data) => {
-        if (err){
-            console.log("Error.");
-        }
-        else{
-            const parsed = JSON.parse(data); //parse data
+    // user = req.body;
 
-            console.log("parsed is: " + parsed);
+    // fs.readFile('./userDatabase.json', 'utf8', (err, data) => {
+    //     if (err){
+    //         console.log("Error.");
+    //     }
+    //     else{
+    //         const parsed = JSON.parse(data); //parse data
 
-            let match = "false";
+    //         console.log("parsed is: " + parsed);
 
-            for(let userdata of parsed){
-                //check that you are looking at the correct/current user
-                if(userdata.username == user.username){
-                    match = "true";
-                    //delete the username
-                    delete parsed.username;
-                }
-            }
+    //         let match = "false";
 
-            if (match == "true"){
-                //write back
-                fs.writeFile('./userDatabase.json', JSON.stringify(databases, null, 4), err => {
-                    if (err) {
-                        console.log("Error deleting.");
-                    }
-                });
-            }
-            console.log(match)
-            res.send(match);
+    //         for(let userdata of parsed){
+    //             //check that you are looking at the correct/current user
+    //             if(userdata.username == user.username){
+    //                 match = "true";
+    //                 //delete the username
+    //                 delete parsed.username;
+    //             }
+    //         }
 
-        }
-    });
+    //         if (match == "true"){
+    //             //write back
+    //             fs.writeFile('./userDatabase.json', JSON.stringify(databases, null, 4), err => {
+    //                 if (err) {
+    //                     console.log("Error deleting.");
+    //                 }
+    //             });
+    //         }
+    //         console.log(match)
+    //         res.send(match);
+
+    // //     }
+    // });
 
 
 });

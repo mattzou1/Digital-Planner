@@ -25,7 +25,7 @@ import {User} from "./classes.js";
             let startTime = document.getElementById("startWorkTime");//gets the start time
             let stopTime = document.getElementById("stopWorkTime");//gets the stop time
             
-            console.log("username is: " + username.value);
+            console.log("new username will be: " + username.value);
 
             //if user did not update anything and clicked submit, nothing should get updated
             if (username.value == "" && password.value == ""){
@@ -36,19 +36,19 @@ import {User} from "./classes.js";
             else{
                 let user = localStorage.getItem("user"); //get the user
 
-                console.log("the user is: " + user);
+                let theUsername = user.username;
+
+                console.log("the current user is: " + user);
+                console.log("the curr username is:" + theUsername);
 
                 let url = "/changeuser";
                 let response = await fetch(url, {
                     method: "POST",
                     headers: {
-                        "Accept": "application/json",
                         "Content-Type": "application/json"
                     },
-                    body: JSON.stringify(user)
+                    body: JSON.stringify({theUsername})
                 });
-
-                console.log("almost at result");
 
                 let result = await response.text(); 
 
