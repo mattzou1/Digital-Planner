@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 let startTime = cell.parentElement.cells[0].innerHTML
                 let endTime = getStopTime(startTime, duration);
                 user1.addElement(startTime, endTime, "empty")
-                //console.log(user1.schedule)
                 
                 //replace missing cells below assignment (goes until cells are not undefined, so when it hits another assignment/event or blank cell) 
                 let checkIndex = originalIndex + 1
