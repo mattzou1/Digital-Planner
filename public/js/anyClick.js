@@ -19,22 +19,29 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 let duration = cell.rowSpan * 30
                 cell.rowSpan = 1;
                 cell.firstChild.remove()
+
+                let originalRow = cell.parentElement;
+                let originalIndex = originalRow.rowIndex
                 let startTime = cell.parentElement.cells[0].innerHTML
                 let endTime = getStopTime(startTime, duration);
                 user1.addElement(startTime, endTime, "empty")
-                //console.log(user1.schedule)
                 
-                for (let row of table.rows) {
-                    if(row.cells[1] == undefined){
-                        //insert at the end of the row
-                        let newCell = row.insertCell(-1)
+                //replace missing cells below assignment (goes until cells are not undefined, so when it hits another assignment/event or blank cell) 
+                let checkIndex = originalIndex + 1
+                let rowCheck = table.rows[checkIndex]
+                while(rowCheck.cells[1] == undefined){
+                    //insert at the end of the row
+                    let newCell = rowCheck.insertCell(-1)
 
-                        //add cell attributes
-                        newCell.id = "calendarBox" + row.cells[0].innerHTML;
-                        newCell.setAttribute("class", "holder");
-                        newCell.setAttribute("ondrop", "drop(event)");
-                        newCell.setAttribute("ondragover", "allowDrop(event)");
-                    }
+                    //add cell attributes
+                    newCell.id = "calendarBox" + rowCheck.cells[0].innerHTML;
+                    newCell.setAttribute("class", "holder");
+                    newCell.setAttribute("ondrop", "drop(event)");
+                    newCell.setAttribute("ondragover", "allowDrop(event)");
+
+                    //increment to check next row
+                    checkIndex++
+                    rowCheck = table.rows[checkIndex];
                 }
             }
 
