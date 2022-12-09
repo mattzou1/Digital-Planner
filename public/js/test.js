@@ -1,7 +1,7 @@
 //code that populates the calendar with times
 //also, this code formats the calendar (row width, height length)
 
-import {getUser,getFormattedDate,getDayOfWeek, currentUser} from "./classes.js";
+import {getUser, getFormattedDate, getDayOfWeek, currentUser} from "./classes.js";
 
 getUser(currentUser);
 let user1 = currentUser;
