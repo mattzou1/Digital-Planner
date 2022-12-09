@@ -1,5 +1,6 @@
 export let weekdays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 
+//function that
 export function getStopTime(startTime, cTime){
     let increment = 30; 
     let time = startTime;
@@ -97,6 +98,7 @@ export class User{
         }
     }
 
+    //function that checks if a schedule is empty between the startTime and endTime
     ifEmpty(startTime, endTime){
         let boo = true; 
         let increment = 30; 
@@ -138,7 +140,6 @@ export class Assignment{
 }
 
 //Event class for making events
-
 export class Event{
     //reocuring should be an boolean array corresponding to ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"] 
     constructor(name, description, startTime, stopTime, reoccuring){
@@ -155,6 +156,7 @@ export class Event{
 
 export let currentUser = new User("", "", "0:00", "0:00");
 
+//function that gets the user
 export function getUser(user){
     let userdata = JSON.parse(window.localStorage.getItem("user"));
     user.username = userdata.username; 
@@ -167,15 +169,17 @@ export function getUser(user){
     }
 }
 
-//export let user1 = new User("Bob", "123", "9:30", "17:00");
+export let user1 = new User("Bob", "123", "9:30", "17:00");
 
 
 //exports the classes so we can use them in other js files
 //module.exports.User = User;
-// module.exports.Assignment = Assignment;
-// module.exports.Event = Event;
-
-
+//module.exports.Assignment = Assignment;
+//module.exports.Event = Event;
+//exports.getUser = getUser;
+//module.exports.getCurrentDate;
+//module.exports.getFormattedDate = getFormattedDate;
+//module.exports.getDayOfWeek = getDayOfWeek;
 
 //to import them, do:
     //let classes = require("./classes.js");
