@@ -83,31 +83,13 @@ form > div { /*Deals with div elements in form*/
 #escapeButton{
     display: flex;
     float: right;
-    margin-top: -421px;
+    margin-top: -375px;
     margin-right: -260px;
     background-color: white;
     color: var(--button-Color);
     border-radius: 5px;
     border: thick double;
     cursor: pointer;
-   
-
-    /*padding: 0px 10px;
-    background: white;
-    color: #007E6F;
-    border: 1;
-    border-radius: 2px;
-    outline: auto;
-    cursor: pointer;
-    width: 10%;
-    height: 6%;
-    font-size: 90%;
-	font-weight: 5000;
-    text-align: center;
-    transition: background-color 0.1s,
-        color 0.1s,
-        box-shadow 0.1s;
-    */
 }
 
 #escapeButton:hover {

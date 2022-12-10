@@ -1,7 +1,7 @@
 [
     {
         "username": "ruth",
-        "password": "123",
+        "password": "plate",
         "startTime": "8:00",
         "endTime": "15:30",
         "assignments": [],
@@ -149,7 +149,7 @@
     },
     {
         "username": "Sasha",
-        "password": "heehee",
+        "password": "hoo",
         "startTime": "1:00",
         "endTime": "1:00",
         "assignments": [],
@@ -195,6 +195,58 @@
             "empty",
             "empty",
             "empty",
+            "empty",
+            "empty",
+            "empty",
+            "empty",
+            "empty",
+            "empty",
+            "empty",
+            "empty",
+            "empty",
+            "empty"
+        ]
+    },
+    {
+        "username": "cup",
+        "password": "plate",
+        "startTime": "8:00",
+        "endTime": "10:00",
+        "assignments": [],
+        "schedule": {},
+        "scheduleKeys": [
+            "8:00",
+            "8:30",
+            "9:00",
+            "9:30"
+        ],
+        "scheduleValues": [
+            "empty",
+            "empty",
+            "empty",
+            "empty"
+        ]
+    },
+    {
+        "username": "iceland",
+        "password": "pooper",
+        "startTime": "5:00",
+        "endTime": "10:00",
+        "assignments": [],
+        "schedule": {},
+        "scheduleKeys": [
+            "5:00",
+            "5:30",
+            "6:00",
+            "6:30",
+            "7:00",
+            "7:30",
+            "8:00",
+            "8:30",
+            "9:00",
+            "9:30"
+        ],
+        "scheduleValues": [
             "empty",
             "empty",
             "empty",

@@ -69,7 +69,8 @@ import {User} from "./classes.js";
                 
                 if(result == "true"){
                     console.log("meow!");
-                    window.localStorage.setItem("user", JSON.stringify(user));
+                    window.localStorage.setItem("user", JSON.stringify(parsed));
+                    window.location.replace("/home");
                 }
 
                 // console.log("Going to change something...");
