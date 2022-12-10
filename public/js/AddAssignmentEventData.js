@@ -106,14 +106,8 @@ function populateCalendar(){
 
             //add event
             cell.innerHTML = `<div class='event'><button type='button' id='removeButton'>X</button><p>${slot.name}</p><p>${slot.description}</p><p>${reoccuringString}</p></div>`;
-            length++;
-        }
-        else if(slot != "empty" && lastTime == slot.stopTime){
-
-            let cell = document.getElementById("calendarBox" + time)
-            cell.remove();
-
-            let event = originalCell.firstChild
+            
+            let event = cell.firstChild
 
             //change event style settings for when it is added to calander
             event.style.height = "100%";
@@ -121,6 +115,18 @@ function populateCalendar(){
             //IDK why but it doesn't work without this line:
             event.style.bottom = "0%"
             event.parentElement.style.position = "relative"
+
+            length++;
+            //if it is only 30 min long
+            if(lastTime == slot.stopTime){
+                length = 0;
+            }
+        }
+        else if(slot != "empty" && lastTime == slot.stopTime){
+
+            let cell = document.getElementById("calendarBox" + time)
+            cell.remove();
+
             length++;
 
             //add span
