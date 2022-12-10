@@ -38,7 +38,7 @@
  * Styling for the add assignment popup.
  */
 .assignment_popup {
-  height: 400px;
+  height: 300px;
   width: 400px;
   background: white;
   border-radius: 30px;
@@ -76,7 +76,7 @@
  */
 .cancelbtn {
 	width: 40%;
-	margin-top: 80px;
+	margin-top: 35px;
 	padding: 10px 10px;
   background-color: #007E6F;
   color: white;
