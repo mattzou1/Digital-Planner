@@ -161,7 +161,7 @@ function clearToDo(){
 
 function clearFields() {
     document.getElementById("Aname").value = "";
-    document.getElementById("reading").checked = false;
+    //document.getElementById("reading").checked = false;
     document.getElementById("Description").value = "";
     document.getElementById("Ctime").value = "";
 }
