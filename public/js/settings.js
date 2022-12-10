@@ -37,7 +37,21 @@ import {User} from "./classes.js";
                 let user = localStorage.getItem("user"); //get the user
 
                 let parsed = JSON.parse(user);
+
+                //if the user does not want to change their username...
+                if (username.value == "" || username.value == null){ 
+                    username.value = parsed.username; //set the current username to username.value 
+                }
+
                 let newUsername = username.value;
+
+                console.log("new username will be:" + newUsername);
+
+                //if the user does not want to change their password...
+                if (password.value == "" || password.value == null){
+                    password.value = parsed.password; //set the current password to password.value 
+                }
+
                 let newPassword = password.value;
 
                 let url = "/changeuser";
