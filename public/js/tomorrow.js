@@ -138,7 +138,28 @@ function handler(){ //event handler for after DOM is loaded
         //store the assignments currently on calendar for today's date
         //create copy of assignment
         let copy = document.querySelectorAll(`[id*="Copy"]`);
+        
+        if(calheader.innerHTML === getFormattedDate()){
+            bringAssBack();
+            // console.log(copy.length);
+            // for(let i = 0; i < copy.length; i++){
+            //     //get an assignment
+            //     let firstAss = copy[i];
+
+            //     console.log("Hiya back!")
+
+            
+            //     //get parent of that assignment
+            //     let firstParent = storeParents[i];
     
+            //     //firstParent.setAttribute("rowSpan", firstParent.rowSpan);
+            //     //console.log(firstParent.rowSpan);
+    
+            //     //append assignment to parent to add it back to calendar
+            //     firstParent.appendChild(firstAss);
+            // }
+       }
+
         //create array to store parent nodes of the assignments
         let storeParents = [];
         for(let i = 0; i < copy.length; i ++){
@@ -180,38 +201,28 @@ function handler(){ //event handler for after DOM is loaded
         //get button for 'today'
         //let todayButton = document.querySelector("#todayButton");
         //if today button pushed, add assignments for current date back to calendar
+        function bringAssBack(){
+                for(let i = 0; i < copy.length; i++){
+                    //get an assignment
+                    let firstAss = copy[i];
+                
+                    //get parent of that assignment
+                    let firstParent = storeParents[i];
+    
+                    //firstParent.setAttribute("rowSpan", firstParent.rowSpan);
+                    //console.log(firstParent.rowSpan);
+    
+                    //append assignment to parent to add it back to calendar
+                    firstParent.appendChild(firstAss);
+                    console.log(copy.length);
+                }
+            
+        }
+
         todayButton.addEventListener("click", function() {
-            for(let i = 0; i < copy.length; i++){
-                //get an assignment
-                let firstAss = copy[i];
-            
-                //get parent of that assignment
-                let firstParent = storeParents[i];
-
-                //firstParent.setAttribute("rowSpan", firstParent.rowSpan);
-                //console.log(firstParent.rowSpan);
-
-                //append assignment to parent to add it back to calendar
-                firstParent.appendChild(firstAss);
-            }
+            bringAssBack();
         });
-
-        if(calheader.innerHTML === getFormattedDate()){
-            console.log("Hiya back!")
-            for(let i = 0; i < copy.length; i++){
-                //get an assignment
-                let firstAss = copy[i];
-            
-                //get parent of that assignment
-                let firstParent = storeParents[i];
-    
-                //firstParent.setAttribute("rowSpan", firstParent.rowSpan);
-                //console.log(firstParent.rowSpan);
-    
-                //append assignment to parent to add it back to calendar
-                firstParent.appendChild(firstAss);
-            }
-       }
+        
     }
 
     // function bringAssBack(){
