@@ -24,11 +24,7 @@ function registerSubmitButtons(){
 
     let submitEventButton = document.querySelector(".addbtn2");
     submitEventButton.addEventListener("click", function () {
-        let reoccuring = [];
-        for(let weekday of weekdays){
-            reoccuring.push(document.getElementById(weekday).checked);
-        }
-        let event1 = new Event(document.getElementById("Ename").value, document.getElementById("EventDescription").value, document.getElementById("Stime").value, document.getElementById("Etime").value, reoccuring)
+        let event1 = new Event(document.getElementById("Ename").value, document.getElementById("EventDescription").value, document.getElementById("Stime").value, document.getElementById("Etime").value)
         if(!user.ifEmpty(event1.startTime, event1.stopTime)){
             window.alert("Space is taken");
         }
@@ -171,11 +167,4 @@ function clearFields2() {
     document.getElementById("EventDescription").value = "";
     document.getElementById("Stime").value = "";
     document.getElementById("Etime").value = "";
-    document.getElementById("Sunday").checked = false;
-    document.getElementById("Monday").checked = false;
-    document.getElementById("Tuesday").checked = false;
-    document.getElementById("Wednesday").checked = false;
-    document.getElementById("Thursday").checked = false;
-    document.getElementById("Friday").checked = false;
-    document.getElementById("Saturday").checked = false;
 }

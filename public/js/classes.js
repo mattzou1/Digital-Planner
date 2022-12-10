@@ -146,9 +146,6 @@ export class Event{
         this.startTime = startTime;
         this.stopTime = stopTime;
         this.reoccuringDays = new Map();
-        for(let i in weekdays){
-            this.reoccuringDays.set(weekdays[i], reoccuring[i]);
-        }
     } 
 }
 
