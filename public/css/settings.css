@@ -83,7 +83,7 @@ form > div { /*Deals with div elements in form*/
 #escapeButton{
     display: flex;
     float: right;
-    margin-top: -375px;
+    margin-top: -273px;
     margin-right: -260px;
     background-color: white;
     color: var(--button-Color);
