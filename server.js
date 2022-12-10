@@ -56,45 +56,63 @@ app.post("/login", (req, res) => {
 });
 
 app.post("/changeuser", (req, res) => {
-    
-    console.log(req.body);
 
-    // user = req.body;
+    user = req.body;
+    console.log(user);
 
-    // fs.readFile('./userDatabase.json', 'utf8', (err, data) => {
-    //     if (err){
-    //         console.log("Error.");
-    //     }
-    //     else{
-    //         const parsed = JSON.parse(data); //parse data
+    fs.readFile('./userDatabase.json', 'utf8', (err, data) => {
+        if (err){
+            console.log("Error.");
+        }
+        else{
+            
+            const database = JSON.parse(data) //parse string to JSON object
+            
+            let match = "false";
 
-    //         console.log("parsed is: " + parsed);
+            console.log("made it inside the else loop");
 
-    //         let match = "false";
+            //console.log("\nparsedData.newUsername: " + parsedData.newUsername);
+            
+            // console.log("\nNew username: " + user.newUsername);
 
-    //         for(let userdata of parsed){
-    //             //check that you are looking at the correct/current user
-    //             if(userdata.username == user.username){
-    //                 match = "true";
-    //                 //delete the username
-    //                 delete parsed.username;
-    //             }
-    //         }
+            // console.log("\database[0].username: " + database[0].username);
+            
+            // console.log("\nCurrent username: " + user.parsed.username);
 
-    //         if (match == "true"){
-    //             //write back
-    //             fs.writeFile('./userDatabase.json', JSON.stringify(databases, null, 4), err => {
-    //                 if (err) {
-    //                     console.log("Error deleting.");
-    //                 }
-    //             });
-    //         }
-    //         console.log(match)
-    //         res.send(match);
+            for (let i = 0; i < database.length; i++){
+                //checks if entry in userDatabase matches the current user
+                if (database[i].username == user.parsed.username){ 
+                    match = "true"; //sets match to true if matches
+                    console.log("the username found is: " + user.parsed.username);
+                    database[i].username = user.newUsername; //set current username in userDatabase to the new username
+                    break;
+                }
+            }
 
-    // //     }
-    // });
+            for (let i = 0; i < database.length; i++){
+                //checks if entry in userDatabase matches the current user
+                if (database[i].password == user.parsed.password){ 
+                    match = "true"; //sets match to true if matches
+                    console.log("the password found is: " + user.parsed.password);
+                    database[i].password = user.newPassword; //set current username in userDatabase to the new username
+                    break;
+                }
+            }
 
+            if (match == "true"){
+                //write back
+                fs.writeFile('./userDatabase.json', JSON.stringify(database, null, 4), err => {
+                    if (err) {
+                        console.log("Error deleting.");
+                    }
+                });
+            }
+            console.log(match)
+            res.send(match);
+
+        }
+    });
 
 });
 

@@ -5,8 +5,8 @@ function registerPostButtonListener() {
     let button = document.getElementById("createAccount");
     button.addEventListener("click", async function (event) {
         event.preventDefault();
-        let username = document.getElementById("changeUsername");
-        let password = document.getElementById("changePassword");
+        let username = document.getElementById("username");
+        let password = document.getElementById("password");
         let startTime = document.getElementById("studyStart");
         let stopTime = document.getElementById("studyStop");
         let user = new User(username.value,password.value,startTime.value,stopTime.value);

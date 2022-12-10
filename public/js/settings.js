@@ -36,10 +36,9 @@ import {User} from "./classes.js";
             else{
                 let user = localStorage.getItem("user"); //get the user
 
-                let theUsername = user.username;
-
-                console.log("the current user is: " + user);
-                console.log("the curr username is:" + theUsername);
+                let parsed = JSON.parse(user);
+                let newUsername = username.value;
+                let newPassword = password.value;
 
                 let url = "/changeuser";
                 let response = await fetch(url, {
@@ -47,7 +46,7 @@ import {User} from "./classes.js";
                     headers: {
                         "Content-Type": "application/json"
                     },
-                    body: JSON.stringify({theUsername})
+                    body: JSON.stringify({parsed,newUsername,newPassword})
                 });
 
                 let result = await response.text(); 
@@ -56,6 +55,7 @@ import {User} from "./classes.js";
                 
                 if(result == "true"){
                     console.log("meow!");
+                    window.localStorage.setItem("user", JSON.stringify(user));
                 }
 
                 // console.log("Going to change something...");
