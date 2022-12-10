@@ -17,9 +17,16 @@ function assToSchedule(){
             let length = cell.rowSpan * 30
             let assignmentid = targetElement.id; 
             let index = assignmentid.substring(10,11);
+            for(let row in table){
+                if(row.cells[1] !== undefined && row.cells[1].hasChildren() ){
+                    if(row.cells[1].firstchild.className == "assignment"){
+                        console.log("assignment")
+                    }
+                }
+            }
             user.addElement(startTime, getStopTime(startTime, length), user.assignments[index]);
-            //console.log(user.assignments);
-            //console.log(user.schedule);
+            console.log(user.assignments);
+            console.log(user.schedule);
         }
     });
 }

@@ -37,7 +37,7 @@
  * Styling for the add event popup.
  */
 .event_popup {
-  height: 400px;
+  height: 300px;
   width: 400px;
   background: #ffff;
   border-radius: 30px;
@@ -76,7 +76,7 @@
  */
 .cancelbtn2 {
 	width: 40%;
-	margin-top: 60px;
+	margin-top: 35px;
 	padding: 10px 10px;
   background-color: #007E6F;
   color: white;
