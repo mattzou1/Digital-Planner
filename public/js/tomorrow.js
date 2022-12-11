@@ -26,6 +26,13 @@ function handler(){ //event handler for after DOM is loaded
     let storeNum = num;
     //console.log(num);
 
+    //variable to make sure clearing assignments only happens one time
+    let callTmrOnce = 0;
+    let callBackOnce = 0;
+
+    //used to store return value from clearAssignments();
+    let returnClearAss = null;
+
     //if tomorrow button is clicked
     tmrButton.addEventListener("click", function() {
         //get day of week
@@ -52,9 +59,36 @@ function handler(){ //event handler for after DOM is loaded
         calheader.innerHTML = `${month} ${day}, ${year}`;
 
         //remove assignments on the current day
-        clearAssignments();
+        if(callTmrOnce == 0){
+            returnClearAss = clearAssignments();
+            //console.log("hello");
+        }
 
-        //bringAssBack();
+        callTmrOnce++;
+        //get assignments back if user manually scrolls to today's date
+        // if(calheader.innerHTML === getFormattedDate()){
+        //     console.log(returnClearAss);
+
+        //     //split array in half (lower half for assignments, upper half for parents)
+        //     let assignments = returnClearAss.splice(0, returnClearAss.length / 2);
+        //     let parents = returnClearAss.splice((returnClearAss.length / 2) - 1);
+
+        //     console.log(assignments);
+        //     console.log(parents);
+
+        //     for(let i = 0; i < assignments.length; i++){
+        //         //get an assignment
+        //         let firstAss = assignments[i];
+        //         //console.log(firstAss);
+            
+        //         //get parent of that assignment
+        //         let firstParent = parents[i];
+        //         //console.log(firstParent);
+
+        //         //append assignment to parent to add it back to calendar
+        //         firstParent.appendChild(firstAss);
+        //     }
+        // }
        
     });
 
@@ -85,9 +119,14 @@ function handler(){ //event handler for after DOM is loaded
         calheader.innerHTML = `${month} ${day}, ${year}`;
 
         //remove assignments from today
-        clearAssignments();
-
-        //bringAssBack();
+        //remove assignments on the current day
+        if(callBackOnce == 0){
+            clearAssignments();
+            console.log("hi");
+        }
+        callBackOnce++;
+        //let test = clearAssignments();
+        //console.log(test);
 
     });
 
@@ -107,27 +146,7 @@ function handler(){ //event handler for after DOM is loaded
         //console.log(storeToday);
         today.setDate(storeToday);
         //console.log("today.getDate: " + today.getDate());
-        //clearToDo();
-
-    //     ///console.log("storeToday2: " + storeToday2);
-
-    //     //update date to today
-    //     date.innerHTML = user1.getDayOfWeek();
-        
-    //     //update cal header
-    //     calheader.innerHTML = user1.getFormattedDate();
-
-    //     num = storeToday; //rest num to the current day of week number
-    //     ///console.log("should be 3: " + num);
-
-    //     //today.setDate(storeToday);
-    //     //console.log("today.getDate: " + today.getDate());
-
-    //     //let newDate = today.setDate(storeToday2);
-    //     today = new Date(storeToday2 - 1);
-    //     ///console.log("today: " + today);
-
-
+       
     });
 
     //remove assignments when user goes past the current day
@@ -139,32 +158,26 @@ function handler(){ //event handler for after DOM is loaded
         //create copy of assignment
         let copy = document.querySelectorAll(`[id*="Copy"]`);
         
-        if(calheader.innerHTML === getFormattedDate()){
-            bringAssBack();
-            // console.log(copy.length);
-            // for(let i = 0; i < copy.length; i++){
-            //     //get an assignment
-            //     let firstAss = copy[i];
-
-            //     console.log("Hiya back!")
-
-            
-            //     //get parent of that assignment
-            //     let firstParent = storeParents[i];
-    
-            //     //firstParent.setAttribute("rowSpan", firstParent.rowSpan);
-            //     //console.log(firstParent.rowSpan);
-    
-            //     //append assignment to parent to add it back to calendar
-            //     firstParent.appendChild(firstAss);
-            // }
-       }
+        //copy2 holds the assignments on the calendar
+        //will holds assignments and their parents, which will later be returned by this function
+        //let copy2 = copy;
+        //convert NodeList into array
+        // let copyArray = Array.prototype.slice(copy)
+       
+        // //push assignments onto copyArray
+        // for(let i = 0; i < copy.length; i ++){
+        //     let parent = copy[i];
+        //     copyArray.push(parent);  
+        // }
 
         //create array to store parent nodes of the assignments
         let storeParents = [];
         for(let i = 0; i < copy.length; i ++){
             let parent = copy[i].parentNode;
             storeParents.push(parent);
+
+            //also push parents of assignments onto copyArray
+            //copyArray.push(parent);  
         }
 
         //if assignments exist, remove them
@@ -201,27 +214,25 @@ function handler(){ //event handler for after DOM is loaded
         //get button for 'today'
         //let todayButton = document.querySelector("#todayButton");
         //if today button pushed, add assignments for current date back to calendar
-        function bringAssBack(){
-                for(let i = 0; i < copy.length; i++){
-                    //get an assignment
-                    let firstAss = copy[i];
-                
-                    //get parent of that assignment
-                    let firstParent = storeParents[i];
-    
-                    //firstParent.setAttribute("rowSpan", firstParent.rowSpan);
-                    //console.log(firstParent.rowSpan);
-    
-                    //append assignment to parent to add it back to calendar
-                    firstParent.appendChild(firstAss);
-                    console.log(copy.length);
-                }
-            
-        }
 
         todayButton.addEventListener("click", function() {
-            bringAssBack();
+            for(let i = 0; i < copy.length; i++){
+                //get an assignment
+                let firstAss = copy[i];
+            
+                //get parent of that assignment
+                let firstParent = storeParents[i];
+
+                //firstParent.setAttribute("rowSpan", firstParent.rowSpan);
+                //console.log(firstParent.rowSpan);
+
+                //append assignment to parent to add it back to calendar
+                firstParent.appendChild(firstAss);
+                console.log(copy.length);
+            }
         });
+
+        //return copyArray;
         
     }
 
