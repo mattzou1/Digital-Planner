@@ -1,11 +1,7 @@
 [
     {
         "username": "ruth",
-<<<<<<< HEAD
-        "password": "1234",
-=======
         "password": "plate",
->>>>>>> 251ce972038d2b164a54cac0fc1bb704dd513bd5
         "startTime": "8:00",
         "endTime": "15:30",
         "assignments": [],
@@ -233,7 +229,7 @@
     },
     {
         "username": "iceland",
-        "password": "pooper",
+        "password": "icey",
         "startTime": "5:00",
         "endTime": "10:00",
         "assignments": [],
