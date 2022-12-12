@@ -4,11 +4,9 @@ let classes = require("../public/js/classes.js");
 xdescribe("Functions in classes.js", () => {
     beforeEach(() => {
         user2 = new classes.User("Rachel",1,"8:30", "13:30");
-        //add an element to the schedule
-        user2.addElement("9:30", "10:30", "Drinking tea")
     });
     it("gets user", () => {
-        expect(getUser(user2)).toBe(user2);
+        expect(classes.getUser(user2)).toBe(user2);
     });
  });
 
@@ -71,22 +69,31 @@ describe("Add element", () => {
  });
 
  //results of test change depending on what day it is
- xdescribe("Get current date", () => {
-    beforeEach(() => {
-        user4 = new classes.User("Joey",1,"8:30", "9:30");
-    });
+ //TODO: make tests pass regardless of day
+ describe("Get current date", () => {
     it("has correct date", () => {
-        expect(getCurrentDate()).toBe("Thursday 12/8");
+        expect(classes.getCurrentDate()).toBe("Monday 12/12");
     });
-    xit("has correct day of week", () => {
-        expect(getDayOfWeek()).toBe("Monday");
+    it("has correct day of week", () => {
+        expect(classes.getDayOfWeek()).toBe("Monday");
     });
-    xit("has correct long date format", () => {
-        expect(getFormattedDate()).toBe("November 28, 2022");
+    it("has correct long date format", () => {
+        expect(classes.getFormattedDate()).toBe("December 12, 2022");
     });
 });
 
-
+//check on what these functions are supposed to return 
+xdescribe("Get stop time", () => {
+    it("has correct stop time", () => {
+        expect(classes.getStopTime("8:00", "11:00")).toBe("11:00");
+    });
+    it("is in the proper time range", () => {
+        expect(classes.inTimeRange("8:00","11:00","9:00")).toBe(true);
+    });
+    it("is out of time range", () => {
+        expect(classes.inTimeRange("8:00","11:00","21:00")).toBe(false);
+    });
+});
 
 //Info about Jasmine tests:
     //can temporarily disable suite using xdescribe() and specs using xit()
