@@ -1,4 +1,4 @@
-import {getUser,getStopTime, currentUser} from "./classes.js";
+import {getUser,getStopTime, currentUser, inTimeRange} from "./classes.js";
 
 getUser(currentUser);
 let user = currentUser;
@@ -17,16 +17,8 @@ function assToSchedule(){
             let length = cell.rowSpan * 30
             let assignmentid = targetElement.id; 
             let index = assignmentid.substring(10,11);
-            for(let row in table){
-                if(row.cells[1] !== undefined && row.cells[1].hasChildren() ){
-                    if(row.cells[1].firstchild.className == "assignment"){
-                        console.log("assignment")
-                    }
-                }
-            }
+            //add assignment to calander
             user.addElement(startTime, getStopTime(startTime, length), user.assignments[index]);
-            console.log(user.assignments);
-            console.log(user.schedule);
         }
     });
 }

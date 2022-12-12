@@ -22,6 +22,33 @@ export function getStopTime(startTime, cTime){
     return time;  
 }
 
+export function inTimeRange(startTime, endTime, time){
+    let hours = parseInt(time.substring(0,time.indexOf(":")));
+    let startHours = parseInt(time.substring(0,startTime.indexOf(":")));
+    let endHours = parseInt(time.substring(0,endTime.indexOf(":")));
+    let minutes = parseInt(time.substring(time.indexOf(":") + 1));
+    let startMinutes = parseInt(time.substring(startTime.indexOf(":") + 1));
+    let endMinutes = parseInt(time.substring(endTime.indexOf(":") + 1));
+
+    //convert to minutes then find the difference and convert back to hours
+    startTotal = (startHours * 60) + startMinutes
+    console.log("Start: " + startTotal)
+
+    endTotal = (endHours * 60) + endMinutes
+    console.log("End: " + endTotal)
+
+    timeTotal = (hours * 60) + minutes
+    console.log("Time: "  + timeTotal)
+
+    if((timeTotal - startTotal) >= 0 && (endTotal - timeTotal) > 0){
+        console.log("in range!")
+        return true
+    }
+    else{
+        return false
+    }
+}
+
 //Returns today's date in the format "Tuesday 11/1"
 export function getCurrentDate(){
     let today = new Date();

@@ -248,6 +248,8 @@
             let table = ev.target.parentNode.parentNode;
 
             ev.target.appendChild(nodeCopy)
+            //Remove drag feature on assignments in the schedule
+            ev.target.firstChild.setAttribute("draggable", "false")
             
             //cycle through cells looking for one with the new element
             for (let row of table.rows) {

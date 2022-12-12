@@ -13,7 +13,7 @@ function registerSubmitButtons(){
     let submitAssButton = document.querySelector(".addbtn");
     clearFields();
     submitAssButton.addEventListener("click", function () {
-        let ass1 = new Assignment(document.getElementById("Aname").value, document.getElementById("Description").value, document.getElementById("Ctime").value/*, document.getElementById("Shortcut").checked*/)
+        let ass1 = new Assignment(document.getElementById("Aname").value, document.getElementById("Description").value, document.getElementById("Ctime").value)
         user.assignments.push(ass1);
         clearFields();
 
@@ -142,7 +142,6 @@ function populateCalendar(){
     }
 
 }
-
 
 //can be optimized 
 function populateToDo(){
