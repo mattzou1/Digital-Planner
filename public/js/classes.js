@@ -195,15 +195,18 @@ export let user1 = new User("Bob", "123", "9:30", "17:00");
 
 
 //exports the classes so we can use them in other js files
-//module.exports.User = User;
-//module.exports.Assignment = Assignment;
-//module.exports.Event = Event;
-//exports.getUser = getUser;
-//module.exports.getCurrentDate;
-//module.exports.getFormattedDate = getFormattedDate;
-//module.exports.getDayOfWeek = getDayOfWeek;
+// module.exports.User = User;
+// module.exports.Assignment = Assignment;
+// module.exports.Event = Event;
+// module.exports.getStopTime = getStopTime;
+// module.exports.inTimeRange = inTimeRange;
+// module.exports.getCurrentDate = getCurrentDate;
+// module.exports.getFormattedDate = getFormattedDate;
+// module.exports.getDayOfWeek = getDayOfWeek;
+// module.exports.getUser = getUser;
 
 //to import them, do:
     //let classes = require("./classes.js");
     //and then access the classes with classes.User, classes.Assignment, etc
     //let user1 = new classes.User(1,1,"9:30", "13:00");
+    //let boolean = classes.inTimeRange("8:00", "11:00", "9:00");
