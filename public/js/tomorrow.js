@@ -58,13 +58,14 @@ function handler(){ //event handler for after DOM is loaded
         
         calheader.innerHTML = `${month} ${day}, ${year}`;
 
+        clearAssignments();
         //remove assignments on the current day
-        if(callTmrOnce == 0){
-            returnClearAss = clearAssignments();
+        //if(callTmrOnce == 0){
+            //returnClearAss = clearAssignments();
             //console.log("hello");
-        }
+        //}
 
-        callTmrOnce++;
+        //callTmrOnce++;
         //get assignments back if user manually scrolls to today's date
         // if(calheader.innerHTML === getFormattedDate()){
         //     console.log(returnClearAss);
@@ -120,11 +121,14 @@ function handler(){ //event handler for after DOM is loaded
 
         //remove assignments from today
         //remove assignments on the current day
-        if(callBackOnce == 0){
-            clearAssignments();
-            console.log("hi");
-        }
-        callBackOnce++;
+        // if(callBackOnce == 0){
+        //     clearAssignments();
+        //     //console.log("hi");
+        // }
+        // callBackOnce++;
+
+        clearAssignments();
+
         //let test = clearAssignments();
         //console.log(test);
 
@@ -228,7 +232,7 @@ function handler(){ //event handler for after DOM is loaded
 
                 //append assignment to parent to add it back to calendar
                 firstParent.appendChild(firstAss);
-                console.log(copy.length);
+                //console.log(copy.length);
             }
         });
 
