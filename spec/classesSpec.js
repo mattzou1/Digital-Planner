@@ -85,13 +85,13 @@ describe("Add element", () => {
 //check on what these functions are supposed to return 
 xdescribe("Get stop time", () => {
     it("has correct stop time", () => {
-        expect(classes.getStopTime("8:00", "11:00")).toBe("11:00");
+        expect(classes.getStopTime("8:00", "90")).toBe("9:30");
     });
     it("is in the proper time range", () => {
-        expect(classes.inTimeRange("8:00","11:00","9:00")).toBe(true);
+        expect(classes.inTimeRange("8:00","11:00","9:00")).toBe(false);
     });
     it("is out of time range", () => {
-        expect(classes.inTimeRange("8:00","11:00","21:00")).toBe(false);
+        expect(classes.inTimeRange("8:00","11:00","21:00")).toBe(true);
     });
 });
 

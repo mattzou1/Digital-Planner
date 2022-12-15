@@ -96,16 +96,16 @@ function populateCalendar(){
             let cell = document.getElementById("calendarBox" + time)
             originalCell = cell
             //make recurring string
-            let reoccuringString = "Reoccuring: "
-            for(let [day] of slot.reoccuringDays){
-                if(slot.reoccuringDays.get(day)){
-                    reoccuringString += day + ", ";
-                }
-            }
-            reoccuringString = reoccuringString.substring(0, reoccuringString.length - 2);
+            // let reoccuringString = "Reoccuring: "
+            // for(let [day] of slot.reoccuringDays){
+            //     if(slot.reoccuringDays.get(day)){
+            //         reoccuringString += day + ", ";
+            //     }
+            // }
+            // reoccuringString = reoccuringString.substring(0, reoccuringString.length - 2);
 
             //add event
-            cell.innerHTML = `<div class='event'><button type='button' id='removeButton'>X</button><p>${slot.name}</p><p>${slot.description}</p><p>${reoccuringString}</p></div>`;
+            cell.innerHTML = `<div class='event'><button type='button' id='removeButton'>X</button><p>${slot.name}</p><p>${slot.description}</p></div>`;
             
             let event = cell.firstChild
 

@@ -45,7 +45,7 @@ import {User} from "./classes.js";
 
                 let newUsername = username.value;
 
-                console.log("new username will be:" + newUsername);
+                //console.log("new username will be:" + newUsername);
 
                 //if the user does not want to change their password...
                 if (password.value == "" || password.value == null){
@@ -68,8 +68,8 @@ import {User} from "./classes.js";
                 console.log("the result is: " + result);
                 
                 if(result == "true"){
-                    console.log("meow!");
-                    window.localStorage.setItem("user", JSON.stringify(user));
+                    //console.log("meow!");
+                    window.localStorage.setItem("user", JSON.stringify(parsed));
                 }
 
                 // console.log("Going to change something...");

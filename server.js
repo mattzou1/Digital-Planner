@@ -70,7 +70,7 @@ app.post("/changeuser", (req, res) => {
             
             let match = "false";
 
-            console.log("made it inside the else loop");
+            //console.log("made it inside the else loop");
 
             //console.log("\nparsedData.newUsername: " + parsedData.newUsername);
             
@@ -84,7 +84,7 @@ app.post("/changeuser", (req, res) => {
                 //checks if entry in userDatabase matches the current user
                 if (database[i].username == user.parsed.username){ 
                     match = "true"; //sets match to true if matches
-                    console.log("the username found is: " + user.parsed.username);
+                    //console.log("the username found is: " + user.parsed.username);
                     database[i].username = user.newUsername; //set current username in userDatabase to the new username
                     break;
                 }
@@ -94,7 +94,7 @@ app.post("/changeuser", (req, res) => {
                 //checks if entry in userDatabase matches the current user
                 if (database[i].password == user.parsed.password){ 
                     match = "true"; //sets match to true if matches
-                    console.log("the password found is: " + user.parsed.password);
+                    //console.log("the password found is: " + user.parsed.password);
                     database[i].password = user.newPassword; //set current username in userDatabase to the new username
                     break;
                 }
