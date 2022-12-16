@@ -1,5 +1,5 @@
 //code to add event and assignment objects to fields in a user object and populate the ToDoList
-import {getUser, Assignment, Event, weekdays, currentUser} from "./classes.js";
+import {getUser, Assignment, Event, weekdays, currentUser, inTimeRange, getStopTime} from "./classes.js";
 
 let user = currentUser;
 let asscount = 0;
@@ -41,6 +41,8 @@ function populateCalendar(){
     let table = document.body.querySelector("table")
     let length = 0;
     let lastTime = null
+    let run = true
+    let originalSlot = null
   
     //clear out schedule before adding everything back
     for(let row of table.rows){
@@ -66,7 +68,10 @@ function populateCalendar(){
     //cannot figure out how to only get 1 time so loop will stay but will quit after first one
     for(let [time] of user.schedule){
 
+        
         let slot = user.schedule.get(time);
+        
+
         //catch if stoptime doesnt exist
         try{
             //Split the time into hours and minutes
@@ -92,17 +97,15 @@ function populateCalendar(){
             }
         catch{}
 
-        if(slot != "empty" && slot.startTime == time){
+        console.log(slot)
+        console.log(slot.stopTime)
+        console.log(time)
+
+        if(slot.startTime == undefined){}
+        //if it is start time
+        else if(slot != "empty" && slot.startTime == time){
             let cell = document.getElementById("calendarBox" + time)
             originalCell = cell
-            //make recurring string
-            // let reoccuringString = "Reoccuring: "
-            // for(let [day] of slot.reoccuringDays){
-            //     if(slot.reoccuringDays.get(day)){
-            //         reoccuringString += day + ", ";
-            //     }
-            // }
-            // reoccuringString = reoccuringString.substring(0, reoccuringString.length - 2);
 
             //add event
             cell.innerHTML = `<div class='event'><button type='button' id='removeButton'>X</button><p>${slot.name}</p><p>${slot.description}</p></div>`;
@@ -122,8 +125,8 @@ function populateCalendar(){
                 length = 0;
             }
         }
+        //if it is end time
         else if(slot != "empty" && lastTime == slot.stopTime){
-
             let cell = document.getElementById("calendarBox" + time)
             cell.remove();
 
@@ -134,7 +137,8 @@ function populateCalendar(){
             length = 0
 
         }
-        else if(slot != "empty" && slot.startTime != time){
+        //if it is middle time
+        else if(slot != "empty" && inTimeRange(slot.startTime, slot.stopTime, time)){
             let cell = document.getElementById("calendarBox" + time)
             cell.remove();
             length++
